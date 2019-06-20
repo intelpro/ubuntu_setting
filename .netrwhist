@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/usr/share/vim/vim74/colors/jellybeans.vim'
+let g:netrw_dirhist_2='/media/intelpro/Coursework/RE501/EXP2/re510_slam/rs_mcl/src'
+let g:netrw_dirhist_3='scp://you@yourserver//path/to/directory/'
+let g:netrw_dirhist_4='scp://vilab@143.248.50.145/~/intelpro/DepthProject/TemporalConsistentDepth/'
+let g:netrw_dirhist_5='sftp://vilab@143.248.50.145/~/intelpro/DepthProject/TemporalConsistentDepth/'
+let g:netrw_dirhist_6='scp://vilab@143.248.50.145/~/intelpro/DepthProject/TemporalConsistentDepth/'
+let g:netrw_dirhist_7='ftp://username@yourdoamin.com//'
+let g:netrw_dirhist_8='ftp://vilab@143.248.50.145//'
+let g:netrw_dirhist_9='scp://vilab@143.248.50.145//home/vilab/intelpro/DepthProject/TemporalConsistentDepth/'
