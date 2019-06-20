@@ -4,10 +4,9 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" call vundle#begin('~/some/path/here')
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-python/python-syntax'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -15,10 +14,6 @@ Plugin 'tpope/vim-fugitive'
 " plugin from http://v
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
-" easy tag plugin for ctags automatic generation 
-Plugin 'xolox/vim-easytags'
-Plugin 'xolox/vim-misc'
-" This two plugin is for easyfags 
 " Indentation guildline tools 
 Plugin 'Yggdroot/indentLine'
 Plugin 'git://git.wincent.com/command-t.git'
@@ -33,10 +28,12 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " All of your Plugins must be added before the following line
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 " YCM install
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
+" vim tags 
+Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
 call vundle#end()            " required
 "NERDTree ON 단축키를 "\nt"로 설정
 map <Leader>nt <ESC>:NERDTree<CR>
@@ -46,7 +43,14 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|vendor$',
     \ 'file': '\v\.(exe|so|dll)$'
 \ }
-
+" tags 설정
+set tags=./tags
+set tags+=../tags
+let g:easytags_async=1
+let g:easytags_auto_highlight = 0 
+let g:easytags_include_members = 1 
+let g:easytags_dynamic_files = 1
+noremap <c-]> 2<c-]>
 " ycm 환경 설정 
 let g:ycm_show_diagnostics_ui = 1 
 let g:ycm_enable_diagnostic_signs = 1 
@@ -56,6 +60,7 @@ let g:ycm_key_list_select_completion = ['', '']
 let g:ycm_key_list_previous_completion = ['', '']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_error_symbol = '!'
+let g:pymode_rope_complete_on_dot = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_collect_identifiers_from_tags_files = 1
 highlight YcmErrorSign guibg=#3f0000
@@ -120,15 +125,6 @@ augroup markdown
 augroup END
 
 autocmd BufRead *.py inoremap # X<c-h>#<space>
-" tags 설정
-set tags=./tags
-set tags+=../tags
-noremap <c-]> 2<c-]>
-" esay tags setting
-let g:easytags_async = 1
-let g:eatytags_auto_highlight = 0 
-let g:easytags_include_member = 1
-let g:easytags_dynamic_file = 1 
 noremap <c-]> 2<c-]>
 " highlighting
 set hlsearch
@@ -155,4 +151,5 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
 
