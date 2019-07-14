@@ -97,4 +97,5 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# source /opt/ros/kinetic/setup.zsh
+source /media/cur_project/catkin_ws/devel/setup.zsh

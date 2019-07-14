@@ -34,6 +34,10 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " vim tags 
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
+" python syntax
+Plugin 'vim-python/python-syntax'
+" colorscheme
+Plugin 'junegunn/seoul256.vim'
 call vundle#end()            " required
 "NERDTree ON 단축키를 "\nt"로 설정
 map <Leader>nt <ESC>:NERDTree<CR>
@@ -50,6 +54,7 @@ let g:easytags_async=1
 let g:easytags_auto_highlight = 0 
 let g:easytags_include_members = 1 
 let g:easytags_dynamic_files = 1
+
 noremap <c-]> 2<c-]>
 " ycm 환경 설정 
 let g:ycm_show_diagnostics_ui = 1 
@@ -86,8 +91,6 @@ set ruler
 if has("syntax")
  syntax on
 endif
-colorscheme darcula
-set t_Co=256
 " set paste
 set autoindent
 set cindent
@@ -116,6 +119,7 @@ au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") |
 \ exe "norm g`\"" |
 \ endif
+
 " Markdown 문법 설정 (Git 에서 사용)
 augroup markdown
     " remove previous autocmds
@@ -146,10 +150,11 @@ set autochdir
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-
+"color
+let g:seoul256_background = 235
+colo seoul256
