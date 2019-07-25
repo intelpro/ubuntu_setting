@@ -38,6 +38,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'vim-python/python-syntax'
 " colorscheme
 Plugin 'junegunn/seoul256.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()            " required
 "NERDTree ON 단축키를 "\nt"로 설정
 map <Leader>nt <ESC>:NERDTree<CR>
@@ -75,7 +76,6 @@ highlight YcmErrorSign guibg=#3f0000
 " nnoremap gD : YcmCompleter GoToDefinition
 " nnoremap gd :YcmCompleter GoToDeclaration
 " nnoremap t :YcmCompleter GetType
-filetype on                                 "vim filetype on
 "Source Explorer 환경설정
 nmap <F8> :SrcExplToggle<CR>                "F8 Key = SrcExpl Toggling
 nmap <C-H> <C-W>h                           "왼쪽 창으로 이동
@@ -91,6 +91,7 @@ set ruler
 if has("syntax")
  syntax on
 endif
+filetype plugin indent on 
 " set paste
 set autoindent
 set cindent
@@ -107,9 +108,6 @@ set mouse=a
 " 한글 입력 설정
 set encoding=utf-8
 set termencoding=utf-8
-" 커서가 있는 줄을 강조함
-set cursorline
-" 상태바 표시를 항상한다
 set laststatus=2 
 set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
 " 검색 설정
@@ -158,3 +156,12 @@ let g:syntastic_check_on_wq = 0
 "color
 let g:seoul256_background = 235
 colo seoul256
+"set split with crtlp
+set splitright
+" tmux navigation 
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <c-l> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-h> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <c-a> :TmuxNavigatePrevious<cr>
