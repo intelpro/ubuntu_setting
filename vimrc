@@ -53,8 +53,9 @@ set tags=./tags
 set tags+=../tags
 let g:easytags_async=1
 let g:easytags_auto_highlight = 0 
-let g:easytags_include_members = 1 
-let g:easytags_dynamic_files = 1
+let g:easytags_include_members = 1
+let g:easytags_dynamic_files = 1 
+let g:easytags_file = '~/.vimtags'
 
 noremap <c-]> 2<c-]>
 " ycm 환경 설정 
@@ -108,6 +109,7 @@ set mouse=a
 " 한글 입력 설정
 set encoding=utf-8
 set termencoding=utf-8
+" 상태바 표시를 항상한다
 set laststatus=2 
 set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
 " 검색 설정
@@ -127,6 +129,7 @@ augroup markdown
 augroup END
 
 autocmd BufRead *.py inoremap # X<c-h>#<space>
+au BufRead,BufNewFile *.pde,*.ino set filetype=c++
 noremap <c-]> 2<c-]>
 " highlighting
 set hlsearch
@@ -161,7 +164,7 @@ set splitright
 " tmux navigation 
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <c-l> :TmuxNavigateLeft<cr>
-nnoremap <silent> <c-h> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-a> :TmuxNavigatePrevious<cr>
