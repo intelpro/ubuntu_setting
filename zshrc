@@ -98,3 +98,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # source /opt/ros/kinetic/setup.zsh
+source /opt/ros/kinetic/setup.zsh
+source ~/catkin_ws/devel/setup.bash
