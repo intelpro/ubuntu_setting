@@ -8,117 +8,117 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/\V\<disp_smoothness_w\>
+~MSle0~/use_lstm
 
 # Last Substitute Search Pattern:
-~MSle0&flow_loader_h
+~MSle0&unit_length
 
 # Last Substitute String:
-$size[0]
+$Unit_Cube_L
 
 # Command Line History (newest to oldest):
-:WQ
-:W
-:w
 :wq
-:vs train_depth.py
-:q!
-:vs trainde
+:W
 :Wq
+:w
+:vs train_flow.py
+:q!
+:we
 :noh
-:Weq
-:121
-:122
-:93
-:115
-:vs train_loop.py
-:104
-::noh
-:WEq
-:205
-:.Wq
-:166
-:11
-:246
-:334
-:%s/flow_loader_h/size[0]/g
-:%s/flow_loader_h/size[0]
-:%s/flow_loader_w/size[1]/g
-:nohj
-:13
-::56
+:vs train_depth_LSTM.py
+:ㅈ
+:WQ
+:151
 :s
-:qw
-:146
-:vs train
-:99
-:vs ../
-:set nopaste
+:121
+:yu
+:415
+:133
+:!33
+:85
+:sp ../train_flow_LSTM.py
+:vs flow_run.sh
+:vs flow_LSTM_run.sh
+:vs stereo_LSTM_run.sh
+:Lw
+:Wx
+:vs gen_flow_file_list.py
+:vs 
 :set paste
-:80
-:79
-:vs scripts/stereo_run.sh
-::w
-:163
+:vs ../eval_utils/__init__.py
+:ww
+:vs eval_depth_eigen.py
+:vs eval_depth_eigen
+:vs eval_depth_2015.py
+:vs eval_depth_video.py
+:187
+:112
+:^kjkkkkkkk
+:252
+:12
 :117
-:set no
-:171
-:108
-:20
-:18
-:615
+:vs test_LSTM.py
+:vs ../test_lo
+:vs ../eval_utils/
+:vs eval_depth.py
+:q1
+:26
+:29
+:.w
+:vs eval_depth_VO.py
+:d
 
 # Search String History (newest to oldest):
-?/depth_sm
-?/smooth
-?/flow_patch_w
-?/stereo_patch_w
-?/self.test_dir
-?/def trai
-?/test_loop_all_dir
-?/test_loop_all
-?/test_depth
-?/self.n_epoch
-?/home/vilab/intelprop
-?/home/vilab/intelprokj
-?/SIM_PAtch
-?/flow_save
-?/,
-? flow_loader_h
-? flow_loader_w
-?/test_eigen
-?/simi
-?/scale
-?/num
-?/flow
-?/disp
-?/get_transform
-?/plot
-?/subplot
-?/dep
-?/depth_model
-?/Depth_model
-?/test_file
-?/lr
-?/adjust
-?/sim
+?/use_lstm
+?/self.flow_model
+?/left_image
+? \<state\>
+?/test_filename
+?/eigen
 ?/pdb
-?/normal
-?/print
-?/with_pp
-?/l///,,./..........ll
-?/masked_fill
+?/self.disp_model
+?/eva
+?/eval_depth
+?/load_gt_disp_kitti
+?/VO
+?/eval_VO
+? )
 ? \<return\>
-?/test_loop
-?/cout
-?/2f
-??:w
-?/clear
-?/reset
-?/bounding
-?/kl
-?/rect
-?/patch
+?/const
+?/dada
+? unit_length
+?/use_LSTM
+?/print
+?/test_loop_all
+? \<static\>
+? n_
+?/ObjectPose
+?/Pointcloud
+?/RunRan
+?/pose
+?/plane
+?/static
+?/imgDepth
+?/Frame_count
+?/Subscribe
+??k
+?/python
+?/block_pose
+? objectpose
+?/objectpose
+? ObjectPose
+?/dependencies
+?/add
+?/generate_message
+?/catkin_package
+?/Mask
+?/utils
+?/cost_volume
+?/S
+?/download
+?/initmodel
+?/models
+?/occ
 
 # Expression History (newest to oldest):
 
@@ -128,556 +128,458 @@ $size[0]
 
 # Registers:
 "0	CHAR	0
-	            for k, v in depth_ckpt['state_dict'].items():
-	                name = k[7:]
-	                new_state_dict[name] = v
-	            self.disp_model.load_state_dict(new_state_dict)
+	    def train_test_flow(self, input_height, input_width):
+	        self.flow_model.eval()
+	        total_error_all, total_error_noc, total_error_occ, fl_error_all, fl_error_noc, fl_error_occ = [0]*6
+	        num_test = 0
+	        save_flow = False
+	        for batch_idx, (former, latter, gt_noc, gt_occ, mask_noc, mask_occ, h, w) in enumerate(self.flow_2015_test_loader, 0):
+	            former_batch = torch.cat((former, torch.from_numpy(np.flip(former.numpy(), 3).copy())), 0)
+	            latter_batch = torch.cat((latter, torch.from_numpy(np.flip(latter.numpy(), 3).copy())), 0)
 	
+	            former = Variable(former_batch.cuda())
+	            latter = Variable(latter_batch.cuda())
+	
+	            model_input = torch.cat((former, latter), 1)
+	            flow_est_scale = self.flow_model(model_input)
+	
+	            flow_ori_scale = nn.UpsamplingBilinear2d(size=(int(h), int(w)))(flow_est_scale[0])
+	            flow_ori_scale[0,0] = flow_ori_scale[0,0] * int(w) / input_width
+	            flow_ori_scale[0,1] = flow_ori_scale[0,1] * int(h) / input_height
+	
+	            error_all, fl_all = evaluate_flow(flow_ori_scale[0].data.cpu().numpy(), gt_occ[0].numpy(), mask_occ.numpy())
+	            error_occ, fl_occ = evaluate_flow(flow_ori_scale[0].data.cpu().numpy(), gt_occ[0].numpy(), mask_occ.numpy()-mask_noc.numpy())
+	            error_noc, fl_noc = evaluate_flow(flow_ori_scale[0].data.cpu().numpy(), gt_noc[0].numpy(), mask_noc.numpy())
+	
+	            total_error_all += error_all
+	            total_error_noc += error_noc
+	            total_error_occ += error_occ
+	            fl_error_noc += fl_noc
+	            fl_error_all += fl_all
+	            fl_error_occ += fl_occ
+	            if save_flow:
+	                flow_imsave_dir = os.path.join(args.flow_save_dir, 'plot_display_epoch_'+str(self.epoch))
+	                if not os.path.exists(flow_imsave_dir):
+	                    os.makedirs(flow_imsave_dir)
+	                flow_save_dir = os.path.join(flow_imsave_dir, str(num_test).zfill(5) + ".png")
+	                flow_cpu = flow_ori_scale[0,:,:,:].detach().to("cpu").numpy().squeeze()
+	                flow_cpu = flow_to_image(np.transpose(flow_cpu, (1,2,0)))
+	                cv2.imwrite(flow_save_dir, flow_cpu)
+	            num_test += 1
+	
+	        total_error_all /= num_test
+	        fl_error_all /= num_test
+	        total_error_noc /= num_test
+	        fl_error_noc /= num_test
+	        total_error_occ /= num_test
+	        fl_error_occ /= num_test
+	        
+	        print("\n{:>10}: ".format('KITTI 2015 Opitcal Flow evaluation'))
+	        print("{:>10}, {:>12}, {:>9}, {:>12}, {:>9}, {:>12}".format('All EPE', 'Fl-All(%)', 'Noc EPE', 'Fl-Noc(%)', 'Occ EPE', 'Fl-Occ(%)'))
+	        print("{:10.3f}, {:10.2f}, {:11.3f}, {:10.2f}, {:11.3f}, {:10.2f}".format(total_error_all.mean(),\
+	              fl_error_all.mean()*100, total_error_noc.mean(), fl_error_noc.mean()*100, total_error_occ.mean(), fl_error_occ.mean()*100))
 "1	LINE	0
-	            self.scheduler = flow_ckpt['scheduler']
-"2	LINE	0
-	            self.flow_model.load_state_dict(flow_ckpt['state_dict'])
-"3	LINE	0
 	
+"2	LINE	0
+	
+"3	LINE	0
+	    
 "4	LINE	0
 	
-"5	LINE	0
-	            """
-"6	LINE	0
-	            """
+"5	CHAR	0
+	    elif args.mode == 'train_flow':
+	        model.train_flow()
+"6	CHAR	0
+	    if args.mode=='train_flow_LSTM':
+	        args.use_LSTM=True
+	    elif args.mode=='train_flow':
+	        args.use_LSTM=False
+	
 "7	LINE	0
 	
 "8	LINE	0
 	
 "9	LINE	0
-	
+	        print('not impletmeted error')
 ""-	CHAR	0
-	depth_ckpt
+	test_flow
 
 # File marks:
-'0  150  32  /media/cur_project/TemporalConsistentDepth/train_loop.py
-'1  618  8  /media/cur_project/TemporalConsistentDepth/train_loop.py
-'2  33  0  /media/cur_project/TemporalConsistentDepth/scripts/loop_run.sh
-'3  64  4  /media/cur_project/TemporalConsistentDepth/scripts/loop_run.sh
-'4  376  0  /media/cur_project/TemporalConsistentDepth/train_loop.py
-'5  1  116  /media/cur_project/TemporalConsistentDepth/Recent_saved_model/run_rsync2remote.sh
-'6  606  31  /media/cur_project/TemporalConsistentDepth/train_loop.py
-'7  1  105  /media/cur_project/TemporalConsistentDepth/Recent_saved_model/145/run_rsync.sh
-'8  1  103  /media/cur_project/TemporalConsistentDepth/Recent_saved_model/133/run_rsync2remote.sh
-'9  119  12  /media/cur_project/TemporalConsistentDepth/train_flow.py
+'0  789  8  /media/cur_project/TemporalConsistentDepth/networks/PWC_net_modified.py
+'1  246  31  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+'2  449  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+'3  4  7  /media/cur_project/TemporalConsistentDepth/eval_utils/eval_flow.py
+'4  1  0  /media/cur_project/TemporalConsistentDepth/eval_utils/train_flow_LSTM.py
+'5  14  25  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+'6  469  33  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+'7  66  27  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+'8  382  8  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+'9  352  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
 
 # Jumplist (newest first):
--'  150  32  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  618  8  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  376  0  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  33  0  /media/cur_project/TemporalConsistentDepth/scripts/loop_run.sh
--'  89  3  /media/cur_project/TemporalConsistentDepth/scripts/loop_run.sh
--'  64  4  /media/cur_project/TemporalConsistentDepth/scripts/loop_run.sh
--'  87  4  /media/cur_project/TemporalConsistentDepth/scripts/loop_run.sh
--'  40  27  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  353  86  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  170  16  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  42  0  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  286  85  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  606  31  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  1  116  /media/cur_project/TemporalConsistentDepth/Recent_saved_model/run_rsync2remote.sh
--'  271  47  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  259  50  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  258  46  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  173  61  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  90  27  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  341  56  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  340  49  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  328  55  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  327  50  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  88  27  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  282  20  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  32  0  /media/cur_project/TemporalConsistentDepth/train_loop.py
--'  1  105  /media/cur_project/TemporalConsistentDepth/Recent_saved_model/145/run_rsync.sh
--'  1  103  /media/cur_project/TemporalConsistentDepth/Recent_saved_model/133/run_rsync2remote.sh
--'  119  12  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  120  38  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  48  54  /media/cur_project/TemporalConsistentDepth/utils.py
--'  357  58  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  361  0  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  101  57  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  65  27  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  100  59  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  85  24  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  99  45  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  1  0  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  29  0  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  179  20  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  57  4  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  26  80  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  304  12  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  125  46  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  106  82  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  103  82  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  100  59  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  28  27  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  140  17  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  101  27  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  58  62  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  26  71  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  88  12  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  211  16  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  22  20  /media/cur_project/TemporalConsistentDepth/scripts/stereo_run.sh
--'  47  37  /media/cur_project/TemporalConsistentDepth/scripts/stereo_run.sh
--'  294  8  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  41  4  /media/cur_project/TemporalConsistentDepth/eval_depth.py
--'  1  0  /media/cur_project/TemporalConsistentDepth/train_De
--'  105  45  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  120  72  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  56  4  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  108  43  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  107  12  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  109  33  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  301  54  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  299  28  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  40  81  /media/cur_project/TemporalConsistentDepth/utils.py
--'  22  60  /media/cur_project/TemporalConsistentDepth/utils.py
--'  21  4  /media/cur_project/TemporalConsistentDepth/utils.py
--'  23  5  /media/cur_project/TemporalConsistentDepth/utils.py
--'  102  33  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  123  19  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  112  0  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  113  0  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  114  0  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  46  56  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  44  64  /media/cur_project/TemporalConsistentDepth/train_depth.py
--'  2  0  /media/dataset/run_rsync2remote.sh
--'  1  0  ~/.vimrc
--'  171  0  ~/.vimrc
--'  1  68  /media/dataset/run_rsync2remote.sh
--'  4  6  /media/dataset/run_rsync2remote.sh
--'  3  10  /media/dataset/run_rsync2remote.sh
--'  188  0  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  242  16  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  247  0  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  63  27  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  205  37  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  191  55  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  1  0  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  76  0  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  142  71  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  332  12  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  246  27  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  113  27  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  298  0  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  257  38  /media/cur_project/TemporalConsistentDepth/train_flow.py
+-'  789  8  /media/cur_project/TemporalConsistentDepth/networks/PWC_net_modified.py
+-'  38  6  /media/cur_project/TemporalConsistentDepth/networks/PWC_net_modified.py
+-'  246  31  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  449  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  14  25  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  4  7  /media/cur_project/TemporalConsistentDepth/eval_utils/eval_flow.py
+-'  1  0  /media/cur_project/TemporalConsistentDepth/eval_utils/train_flow_LSTM.py
+-'  1  0  /media/cur_project/TemporalConsistentDepth/eval_utils/eval_flow.py
+-'  469  33  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  66  27  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  556  18  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  554  16  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  279  20  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  555  12  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  123  27  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  558  23  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  451  8  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  348  31  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  165  38  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  164  38  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  152  12  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  134  46  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  92  12  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  86  36  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  85  26  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  84  12  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  82  12  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  509  31  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  352  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  382  8  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  263  30  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  172  17  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  487  0  /media/cur_project/TemporalConsistentDepth/networks/PWC_net.py
+-'  158  24  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  243  0  /media/cur_project/TemporalConsistentDepth/utils/loss_utils.py
+-'  139  8  /media/cur_project/TemporalConsistentDepth/train_flow.py
+-'  130  34  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  115  45  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
+-'  112  12  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
+-'  57  22  /media/cur_project/TemporalConsistentDepth/utils/utils.py
+-'  162  16  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  157  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  120  18  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  125  0  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
+-'  130  30  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
+-'  122  135  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  119  15  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  61  0  /media/cur_project/TemporalConsistentDepth/utils/utils.py
+-'  73  4  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  60  0  /media/cur_project/TemporalConsistentDepth/utils/utils.py
+-'  94  39  /media/cur_project/TemporalConsistentDepth/train_flow.py
+-'  93  57  /media/cur_project/TemporalConsistentDepth/train_flow.py
+-'  55  0  /media/cur_project/TemporalConsistentDepth/utils/utils.py
+-'  133  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  135  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  60  66  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  41  33  /media/cur_project/TemporalConsistentDepth/scripts/flow_LSTM_run.sh
+-'  72  18  /media/cur_project/TemporalConsistentDepth/scripts/flow_LSTM_run.sh
+-'  37  4  /media/cur_project/TemporalConsistentDepth/scripts/flow_LSTM_run.sh
+-'  13  0  /media/cur_project/TemporalConsistentDepth/scripts/flow_LSTM_run.sh
+-'  69  27  /media/cur_project/TemporalConsistentDepth/scripts/flow_LSTM_run.sh
+-'  1  0  /media/cur_project/TemporalConsistentDepth/scripts/flow_LSTM_run.sh
+-'  71  0  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
+-'  86  53  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
+-'  82  0  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
+-'  35346  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video_train.txt
+-'  38720  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video_train.txt
+-'  38758  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video.txt
+-'  1  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video
+-'  28  78  /media/cur_project/TemporalConsistentDepth/utils/filename/gen_train_file_list.py
+-'  27866  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video.txt
+-'  1303  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video_train.txt
+-'  1  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video_train.txt
+-'  30  12  /media/cur_project/TemporalConsistentDepth/utils/filename/gen_train_file_list.py
+-'  2  0  /media/cur_project/TemporalConsistentDepth/utils/filename/gen_stereo_video_file.py
+-'  1  0  /media/cur_project/TemporalConsistentDepth/utils/filename/gen_stereo_video_file.py
+-'  1  0  /media/cur_project/TemporalConsistentDepth/utils/filename/gen_train_file_list.py
+-'  7  36  /media/cur_project/TemporalConsistentDepth/utils/filename/gen_flow_file_list.py
+-'  1  0  /media/cur_project/TemporalConsistentDepth/utils/filename/gen_flow_file_list.py
+-'  3277  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video.txt
+-'  1  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video.txt
+-'  136  8  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
+-'  32  27  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  109  72  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  109  0  /media/cur_project/TemporalConsistentDepth/tags
+-'  1  0  /media/cur_project/TemporalConsistentDepth/tags
+-'  1  0  ~/.vimtags
+-'  90  71  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  5  46  /media/cur_project/TemporalConsistentDepth/README.md
+-'  1  0  /media/cur_project/TemporalConsistentDepth/README.md
+-'  30  27  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  40  27  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  80  40  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  1  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  225  16  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  73  76  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  10  27  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  6  5  /media/cur_project/TemporalConsistentDepth/utils/loss_utils.py
+-'  1  0  /media/cur_project/TemporalConsistentDepth/utils/loss_utils.py
+-'  246  31  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
 
 # History of marks within files (newest to oldest):
 
-> /media/cur_project/TemporalConsistentDepth/train_loop.py
-	"	150	32
-	^	139	33
-	.	139	32
-	+	636	0
-	+	684	0
-	+	344	0
-	+	341	26
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	16
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	59
-	+	341	0
-	+	341	0
-	+	341	42
-	+	11	26
-	+	146	43
-	+	341	63
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	63
-	+	341	22
-	+	341	27
-	+	341	59
-	+	341	66
-	+	341	53
-	+	340	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	25
-	+	341	0
-	+	341	54
-	+	341	51
-	+	341	42
-	+	341	0
-	+	341	27
-	+	341	38
-	+	341	25
-	+	341	37
-	+	341	78
-	+	341	42
-	+	341	27
-	+	341	39
-	+	341	43
-	+	341	0
-	+	341	21
-	+	341	27
-	+	341	39
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	38
-	+	341	0
-	+	341	0
-	+	157	42
-	+	34	71
-	+	35	69
-	+	34	43
-	+	35	42
-	+	34	66
-	+	35	65
-	+	36	0
-	+	35	0
-	+	742	0
-	+	752	0
-	+	353	88
-	+	286	87
-	+	39	0
-	+	40	0
-	+	42	0
-	+	43	0
-	+	40	43
-	+	41	42
-	+	353	86
-	+	617	0
-	+	617	66
-	+	618	0
-	+	618	76
-	+	147	0
-	+	151	0
-	+	148	47
-	+	151	58
-	+	139	0
-	+	143	0
-	+	130	96
-	+	139	32
-	a	195	69
-	m	369	20
-	n	294	63
+> /media/cur_project/TemporalConsistentDepth/networks/PWC_net_modified.py
+	"	789	8
+	^	38	25
+	.	38	24
+	+	1309	0
+	+	1309	0
+	+	1079	21
+	+	1691	0
+	+	1225	0
+	+	762	0
+	+	761	0
+	+	762	24
+	+	770	32
+	+	844	21
+	+	984	29
+	+	789	0
+	+	789	21
+	+	984	13
+	+	985	27
+	+	918	0
+	+	922	0
+	+	918	31
+	+	919	30
+	+	900	52
+	+	984	47
+	+	903	0
+	+	907	0
+	+	907	0
+	+	988	73
+	+	907	0
+	+	518	0
+	+	276	0
+	+	518	24
+	+	526	32
+	+	545	0
+	+	592	0
+	+	592	0
+	+	677	0
+	+	678	0
+	+	592	21
+	+	581	0
+	+	581	21
+	+	570	0
+	+	570	21
+	+	559	0
+	+	559	21
+	+	732	0
+	+	732	30
+	+	716	0
+	+	716	30
+	+	701	0
+	+	701	30
+	+	686	0
+	+	686	30
+	+	747	13
+	+	748	26
+	+	733	0
+	+	733	0
+	+	704	0
+	+	733	26
+	+	716	13
+	+	701	13
+	+	686	13
+	+	717	0
+	+	717	26
+	+	702	0
+	+	702	26
+	+	687	0
+	+	687	26
+	+	686	46
+	+	701	46
+	+	732	46
+	+	747	46
+	+	659	42
+	+	718	43
+	+	734	43
+	+	751	73
+	+	703	43
+	+	688	43
+	+	277	0
+	+	348	0
+	+	338	0
+	+	328	0
+	+	318	0
+	+	358	21
+	+	368	0
+	+	368	62
+	+	415	42
+	+	503	13
+	+	504	26
+	+	507	73
+	+	509	24
+	+	503	30
+	+	358	21
+	+	509	37
+	+	510	21
+	+	38	0
+	+	37	0
+	+	38	24
+	+	119	0
+	+	175	41
+	+	264	0
+	+	277	24
+	+	38	24
 
-> /media/cur_project/TemporalConsistentDepth/trainde
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/train_depth.py
-	"	91	0
-	^	303	39
-	.	303	38
-	+	102	209
-	+	102	266
-	+	102	323
-	+	111	0
-	+	102	47
-	+	102	0
-	+	102	0
-	+	102	119
-	+	102	0
-	+	71	0
-	+	73	0
-	+	10	27
-	+	98	0
-	+	98	0
-	+	99	110
-	+	100	0
-	+	98	0
-	+	98	0
-	+	98	0
-	+	102	142
-	+	103	131
-	+	98	0
-	+	99	23
-	+	101	0
-	+	102	143
-	+	14	37
-	+	265	28
-	+	267	28
-	+	266	54
-	+	225	21
-	+	177	0
-	+	153	0
-	+	173	0
-	+	174	0
-	+	190	55
-	+	191	60
-	+	203	55
-	+	204	61
-	+	223	0
-	+	225	0
-	+	239	0
-	+	266	55
-	+	26	99
-	+	27	98
-	+	114	0
-	+	43	75
-	+	44	63
-	+	47	0
-	+	46	61
-	+	44	65
-	+	114	59
-	+	121	0
-	+	112	0
-	+	114	0
-	+	112	0
-	+	120	78
-	+	121	71
-	+	128	0
-	+	129	0
-	+	123	70
-	+	122	59
-	+	122	55
-	+	251	23
-	+	241	32
-	+	111	0
-	+	104	42
-	+	105	50
-	+	317	37
-	+	319	0
-	+	269	0
-	+	268	0
-	+	298	0
-	+	297	0
-	+	301	0
-	+	302	0
-	+	305	0
-	+	318	23
-	+	86	0
-	+	87	0
-	+	107	0
-	+	110	0
-	+	109	42
-	+	107	49
-	+	108	0
-	+	105	169
-	+	105	28
-	+	34	0
-	+	35	0
-	+	34	59
-	+	35	0
-	+	115	86
-	+	120	84
-	+	105	45
-	+	124	0
-	+	125	0
-	+	124	55
-	+	125	57
-	+	126	58
-	+	127	56
-	+	303	38
-
-> /media/cur_project/TemporalConsistentDepth/scripts/loop_run.sh
-	"	33	0
-	^	127	43
-	.	34	0
-	+	1	14
-	+	115	39
-	+	116	40
-	+	117	0
-	+	115	44
-	+	114	25
-	+	1	17
-	+	152	35
-	+	153	26
-	+	153	27
-	+	155	0
-	+	153	43
-	+	12	0
-	+	11	0
-	+	19	0
-	+	17	14
-	+	18	13
-	+	115	0
-	+	31	25
-	+	53	0
-	+	74	20
-	+	77	0
-	+	75	0
-	+	75	39
-	+	153	45
-	+	154	22
-	+	154	23
-	+	155	0
-	+	154	35
-	+	1	14
-	+	70	3
-	+	70	0
-	+	70	0
-	+	67	37
-	+	68	11
-	+	70	0
-	+	68	36
-	+	70	0
-	+	68	38
-	+	70	7
-	+	70	0
+> /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+	"	246	31
+	^	246	32
+	.	246	31
+	+	553	35
+	+	558	41
+	+	118	0
+	+	119	126
+	+	119	48
 	+	74	0
-	+	69	7
-	+	73	5
-	+	71	7
-	+	72	21
-	+	94	0
-	+	84	28
-	+	84	28
-	+	84	29
-	+	94	0
-	+	84	43
-	+	94	0
-	+	85	6
-	+	94	0
-	+	94	0
-	+	85	30
-	+	94	0
-	+	86	8
-	+	88	5
-	+	88	0
-	+	85	34
-	+	94	0
-	+	87	0
-	+	87	0
-	+	88	0
-	+	87	0
-	+	97	0
-	+	89	0
-	+	94	0
-	+	85	35
-	+	145	49
-	+	146	23
-	+	146	23
-	+	146	24
-	+	147	0
-	+	146	37
-	+	1	17
-	+	106	22
-	+	82	35
-	+	108	70
-	+	1	13
-	+	41	25
-	+	48	26
-	+	48	26
-	+	55	11
-	+	56	11
-	+	57	22
-	+	58	22
-	+	89	39
-	+	90	52
-	+	91	52
-	+	126	27
-	+	126	28
-	+	129	0
-	+	129	0
-	+	128	0
-	+	126	43
-	+	127	42
-	+	34	0
-	m	13	0
-	n	13	0
-
-> /media/cur_project/TemporalConsistentDepth/Recent_saved_model/run_rsync2remote.sh
-	"	1	116
-	^	1	117
-	.	1	116
-	+	1	102
-	+	1	19
-	+	1	95
-	+	1	42
-	+	2	0
-	+	1	112
-	+	1	27
-	+	1	116
-
-> /media/cur_project/TemporalConsistentDepth/Recent_saved_model/145/run_rsync.sh
-	"	1	105
-	^	1	106
-	.	1	105
-	+	1	105
-
-> /media/cur_project/TemporalConsistentDepth/Recent_saved_model/133/run_rsync2remote.sh
-	"	1	103
-	^	1	104
-	.	1	103
-	+	1	103
+	+	69	0
+	+	73	0
+	+	118	0
+	+	119	0
+	+	120	0
+	+	69	81
+	+	71	80
+	+	65	51
+	+	65	0
+	+	157	43
+	+	157	43
+	+	157	38
+	+	157	38
+	+	172	0
+	+	172	33
+	+	172	0
+	+	172	125
+	+	172	125
+	+	172	27
+	+	172	0
+	+	172	0
+	+	172	0
+	+	158	0
+	+	157	0
+	+	155	53
+	+	156	53
+	+	158	53
+	+	159	53
+	+	161	65
+	+	162	67
+	+	181	0
+	+	167	0
+	+	166	0
+	+	172	0
+	+	164	35
+	+	165	36
+	+	164	36
+	+	165	36
+	+	450	24
+	+	242	33
+	+	509	29
+	+	463	29
+	+	171	0
+	+	169	0
+	+	123	38
+	+	124	0
+	+	352	0
+	+	244	0
+	+	256	0
+	+	256	53
+	+	256	53
+	+	256	0
+	+	256	0
+	+	256	53
+	+	256	0
+	+	272	0
+	+	265	33
+	+	266	33
+	+	265	33
+	+	266	33
+	+	552	35
+	+	552	25
+	+	552	32
+	+	552	26
+	+	550	0
+	+	552	0
+	+	552	0
+	+	555	0
+	+	558	28
+	+	558	0
+	+	558	34
+	+	558	0
+	+	558	0
+	+	558	23
+	+	281	0
+	+	25	80
+	+	24	97
+	+	25	98
+	+	24	74
+	+	25	75
+	+	553	0
+	+	558	0
+	+	555	4
+	+	555	0
+	+	554	30
+	+	555	0
+	+	556	33
+	+	557	0
+	+	557	27
+	+	145	33
+	+	14	25
+	+	353	0
+	+	449	0
+	+	246	31
 
 > /media/cur_project/TemporalConsistentDepth/train_flow.py
-	"	119	12
-	.	119	0
-	+	245	69
-	+	219	0
-	+	218	0
-	+	228	0
-	+	188	23
-	+	188	52
-	+	188	25
-	+	188	0
-	+	188	0
-	+	188	42
-	+	188	38
-	+	189	0
-	+	211	0
-	+	210	0
-	+	211	0
-	+	211	0
-	+	211	0
-	+	211	0
-	+	211	0
-	+	211	33
-	+	211	47
-	+	211	27
-	+	211	0
-	+	211	0
-	+	211	0
-	+	211	0
-	+	211	0
-	+	211	44
-	+	211	38
-	+	211	0
-	+	211	0
-	+	211	35
-	+	211	44
-	+	211	73
-	+	211	74
-	+	211	76
-	+	211	0
-	+	211	0
-	+	211	0
-	+	211	26
-	+	211	76
-	+	211	0
-	+	211	0
-	+	211	48
-	+	211	48
-	+	211	0
-	+	211	38
-	+	211	0
-	+	211	27
-	+	211	42
-	+	211	27
-	+	211	34
-	+	211	56
-	+	211	0
-	+	211	0
-	+	211	32
-	+	211	51
-	+	211	0
+	"	226	0
+	^	93	0
+	.	97	0
+	+	180	0
+	+	179	0
+	+	180	0
+	+	180	0
+	+	180	0
+	+	180	0
+	+	180	0
+	+	180	33
+	+	180	47
+	+	180	27
+	+	180	0
+	+	180	0
+	+	180	0
+	+	180	0
+	+	180	0
+	+	180	44
+	+	180	38
+	+	180	0
+	+	180	0
+	+	180	35
+	+	180	44
+	+	180	73
+	+	180	74
+	+	180	76
+	+	180	0
+	+	180	0
+	+	180	0
+	+	180	26
+	+	180	76
+	+	180	0
+	+	180	0
+	+	180	48
+	+	180	48
+	+	180	0
+	+	180	38
+	+	180	0
+	+	180	27
+	+	180	42
+	+	180	27
+	+	180	34
+	+	180	56
+	+	180	0
+	+	180	0
+	+	180	32
+	+	180	51
+	+	180	0
 	+	26	0
 	+	91	0
 	+	35	25
@@ -687,1690 +589,169 @@ $size[0]
 	+	35	0
 	+	27	94
 	+	26	97
-	+	371	35
-	+	372	0
-	+	372	23
-	+	353	0
-	+	361	0
-	+	354	0
-	+	357	96
-	+	358	26
-	+	359	25
-	+	92	0
-	+	93	86
-	+	92	58
-	+	98	23
-	+	101	60
-	+	100	59
-	+	101	71
-	+	113	66
-	+	361	0
-	+	123	0
-	+	118	41
-	+	113	38
-	+	119	0
-	+	123	0
-	+	125	41
-	+	123	47
+	+	331	35
+	+	331	0
+	+	331	23
+	+	322	0
+	+	323	0
+	+	323	0
+	+	323	96
+	+	323	26
+	+	323	25
+	+	91	0
+	+	91	86
+	+	91	58
+	+	91	23
+	+	91	60
+	+	91	59
+	+	91	71
+	+	97	66
+	+	323	0
+	+	97	0
+	+	97	41
+	+	97	38
+	+	97	0
+	+	97	0
+	+	97	41
+	+	97	47
 	+	34	0
 	+	34	0
 	+	35	0
 	+	34	0
 	+	34	35
-	+	93	56
-	+	122	108
-	+	119	0
-	m	441	39
-
-> /media/cur_project/TemporalConsistentDepth/utils.py
-	"	48	54
-	^	48	55
-	.	48	54
-	+	66	0
-	+	66	68
-	+	71	0
-	+	75	0
-	+	77	33
-	+	70	36
-	+	78	0
-	+	77	76
-	+	69	103
-	+	55	79
-	+	59	0
-	+	63	72
-	+	65	72
-	+	73	72
-	+	71	72
-	+	64	15
-	+	72	15
-	+	57	48
-	+	77	34
-	+	59	0
-	+	77	0
-	+	55	0
-	+	76	16
-	+	58	74
-	+	76	115
-	+	77	51
-	+	55	159
-	+	7	90
-	+	58	94
-	+	68	0
-	+	68	0
-	+	69	77
-	+	13	0
-	+	55	12
-	+	19	0
-	+	19	0
-	+	20	96
-	+	25	0
-	+	20	12
-	+	21	0
-	+	24	27
-	+	25	0
-	+	30	27
-	+	31	0
-	+	37	0
-	+	22	0
-	+	57	0
-	+	21	0
-	+	56	50
-	+	60	0
-	+	70	0
-	+	20	77
-	+	38	0
-	+	38	0
-	+	54	0
-	+	10	0
-	+	19	0
-	+	38	11
-	+	39	0
-	+	59	0
-	+	60	0
-	+	71	0
-	+	48	0
-	+	54	0
-	+	7	116
-	+	7	151
-	+	7	23
-	+	25	40
-	+	40	40
-	+	60	40
-	+	21	0
-	+	56	0
-	+	43	0
-	+	48	0
-	+	49	0
-	+	54	0
-	+	59	4
-	+	47	85
-	+	53	58
-	+	38	137
-	+	43	105
-	+	45	105
-	+	49	105
-	+	51	105
-	+	43	90
-	+	45	90
-	+	49	90
-	+	51	90
-	+	53	0
-	+	40	91
-	+	60	91
-	+	56	0
-	+	56	0
-	+	56	0
-	+	53	0
-	+	33	31
-	+	34	108
-	+	35	115
-	+	36	44
-	+	48	54
-
-> /media/cur_project/TemporalConsistentDepth/scripts/stereo_run.sh
-	"	22	20
-	^	27	30
-	.	17	0
-	+	51	0
-	+	49	19
-	+	50	21
-	+	50	22
-	+	51	0
-	+	50	35
-	+	51	20
-	+	51	21
-	+	51	0
-	+	51	33
-	+	51	25
-	+	51	26
-	+	51	0
-	+	51	43
-	+	51	30
-	+	51	31
-	+	51	0
-	+	51	53
-	+	51	22
-	+	51	23
-	+	51	0
-	+	51	38
-	+	51	20
-	+	51	21
-	+	51	0
-	+	51	34
-	+	51	18
-	+	51	19
-	+	51	0
-	+	51	29
-	+	51	24
-	+	51	24
-	+	51	25
-	+	51	0
-	+	51	41
-	+	51	23
-	+	51	24
-	+	51	0
-	+	51	39
-	+	51	0
-	+	51	22
-	+	51	23
-	+	51	0
-	+	51	37
-	+	51	20
-	+	51	19
-	+	51	20
-	+	51	0
-	+	51	31
-	+	51	20
-	+	51	21
-	+	51	0
-	+	51	33
-	+	51	22
-	+	51	23
-	+	51	0
-	+	51	37
-	+	51	27
-	+	51	27
-	+	51	28
-	+	51	0
-	+	51	43
-	+	51	25
-	+	51	24
-	+	51	25
-	+	51	0
-	+	51	0
-	+	51	29
-	+	51	28
-	+	51	29
-	+	51	0
-	+	51	41
-	+	51	21
-	+	51	20
-	+	51	21
-	+	51	0
-	+	51	37
-	+	51	20
-	+	51	19
-	+	51	20
-	+	51	0
-	+	51	39
-	+	51	25
-	+	51	26
-	+	51	0
-	+	51	32
-	+	17	17
-	+	51	38
-	+	38	15
-	+	52	0
-	+	48	0
-	+	47	33
-	+	36	0
-	+	35	32
-	+	26	38
-	+	27	0
-	+	1	15
-	+	27	29
-	+	5	0
-	+	17	0
-
-> /media/cur_project/TemporalConsistentDepth/eval_depth.py
-	"	41	4
-	^	99	66
-	.	41	0
-	+	262	0
-	+	262	0
-	+	67	34
-	+	9	0
-	+	6	12
-	+	8	0
-	+	4	7
-	+	295	59
-	+	66	31
-	+	67	29
-	+	67	0
-	+	67	58
-	+	7	10
-	+	67	0
-	+	66	0
-	+	99	0
-	+	97	54
-	+	76	0
-	+	83	0
-	+	82	0
-	+	83	0
-	+	85	0
-	+	86	0
-	+	87	0
-	+	76	0
-	+	82	41
-	+	79	32
-	+	80	45
-	+	79	45
-	+	82	63
-	+	83	0
+	+	91	56
+	+	97	108
+	+	97	0
+	+	226	13
+	+	215	22
+	+	16	0
+	+	324	0
+	+	331	0
 	+	92	0
-	+	95	0
-	+	87	11
-	+	92	13
 	+	91	0
-	+	90	0
-	+	51	17
-	+	52	19
 	+	97	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	99	0
-	+	98	0
-	+	100	0
-	+	95	0
-	+	51	12
-	+	44	0
-	+	46	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	76	0
-	+	55	0
-	+	76	0
-	+	99	34
-	+	76	32
-	+	77	36
-	+	75	9
-	+	77	30
-	+	76	42
-	+	67	9
-	+	98	89
-	+	99	0
-	+	44	5
-	+	45	19
-	+	63	0
-	+	99	34
-	+	69	70
-	+	64	38
-	+	68	39
-	+	69	61
-	+	63	8
-	+	65	0
-	+	66	0
-	+	99	0
-	+	45	5
-	+	44	4
-	+	98	0
-	+	98	0
-	+	99	0
-	+	99	121
-	+	100	79
-	+	100	79
-	+	100	80
-	+	101	0
-	+	100	78
-	+	99	65
-	+	99	65
-	+	99	66
-	+	100	0
-	+	99	64
-	+	41	0
-
-> /media/cur_project/TemporalConsistentDepth/train_De
-	"	1	0
-
-> /media/dataset/run_rsync2remote.sh
-	"	2	0
-	^	2	1
-	.	2	0
-	+	1	67
-	+	4	64
-	+	4	47
-	+	1	53
-	+	4	54
-	+	4	54
-	+	1	87
-	+	4	88
-	+	4	88
-	+	4	0
-	+	4	0
-	+	1	0
-	+	4	0
-	+	4	0
-	+	1	0
-	+	1	17
-	+	4	10
-	+	1	10
-	+	4	9
-	+	1	9
-	+	4	9
-	+	4	16
-	+	4	0
-	+	1	0
-	+	1	7
-	+	3	7
-	+	1	17
-	+	3	17
-	+	4	17
-	+	3	17
-	+	1	60
-	+	3	60
-	+	1	12
-	+	3	12
-	+	4	12
-	+	1	50
-	+	3	50
-	+	4	49
-	+	1	45
-	+	3	45
-	+	4	44
-	+	3	50
-	+	4	49
-	+	1	87
-	+	3	87
-	+	4	86
-	+	1	94
-	+	3	94
-	+	4	93
-	+	4	16
-	+	1	16
-	+	3	16
-	+	1	1
-	+	3	9
-	+	4	10
-	+	3	13
-	+	4	13
-	+	3	9
-	+	4	9
-	+	3	10
-	+	4	10
-	+	3	12
-	+	4	9
-	+	3	9
-	+	4	9
-	+	3	6
-	+	4	6
-	+	3	9
-	+	4	10
-	+	3	12
-	+	4	13
-	+	3	6
-	+	4	6
-	+	1	0
-	+	4	0
-	+	4	0
-	+	1	0
-	+	1	0
-	+	1	89
-	+	2	90
-	+	3	90
-	+	1	0
-	+	2	0
-
-> ~/.vimrc
-	"	1	0
-	.	171	0
-	+	171	20
-	+	172	0
-	+	171	0
-
-> /media/cur_project/TemporalConsistentDepth/dataloader.py
-	"	72	0
-	^	73	64
-	.	73	63
-	+	208	32
-	+	155	0
-	+	206	0
-	+	161	55
-	+	211	0
-	+	161	19
-	+	166	31
-	+	162	60
-	+	167	31
-	+	179	19
-	+	180	20
-	+	181	30
-	+	182	19
-	+	183	22
-	+	185	19
-	+	186	38
-	+	187	34
-	+	189	16
-	+	190	19
-	+	205	82
-	+	205	0
-	+	162	19
-	+	179	0
-	+	206	0
-	+	191	0
-	+	192	30
-	+	193	14
-	+	194	24
-	+	195	13
-	+	196	17
-	+	198	28
-	+	199	13
-	+	200	30
-	+	202	38
-	+	203	14
-	+	193	34
-	+	163	33
-	+	162	56
-	+	163	0
-	+	162	60
-	+	193	0
-	+	205	120
-	+	190	0
-	+	232	0
-	+	231	0
-	+	232	23
-	+	234	0
-	+	238	0
-	+	251	0
-	+	251	2
-	+	251	2
-	+	233	69
-	+	234	86
-	+	238	0
-	+	235	30
-	+	234	29
-	+	235	91
-	+	238	0
-	+	237	11
-	+	240	0
-	+	247	0
-	+	246	0
-	+	237	58
-	+	240	54
-	+	251	0
-	+	233	42
-	+	237	34
-	+	233	40
-	+	237	0
-	+	234	0
-	+	234	0
-	+	237	0
-	+	237	0
-	+	233	56
-	+	236	33
-	+	150	27
-	+	150	103
-	+	150	35
-	+	150	0
-	+	150	0
-	+	150	21
-	+	150	90
-	+	150	0
-	+	72	0
-	+	150	31
-	+	175	31
-	+	137	31
-	+	71	0
-	+	72	0
-	+	150	0
-	+	150	0
-	+	155	0
-	+	150	21
-	+	150	0
-	+	150	0
-	+	150	0
-	+	150	0
-	+	150	1
-	+	150	0
-	+	73	63
-
-> /media/cur_project/TemporalConsistentDepth/loss_function/depth_loss.py
-	"	28	0
-	^	432	0
-	.	433	0
-	+	16	14
-	+	6	0
-	+	254	0
-	+	434	18
-	+	255	0
-	+	256	0
-	+	432	0
-	+	433	0
-
-> /media/cur_project/TemporalConsistentDepth/loss_function/loss_utils.py
-	"	192	4
-	^	57	51
-	.	274	0
-	+	184	61
-	+	185	61
-	+	173	30
-	+	189	33
-	+	173	0
-	+	173	0
-	+	173	0
-	+	173	0
-	+	173	0
-	+	173	28
-	+	173	15
-	+	173	25
-	+	173	15
-	+	173	0
-	+	173	0
-	+	173	23
-	+	173	20
-	+	173	15
-	+	173	31
-	+	173	37
-	+	173	23
-	+	173	34
-	+	173	0
-	+	173	16
-	+	173	27
-	+	173	28
-	+	163	38
-	+	164	38
-	+	171	27
-	+	172	27
-	+	173	26
-	+	173	0
-	+	173	0
-	+	173	47
-	+	173	21
-	+	173	8
-	+	173	0
-	+	173	0
-	+	173	0
-	+	173	0
-	+	173	30
-	+	173	22
-	+	173	15
-	+	173	0
-	+	173	0
-	+	173	0
-	+	162	22
-	+	173	0
-	+	171	6
-	+	173	6
-	+	171	0
-	+	173	0
-	+	174	0
-	+	190	0
-	+	206	30
-	+	9	18
-	+	245	0
-	+	247	35
-	+	248	22
-	+	249	17
-	+	249	11
-	+	250	11
-	+	249	19
-	+	247	32
-	+	250	10
-	+	249	18
-	+	250	19
-	+	257	0
-	+	249	0
-	+	251	34
-	+	252	23
-	+	253	22
-	+	254	22
-	+	254	0
-	+	255	71
-	+	256	21
-	+	66	4
-	+	173	34
-	+	48	27
-	+	52	62
-	+	53	61
-	+	55	45
-	+	56	45
-	+	55	69
-	+	56	69
-	+	57	69
-	+	52	62
-	+	53	62
-	+	52	42
-	+	53	42
-	+	55	49
-	+	52	43
-	+	53	43
-	+	55	73
-	+	56	73
-	+	57	73
-	+	55	51
-	+	56	51
-	+	57	51
-	+	274	0
-
-> /media/cur_project/TemporalConsistentDepth/train
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/loss_function/flow_loss.py
-	"	43	0
-	.	3	0
-	+	266	73
-	+	267	84
-	+	268	93
-	+	266	57
-	+	267	66
-	+	268	70
-	+	266	73
-	+	267	84
-	+	268	0
-	+	280	0
-	+	280	0
-	+	279	9
-	+	280	49
-	+	280	34
-	+	268	93
-	+	280	0
-	+	296	38
-	+	296	0
-	+	298	74
-	+	298	28
-	+	298	24
-	+	298	74
-	+	298	0
-	+	296	0
-	+	298	0
-	+	298	43
-	+	313	0
-	+	313	0
-	+	313	88
-	+	313	116
-	+	313	53
-	+	269	0
-	+	313	38
-	+	316	0
-	+	299	0
-	+	299	0
-	+	279	8
-	+	280	0
-	+	298	0
-	+	300	0
-	+	299	0
-	+	314	0
-	+	298	0
-	+	14	74
-	+	15	50
-	+	42	34
-	+	42	0
-	+	42	37
-	+	42	0
-	+	42	51
-	+	42	32
-	+	26	32
-	+	27	32
-	+	26	32
-	+	28	36
-	+	42	0
-	+	42	0
-	+	42	0
-	+	42	0
-	+	29	0
-	+	29	0
-	+	29	13
-	+	29	47
-	+	42	0
-	+	29	0
-	+	29	0
-	+	42	0
-	+	30	0
-	+	35	36
-	+	29	0
-	+	36	0
-	+	29	0
-	+	35	0
-	+	30	0
-	+	34	0
-	+	38	38
-	+	39	51
-	+	40	57
-	+	37	43
-	+	208	50
-	+	211	94
-	+	232	0
-	+	213	15
-	+	230	43
-	+	213	18
-	+	329	0
-	+	329	0
-	+	294	34
-	+	295	34
-	+	310	49
-	+	311	49
-	+	295	23
-	+	294	23
-	+	310	40
-	+	311	40
-	+	10	0
-	+	209	0
-	+	9	0
-	+	3	0
-	+	3	0
-
-> /media/cur_project/TemporalConsistentDepth/core
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/post_process.py
-	"	125	0
-	.	161	0
-	+	6	28
-	+	1	0
-	+	7	0
-	+	8	61
-	+	8	66
-	+	102	28
-	+	9	0
-	+	36	0
-	+	102	0
-	+	36	61
-	+	102	60
-	+	102	0
-	+	9	76
-	+	2	0
-	+	5	0
-	+	9	0
-	+	36	0
-	+	102	0
-	+	103	0
-	+	104	28
-	+	123	32
-	+	124	0
-	+	171	31
-	+	20	38
-	+	107	5
-	+	128	5
-	+	121	5
-	+	170	5
-	+	20	0
-	+	21	12
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	19	0
-	+	20	0
-	+	20	19
-	+	20	20
-	+	20	0
-	+	20	0
-	+	20	32
-	+	14	65
-	+	21	0
-	+	117	38
-	+	113	58
-	+	114	67
-	+	115	57
-	+	116	65
-	+	117	0
-	+	171	0
-	+	172	0
-	+	173	26
-	+	176	67
-	+	130	8
-	+	144	58
-	+	145	67
-	+	146	57
-	+	147	65
-	+	151	53
-	+	152	53
-	+	153	53
-	+	154	53
-	+	156	0
-	+	163	0
-	+	163	38
-	+	161	35
-	+	162	0
-	+	162	0
-	+	163	0
-	+	163	0
-	+	163	0
-	+	162	0
-	+	161	0
-
-> ~/catkin_ws/src/ObjectPose/src/ObjectPose.cc
-	"	298	5
-	^	206	21
-	.	206	19
-	+	273	30
-	+	273	28
-	+	273	30
-	+	273	28
-	+	273	0
-	+	273	28
-	+	273	30
-	+	273	0
-	+	276	6
-	+	276	6
-	+	276	4
-	+	276	4
-	+	276	32
-	+	276	33
-	+	295	5
-	+	303	5
-	+	273	18
-	+	277	0
-	+	276	5
-	+	295	0
-	+	273	0
-	+	273	0
-	+	273	0
-	+	273	0
-	+	273	20
-	+	273	0
-	+	273	0
-	+	273	0
-	+	273	0
-	+	273	0
-	+	273	0
-	+	273	0
-	+	273	25
-	+	273	23
-	+	273	0
-	+	273	43
-	+	273	57
-	+	273	43
-	+	273	0
-	+	273	0
-	+	273	0
-	+	273	0
-	+	273	24
-	+	273	0
-	+	273	0
-	+	273	30
-	+	273	30
-	+	273	30
-	+	273	0
-	+	273	0
-	+	273	0
-	+	303	0
-	+	304	0
-	+	273	0
-	+	273	0
-	+	273	39
-	+	273	38
-	+	273	26
-	+	273	26
-	+	273	41
-	+	273	41
-	+	273	40
-	+	273	0
-	+	273	0
-	+	273	0
-	+	273	0
-	+	276	0
-	+	303	0
-	+	273	0
-	+	258	20
-	+	259	16
-	+	273	0
-	+	273	0
-	+	276	0
-	+	300	0
-	+	299	0
-	+	260	49
-	+	272	0
-	+	262	55
-	+	270	0
-	+	272	0
-	+	264	50
-	+	271	0
-	+	270	27
-	+	270	0
-	+	269	0
-	+	270	0
-	+	269	16
-	+	269	0
-	+	266	0
-	+	267	25
-	+	269	0
-	+	266	0
-	+	269	0
-	+	268	21
-	+	274	24
-	+	275	23
-	+	262	27
-	+	264	47
-	+	206	19
-	a	253	12
-
-> ~/catkin_ws/src/ObjectPose/src/main.cc
-	"	130	31
-	^	127	55
-	.	127	54
-	+	518	0
-	+	518	0
-	+	518	0
-	+	155	0
-	+	155	0
-	+	155	0
-	+	268	0
-	+	518	0
-	+	511	14
-	+	512	14
-	+	513	14
-	+	514	14
-	+	515	14
-	+	516	14
-	+	517	14
-	+	518	6
-	+	518	0
-	+	518	5
-	+	155	5
-	+	155	0
-	+	156	0
-	+	157	5
-	+	155	24
-	+	159	52
-	+	30	0
-	+	159	0
-	+	511	39
-	+	512	42
-	+	513	41
-	+	514	40
-	+	515	41
-	+	516	42
-	+	517	34
-	+	518	4
-	+	518	4
-	+	518	31
-	+	155	32
-	+	159	53
-	+	30	53
-	+	159	53
-	+	155	32
-	+	155	0
-	+	155	0
-	+	157	0
-	+	518	0
-	+	156	0
-	+	135	0
-	+	135	0
-	+	135	0
-	+	155	0
-	+	156	0
-	+	125	0
-	+	128	0
-	+	135	0
-	+	125	0
-	+	96	4
-	+	95	0
-	+	95	0
-	+	96	0
-	+	125	20
-	+	17	25
-	+	18	22
-	+	128	5
-	+	135	4
-	+	155	6
-	+	156	6
-	+	128	17
-	+	128	0
-	+	122	0
-	+	122	0
-	+	128	0
-	+	135	0
-	+	155	4
-	+	156	4
-	+	128	0
-	+	134	0
-	+	134	0
-	+	29	0
-	+	98	0
-	+	97	0
-	+	98	0
-	+	128	0
-	+	126	0
-	+	128	0
-	+	126	55
-	+	95	0
+	+	11	16
+	+	93	0
 	+	94	0
-	+	95	0
-	+	94	27
-	+	96	10
-	+	97	10
-	+	126	54
-	+	94	27
-	+	108	0
-	+	126	54
-	+	134	6
-	+	126	54
-	+	127	54
-	+	126	6
-	+	127	54
-	j	169	0
+	+	97	0
+	m	399	39
 
-> ~/catkin_ws/src/ObjectPose/src/DominantPlane.cc
-	"	150	0
-	^	114	18
-	.	114	17
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	8
-	+	2	0
-	+	2	0
-	+	2	4
-	+	261	0
-	+	260	0
-	+	260	447
-	+	260	0
-	+	260	0
-	+	260	0
-	+	260	0
-	+	260	0
-	+	260	0
-	+	260	0
-	+	260	0
-	+	260	0
-	+	260	0
-	+	260	0
-	+	260	0
-	+	260	0
-	+	260	0
-	+	260	0
-	+	260	0
-	+	260	0
-	+	259	0
-	+	2	0
-	+	3	0
-	+	192	0
-	+	197	0
-	+	199	0
+> /media/cur_project/TemporalConsistentDepth/eval_utils/eval_flow.py
+	"	4	7
+	^	4	15
+	.	4	7
+	+	4	7
+
+> /media/cur_project/TemporalConsistentDepth/eval_utils/train_flow_LSTM.py
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+	"	382	8
+	^	35	35
+	.	35	34
+	+	399	0
+	+	400	30
+	+	401	0
+	+	402	32
+	+	403	0
+	+	403	29
+	+	161	66
+	+	402	16
+	+	161	0
+	+	170	0
+	+	173	0
+	+	176	0
+	+	169	0
+	+	172	0
+	+	175	0
+	+	347	0
+	+	275	0
+	+	275	0
+	+	271	49
+	+	271	20
+	+	271	0
+	+	271	22
+	+	271	0
+	+	271	0
+	+	274	0
+	+	295	0
+	+	302	0
+	+	301	47
+	+	302	0
+	+	296	75
+	+	297	45
+	+	301	0
+	+	296	78
+	+	298	46
+	+	299	65
+	+	300	67
+	+	292	54
+	+	308	0
+	+	182	0
 	+	196	0
-	+	217	0
-	+	260	0
-	+	260	0
-	+	260	0
-	+	260	0
+	+	194	0
+	+	48	65
+	+	49	0
+	+	147	34
+	+	412	0
+	+	114	50
+	+	115	38
+	+	409	4
+	+	410	28
+	+	411	0
+	+	410	28
+	+	124	146
+	+	121	128
+	+	410	29
+	+	410	0
+	+	410	0
+	+	410	27
+	+	411	0
+	+	422	0
+	+	84	48
+	+	12	56
+	+	266	34
+	+	12	30
+	+	157	0
+	+	149	25
+	+	150	39
+	+	149	24
+	+	84	48
+	+	12	56
+	+	266	26
+	+	259	0
 	+	261	0
-	+	114	0
-	+	134	0
-	+	3	0
-	+	72	0
-	+	82	0
-	+	84	0
-	+	90	0
-	+	231	0
-	+	232	94
-	+	232	93
-	+	257	4
-	+	232	4
-	+	114	0
-	+	113	20
-	+	110	7
-	+	111	7
-	+	112	7
-	+	113	7
-	+	114	7
-	+	96	0
-	+	111	50
-	+	109	0
-	+	114	17
-
-> ~/catkin_ws/src/ObjectPose/include/ObjectPose.h
-	"	44	20
-	^	44	21
-	.	44	20
-	+	55	6
-	+	1	0
-	+	19	8
-	+	44	20
-
-> /media/cur_project/HandProj_git/src/ObjectPose.cc
-	"	51	9
-	^	115	93
-	.	119	86
-	+	141	0
-	+	142	0
-	+	141	0
-	+	126	4
-	+	141	0
-	+	141	0
-	+	126	3
-	+	126	0
-	+	126	0
-	+	141	0
-	+	100	0
-	+	95	33
-	+	96	28
-	+	97	53
-	+	99	20
-	+	122	0
-	+	121	111
-	+	108	0
-	+	109	30
-	+	111	88
-	+	112	49
-	+	115	89
-	+	116	50
-	+	107	0
-	+	105	4
-	+	141	0
-	+	141	2
-	+	126	0
-	+	130	0
-	+	130	0
-	+	126	0
-	+	126	0
-	+	126	0
-	+	130	0
-	+	133	37
-	+	130	0
-	+	133	42
-	+	126	0
-	+	131	16
-	+	106	32
-	+	134	26
-	+	126	0
-	+	14	43
-	+	15	0
-	+	13	2
-	+	5	29
-	+	1	0
-	+	126	18
-	+	125	38
-	+	133	61
-	+	108	96
-	+	109	10
-	+	112	10
-	+	113	10
-	+	116	10
-	+	117	10
-	+	133	16
-	+	108	57
-	+	120	10
-	+	121	10
-	+	139	14
-	+	126	19
-	+	133	12
-	+	126	35
-	+	112	24
-	+	116	24
-	+	120	24
-	+	129	0
-	+	129	27
-	+	125	34
-	+	126	18
-	+	133	34
-	+	125	38
-	+	126	18
-	+	133	34
-	+	126	36
-	+	133	51
-	+	126	0
-	+	129	0
-	+	119	118
-	+	121	94
-	+	117	94
-	+	113	93
-	+	111	97
-	+	119	114
-	+	133	53
-	+	133	57
-	+	99	0
-	+	98	40
-	+	134	12
-	+	133	55
-	+	98	26
-	+	134	10
-	+	129	0
-	+	126	0
-	+	103	80
-	+	111	89
-	+	103	130
-	+	115	92
-	+	119	86
-	a	131	15
-
-> /media/cur_project/HandProj_git/include/ObjectPose.h
-	"	43	0
-
-> ~/.bashrc
-	"	124	0
-	.	125	0
-	+	124	0
-	+	121	0
-	+	124	0
-	+	122	0
-	+	125	0
-
-> ~/catkin_ws/src/ObjectPose/CMakeLists.txt
-	"	206	49
-	^	204	67
-	.	204	66
-	+	209	0
-	+	209	0
-	+	208	67
-	+	202	28
-	+	203	13
-	+	205	0
-	+	204	28
-	+	205	25
-	+	208	32
-	+	205	0
-	+	15	7
-	+	15	13
-	+	11	0
-	+	12	2
-	+	11	0
-	+	17	0
-	+	15	7
-	+	208	67
-	+	209	0
-	+	208	68
-	+	208	68
-	+	208	69
-	+	209	0
-	+	208	66
-	+	209	2
-	+	208	84
-	+	209	0
-	+	204	66
-
-> ~/catkin_ws/src/ObjectPose/Cm
-	"	1	0
-
-> ~/catkin_ws/src/ObjectPose/include/DominantPlane.h
-	"	58	0
-	.	76	0
-	+	1	37
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	66
-	+	83	0
-	+	82	0
-	+	1	0
-	+	2	0
-	+	2	0
-	+	57	0
-	+	59	0
-	+	59	0
-	+	58	0
-	+	59	0
-	+	78	35
-	+	79	0
-	+	74	30
-	+	76	0
-	+	75	24
-	+	76	0
-
-> ~/catkin_ws/src/ObjectPose/include/DO
-	"	1	0
-
-> ~/catkin_ws/bagfiles/run_recording.sh
-	"	1	77
-	^	1	78
-	.	1	77
-	+	1	46
-	+	2	0
-	+	2	0
-	+	2	0
-	+	1	77
-
-> ~/catkin_ws/src/ObjectPose/src/ma
-	"	1	0
-
-> ~/catkin_ws/src/ObjectPose/src/DO
-	"	1	0
-
-> ~/catkin_ws/src/ObjectPose/package.xml
-	"	41	0
-
-> ~/catkin_ws/src/CMakeLists.txt
-	"	28	0
-
-> ~/catkin_ws/src/ObjectPose/src/main.cpp
-	"	95	35
-	^	33	36
-	.	33	35
-	+	151	0
-	+	152	0
-	+	152	0
-	+	152	0
-	+	151	0
-	+	152	0
-	+	152	0
-	+	150	1300
-	+	150	1300
-	+	150	59
-	+	150	1300
-	+	150	0
-	+	150	1299
-	+	150	0
-	+	92	0
-	+	104	0
-	+	106	0
-	+	107	0
-	+	108	0
-	+	109	0
-	+	110	0
-	+	92	0
-	+	92	0
-	+	81	0
-	+	73	0
-	+	8	0
-	+	17	0
-	+	17	25
-	+	17	0
-	+	17	0
-	+	15	0
-	+	1	0
-	+	2	1
-	+	3	1
-	+	4	1
-	+	5	1
-	+	6	1
-	+	7	1
-	+	8	1
-	+	9	1
-	+	10	1
-	+	11	1
-	+	12	1
-	+	13	1
-	+	14	1
-	+	21	0
-	+	24	0
-	+	28	0
-	+	30	0
-	+	30	0
-	+	28	0
-	+	26	0
-	+	18	6
-	+	18	0
-	+	22	0
-	+	22	0
-	+	35	0
-	+	33	35
-
-> ~/catkin_ws/src/CM
-	"	1	0
-
-> ~/catkin_ws2/src/CMakeLists.txt
-	"	58	0
-
-> ~/catkin_ws/devel/local_setup.sh
-	"	8	17
-
-> ~/catkin_ws/src/matching_algorithm/matching_algorithm.
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/flowlib.py
-	"	362	0
-	^	364	36
-	.	364	0
-	+	257	0
-	+	60	0
-	+	67	20
-	+	65	0
-	+	67	0
-	+	62	0
-	+	130	35
-	+	142	14
-	+	143	0
-	+	635	0
-	+	634	0
-	+	608	0
-	+	618	0
-	+	617	19
-	+	607	0
-	+	619	0
-	+	2	9
-	+	610	46
-	+	139	30
-	+	140	0
-	+	139	29
-	+	140	0
-	+	139	52
-	+	140	0
-	+	139	50
-	+	139	0
-	+	165	0
-	+	192	0
-	+	536	0
-	+	537	39
-	+	538	42
-	+	546	30
-	+	538	28
-	+	546	0
-	+	546	0
-	+	546	0
-	+	539	36
-	+	540	29
-	+	541	29
-	+	542	26
-	+	546	0
-	+	543	42
-	+	544	32
-	+	546	0
-	+	542	26
-	+	546	0
-	+	543	0
-	+	542	47
-	+	543	0
-	+	545	30
-	+	542	45
-	+	544	34
-	+	254	20
-	+	49	0
-	+	49	0
-	+	67	0
-	+	62	0
-	+	62	0
-	+	124	11
-	+	130	33
-	+	128	33
-	+	124	15
-	+	64	16
-	+	66	16
-	+	67	20
-	+	546	0
-	+	364	0
-
-> /etc/ssh/sshd_config
-	"	5	0
-	^	5	2
-	.	5	0
-	+	54	0
-	+	30	18
-	+	35	0
-	+	30	0
-	+	34	0
-	+	35	0
-	+	54	1
-	+	29	18
-	+	6	9
-	+	5	0
-
-> /etc/ssh/sshd_cof
-	"	1	0
-
-> /etc/sshd/config
-	"	1	0
-
-> /etc/passwd
-	"	11	50
-	^	40	57
-	.	40	56
-	+	40	56
-
-> ect/shells
-	"	1	0
-
-> ~/.ssh/authorized_keys
-	"	1	0
-
-> /etc/ssh/ssh_config
-	"	25	0
-	^	25	30
-	.	25	29
-	+	25	29
-
-> ~/cat
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/Recent_saved_model/133/run_rsync.sh
-	"	1	0
-	^	1	1
-	.	1	0
-	+	1	100
-	+	1	0
-
-> ~/catkin_ws/src/matching_algorithm/matching_algorithm.cpp
-	"	654	4
-	^	1591	55
-	.	1591	54
-	+	911	22
-	+	1589	48
-	+	972	0
-	+	1266	0
-	+	1589	21
-	+	1591	52
-	+	1575	0
-	+	1589	14
-	+	1591	54
-	+	1588	0
-	+	1589	0
-	+	1588	12
-	+	1587	0
-	+	1587	0
-	+	1588	0
-	+	1587	23
-	+	1583	17
-	+	1582	22
-	+	1583	26
-	+	1582	26
-	+	1585	69
-	+	1587	38
-	+	595	0
-	+	596	0
-	+	597	0
-	+	598	0
-	+	599	0
-	+	600	0
-	+	1587	21
-	+	1591	52
-	+	1587	21
-	+	1591	52
-	+	1587	13
-	+	1588	0
-	+	1587	23
-	+	1591	54
-
-> /media/cur_project/HandProj_git/realsense_recording.py
-	"	66	40
-	^	66	41
-	.	66	40
-	+	14	62
-	+	14	0
-	+	15	0
-	+	5	0
-	+	3	0
-	+	6	0
-	+	66	40
-
-> /media/cur_project/HandProj_git/run_recording.py
-	"	1	0
-
-> /media/cur_project/HandProj_git/run_recording_rosbag.sh
-	"	1	69
-	^	1	70
-	.	1	69
-	+	2	0
-	+	2	0
-	+	1	69
-
-> /media/cur_project/HandProj_git/run_recording.sh
-	"	2	45
-
-> /media/cur_project/HandProj_git/realsense_
-	"	1	0
-
-> ~/catkin_ws/src/matching_algorithm/matching_algorithm.h
-	"	19	0
-
-> ~/catkin_ws/src/matching_algorithm/CMakeLists.txt
-	"	18	0
-	^	18	2
-	.	18	0
-	+	13	0
-	+	14	0
-	+	15	0
-	+	34	0
-	+	9	0
-	+	10	0
-	+	11	0
+	+	266	40
+	+	84	48
+	+	12	56
+	+	271	66
+	+	274	0
+	+	272	0
+	+	274	0
+	+	274	0
+	+	12	56
+	+	84	48
+	+	266	30
+	+	267	30
+	+	84	48
+	+	12	10
+	+	10	10
 	+	12	0
-	+	13	0
+	+	10	24
+	+	12	0
+	+	14	0
 	+	14	0
 	+	15	0
-	+	18	0
-	+	19	0
-	+	9	4
-	+	10	4
-	+	11	4
-	+	12	4
-	+	13	4
-	+	14	4
-	+	15	4
-	+	18	0
-	+	19	0
-	+	18	2
-	+	19	0
-	+	18	0
-
-> ~/catkin_ws/src/matching_algorithm/M
-	"	1	0
-
-> ~/catkin_ws/devel/setup.sh
-	"	96	0
-
-> ~/.zshrc
-	"	101	0
-	.	102	0
-	+	102	0
-
-> /media/cur_project/TemporalConsistentDepth/Recent_saved_model/145/r
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/loss_function/lo
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/NERD_tree_1
-	"	1	1
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
+	+	11	0
+	+	11	9
+	+	69	71
+	+	71	71
+	+	73	76
+	+	30	60
+	+	35	34
 
 > /media/cur_project/TemporalConsistentDepth/networks/PWC_net.py
-	"	263	0
+	"	487	0
 	^	124	26
 	.	720	0
 	+	36	0
@@ -2427,574 +808,2341 @@ $size[0]
 	+	734	0
 	+	720	0
 
-> /media/cur_project/TemporalConsistentDepth/filename/eigen_test_files.txt
-	"	697	0
-	^	648	99
-	.	1	0
-	+	697	135
-	+	648	98
-	+	697	132
-	+	1	0
+> /media/cur_project/TemporalConsistentDepth/utils/loss_utils.py
+	"	243	0
+	^	6	6
+	.	6	5
+	+	6	5
 
-> /media/cur_project/TemporalConsistentDepth/filename/kitti_2012_flow_all_filename.txt
-	"	1	0
+> /media/cur_project/TemporalConsistentDepth/utils/utils.py
+	"	57	22
+	^	57	50
+	.	60	0
+	+	7	5
+	+	8	6
+	+	74	0
+	+	74	0
+	+	74	0
+	+	75	0
+	+	56	0
+	+	60	5
+	+	56	4
+	+	57	40
+	+	57	0
+	+	57	0
+	+	57	0
+	+	60	0
 
-> /media/cur_project/TemporalConsistentDepth/filename/gen_2012_flow_files.py
-	"	14	38
-	^	14	39
-	.	14	38
-	+	5	23
-	+	6	75
-	+	20	0
-	+	2	9
-	+	4	0
-	+	12	18
-	+	9	23
-	+	6	10
-	+	9	10
-	+	14	37
-	+	16	16
-	+	12	22
-	+	16	24
-	+	12	22
-	+	16	38
-	+	15	23
-	+	16	129
-	+	17	73
-	+	7	18
-	+	10	24
-	+	8	77
-	+	11	24
-	+	12	0
-	+	17	127
-	+	17	112
-	+	20	0
-	+	20	22
-	+	20	0
-	+	14	37
-	+	16	131
-	+	14	0
-	+	13	0
-	+	14	0
-	+	13	35
-	+	20	0
-	+	18	21
-	+	19	10
-	+	14	38
-
-> /media/cur_project/TemporalConsistentDepth/filename/kitti_2015_flow_all_filename.txt
-	"	200	98
-
-> /media/cur_project/TemporalConsistentDepth/eval_flow.py
-	"	66	9
-	^	66	10
-	.	66	9
-	+	19	0
-	+	12	32
-	+	12	30
-	+	42	40
-	+	42	32
-	+	14	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	30
-	+	17	24
-	+	19	0
-	+	12	0
-	+	18	24
-	+	23	48
-	+	23	34
-	+	13	50
-	+	14	0
-	+	13	50
-	+	23	0
-	+	23	44
-	+	24	0
-	+	12	11
-	+	13	27
-	+	38	0
-	+	38	127
-	+	38	35
-	+	39	112
-	+	42	0
-	+	39	113
-	+	37	12
-	+	37	13
-	+	38	0
-	+	37	20
-	+	37	20
-	+	37	21
-	+	38	0
-	+	37	11
-	+	38	0
-	+	37	12
-	+	37	13
-	+	38	0
-	+	37	12
-	+	42	0
-	+	42	0
-	+	41	0
-	+	40	22
-	+	104	0
-	+	6	39
-	+	12	0
-	+	13	61
-	+	14	34
-	+	13	30
-	+	23	9
-	+	14	0
-	+	42	50
-	+	103	25
-	+	42	19
-	+	14	0
-	+	43	28
-	+	43	0
-	+	43	5
-	+	75	0
-	+	75	0
-	+	43	50
-	+	44	591
-	+	44	22
-	+	44	0
-	+	64	11
-	+	75	34
-	+	75	0
-	+	75	0
-	+	65	19
-	+	69	8
-	+	75	10
-	+	64	0
-	+	70	0
-	+	70	0
-	+	75	0
-	+	70	0
-	+	75	0
-	+	68	0
-	+	69	0
-	+	69	36
-	+	69	0
-	+	75	0
-	+	69	0
-	+	70	0
-	+	75	8
-	+	75	0
-	+	69	0
-	+	69	0
+> /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
+	"	115	45
+	^	115	46
+	.	115	45
+	+	9	5
+	+	191	0
 	+	71	0
-	+	69	0
-	+	74	0
-	+	74	0
-	+	75	0
-	+	66	16
-	+	67	29
-	+	66	9
-
-> /media/cur_project/TemporalConsistentDepth/eava
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/filename/kitti_flow_val_files_200.txt
-	"	2	0
-	^	200	93
-	.	200	92
-	+	200	92
-
-> /media/cur_project/TemporalConsistentDepth/filename/filename.txt
-	"	2	7
-
-> /media/cur_project/TemporalConsistentDepth/filename/gen_file_list.py
-	"	19	84
-	^	19	85
-	.	19	84
-	+	22	0
-	+	6	12
-	+	7	13
-	+	6	16
-	+	7	76
-	+	8	75
-	+	9	75
-	+	15	30
-	+	21	12
-	+	16	0
-	+	15	0
-	+	15	0
-	+	10	23
-	+	11	23
-	+	12	23
-	+	13	23
-	+	15	0
-	+	16	35
-	+	19	25
-	+	14	21
-	+	19	148
-	+	19	108
-	+	19	108
-	+	20	0
-	+	19	38
-	+	19	136
-	+	20	0
-	+	19	42
-	+	17	25
-	+	18	34
-	+	19	34
-	+	18	28
-	+	19	182
-	+	19	84
-
-> /media/cur_project/TemporalConsistentDepth/filename/kitti_2015_al
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/filename/kitti_2015_all_filename.txt
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/filename/kitti_2015_noc_filename.txt
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/filename/kitti_2015_occ_filename.txt
-	"	67	59
-	^	200	93
-	.	200	92
-	+	200	92
-
-> /media/cur_project/TemporalConsistentDepth/scripts/train_l
-	"	1	0
-
-> /media/cur_project/scripts/compare.py
-	"	24	8
-	^	23	32
-	.	24	0
-	+	7	42
-	+	6	14
-	+	8	0
-	+	24	0
-	+	24	0
-	+	23	31
-	+	24	0
-
-> /media/cur_project/scripts/flow_compare.py
-	"	10	30
-	^	10	31
-	.	10	30
-	+	235	23
-	+	236	23
-	+	237	23
-	+	238	23
-	+	239	23
-	+	240	23
-	+	241	23
-	+	243	27
-	+	248	27
-	+	253	27
-	+	258	27
 	+	70	0
-	+	71	30
-	+	76	0
-	+	79	0
-	+	180	0
-	+	79	0
-	+	178	0
-	+	79	0
-	+	76	26
-	+	79	26
-	+	81	0
-	+	72	0
-	+	76	0
-	+	178	0
-	+	178	0
-	+	179	0
-	+	180	0
-	+	145	17
-	+	146	17
-	+	147	17
-	+	148	17
-	+	149	17
-	+	150	17
-	+	151	17
-	+	152	17
-	+	153	17
-	+	154	17
-	+	155	17
-	+	157	21
-	+	162	21
-	+	167	21
-	+	172	21
-	+	264	0
-	+	71	29
-	+	98	0
-	+	71	27
-	+	72	0
-	+	71	27
-	+	79	0
-	+	78	51
-	+	174	16
-	+	177	30
-	+	71	26
-	+	178	0
-	+	71	25
-	+	116	0
-	+	93	27
-	+	93	19
-	+	93	30
-	+	93	19
-	+	93	32
-	+	93	28
-	+	103	0
-	+	105	43
-	+	116	32
-	+	94	0
-	+	106	0
-	+	116	0
-	+	109	0
-	+	109	59
-	+	113	44
-	+	114	29
-	+	111	27
-	+	109	58
-	+	113	43
-	+	71	27
-	+	105	37
-	+	109	37
-	+	105	64
-	+	109	37
-	+	105	64
-	+	71	27
-	+	105	41
-	+	71	28
-	+	104	18
-	+	115	18
-	+	117	0
-	+	176	13
-	+	71	26
-	+	76	0
-	+	76	0
-	+	77	0
-	+	77	13
-	+	6	10
-	+	77	0
-	+	127	31
-	+	128	0
-	+	127	62
-	+	10	30
+	+	71	35
+	+	81	19
+	+	82	20
+	+	83	19
+	+	84	20
+	+	82	62
+	+	83	58
+	+	84	60
+	+	85	34
+	+	85	52
+	+	86	53
+	+	85	0
+	+	89	14
+	+	91	0
+	+	90	36
+	+	91	38
+	+	92	39
+	+	91	21
+	+	103	16
+	+	104	0
+	+	103	29
+	+	92	21
+	+	104	78
+	+	109	78
+	+	110	29
+	+	118	78
+	+	119	78
+	+	123	21
+	+	124	21
+	+	126	47
+	+	130	30
+	+	86	53
+	+	115	45
 
-> /media/cur_project/TemporalConsistentDepth/loss_function/loop_loss.py
-	"	67	0
-
-> /media/cur_project/scripts/lf
-	"	1	0
-
-> /media/cur_project/scripts/flq
-	"	1	0
-
-> /media/cur_project/scripts/compare.p
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/scripts/_run.sh
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/.gitignore
-	"	11	19
-	^	11	20
-	.	11	19
-	+	9	15
-	+	10	0
-	+	11	19
-
-> ~/.tmux.conf
-	"	42	0
-	.	48	0
-	+	48	0
-	+	48	26
-	+	48	0
-	+	43	0
-	+	48	31
-	+	48	0
-	+	43	0
-	+	48	40
-	+	48	0
-	+	48	41
-	+	48	0
-	+	48	0
-	+	48	0
-	+	48	0
-	+	45	0
-	+	48	0
-	+	45	30
-	+	46	11
-	+	48	0
-	+	47	0
-	+	48	0
-
-> /media/cur_project/TemporalConsistentDepth/Recent_saved_model/training/NERD_tree_1
-	"	1	0
-	.	1	0
+> /media/cur_project/TemporalConsistentDepth/scripts/flow_LSTM_run.sh
+	"	41	33
+	^	41	34
+	.	41	33
+	+	1	19
+	+	1	49
+	+	1	347
 	+	1	0
-
-> /media/cur_project/TemporalConsistentDepth/README.md
-	"	20	21
-	^	11	53
-	.	11	52
-	+	9	0
-	+	8	13
-	+	15	37
-	+	23	39
-	+	12	40
-	+	15	39
-	+	11	52
+	+	74	0
+	+	1	19
+	+	8	17
+	+	10	12
+	+	14	16
+	+	59	0
+	+	61	20
+	+	61	21
+	+	61	0
+	+	73	40
+	+	72	16
+	+	72	17
+	+	73	0
+	+	72	27
+	+	30	32
+	+	38	20
+	+	54	52
+	+	39	0
+	+	40	0
+	+	40	0
+	+	41	22
+	+	41	23
+	+	42	0
+	+	41	33
 
 > /media/cur_project/TemporalConsistentDepth/scripts/flow_run.sh
-	"	27	51
-	^	54	5
-	.	27	51
-	+	1	0
-	+	1	25
-	+	1	1119
-	+	1	856
-	+	1	800
-	+	1	1474
-	+	1	825
-	+	1	855
-	+	1	452
-	+	1	1625
-	+	1	967
-	+	1	967
-	+	1	1001
-	+	1	967
-	+	1	1001
-	+	1	978
-	+	1	978
-	+	1	979
-	+	1	1001
-	+	1	999
-	+	1	1011
-	+	1	1010
-	+	1	973
-	+	1	1001
-	+	1	947
-	+	1	947
-	+	1	351
-	+	1	947
-	+	1	431
-	+	1	947
-	+	1	431
-	+	1	431
-	+	1	380
-	+	1	393
-	+	1	428
-	+	1	1069
-	+	1	1065
-	+	1	1065
-	+	1	452
-	+	1	1065
-	+	1	1004
-	+	1	1065
-	+	1	1048
-	+	1	1004
-	+	1	1063
-	+	1	1070
-	+	1	0
-	+	57	32
-	+	58	52
-	+	59	44
-	+	60	42
-	+	61	34
-	+	62	38
-	+	63	29
-	+	64	42
-	+	65	38
-	+	66	39
-	+	67	0
-	+	66	37
-	+	67	40
-	+	68	34
-	+	69	38
-	+	70	30
-	+	73	0
-	+	56	0
-	+	56	19
-	+	41	18
-	+	42	19
-	+	71	20
-	+	71	20
-	+	71	21
-	+	73	0
-	+	71	33
-	+	72	21
-	+	72	22
-	+	73	0
-	+	72	33
-	+	39	15
-	+	27	62
-	+	3	19
-	+	27	79
-	+	55	40
-	+	1	13
-	+	27	79
-	+	48	0
-	+	48	0
-	+	54	4
-	+	55	38
-	+	27	51
+	"	1	0
 
-> /media/cur_project/HandProject/recording/run_recording.sh
-	"	1	65
-	^	1	66
-	.	1	65
-	+	1	81
-	+	2	32
-	+	1	61
+> /media/cur_project/TemporalConsistentDepth/scripts/stereo_LSTM_run.sh
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video_train.txt
+	"	35346	0
+
+> /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video.txt
+	"	38758	0
+
+> /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/utils/filename/gen_train_file_list.py
+	"	28	78
+	^	28	79
+	.	28	78
+	+	7	54
+	+	23	47
+	+	24	0
+	+	26	0
+	+	28	0
+	+	26	44
+	+	27	45
+	+	26	112
+	+	27	115
+	+	28	127
+	+	24	44
+	+	25	45
+	+	28	78
+
+> /media/cur_project/TemporalConsistentDepth/utils/filename/gen_stereo_video_file.py
+	"	2	0
+	.	1	0
+	+	1	0
+
+> /media/cur_project/TemporalConsistentDepth/utils/filename/gen_flow_file_list.py
+	"	7	36
+	^	7	37
+	.	7	36
+	+	1	0
+	+	7	36
+
+> /media/cur_project/TemporalConsistentDepth/tags
+	"	109	0
+
+> ~/.vimtags
+	"	1	0
+	.	2	0
 	+	2	0
-	+	1	65
 
-> /media/cur_project/TemporalConsistentDepth/transform.py
-	"	58	0
-	.	292	0
-	+	17	0
-	+	17	29
-	+	17	85
-	+	17	71
-	+	17	28
-	+	9	7
-	+	17	78
-	+	17	0
+> /media/cur_project/TemporalConsistentDepth/README.md
+	"	5	46
+	^	5	47
+	.	5	46
+	+	6	0
+	+	4	28
+	+	5	46
+
+> /media/cur_project/TemporalConsistentDepth/utils/__init__.py
+	"	6	26
+	^	6	29
+	.	6	26
+	+	1	11
+	+	2	16
+	+	3	24
+	+	4	5
+	+	5	24
+	+	6	26
+
+> /media/cur_project/TemporalConsistentDepth/eval_utils/__init__.py
+	"	1	0
+	^	2	23
+	.	2	22
+	+	1	21
+	+	2	22
+
+> /media/cur_project/TemporalConsistentDepth/utils.py
+	"	14	0
+	^	27	64
+	.	27	46
+	+	44	77
+	+	61	0
+	+	61	0
+	+	77	0
+	+	10	0
+	+	39	0
+	+	61	11
+	+	62	0
+	+	82	0
+	+	83	0
+	+	94	0
+	+	71	0
+	+	77	0
+	+	7	116
+	+	7	151
+	+	7	23
+	+	49	40
+	+	63	40
+	+	83	40
+	+	45	0
+	+	79	0
+	+	66	0
+	+	71	0
+	+	72	0
+	+	77	0
+	+	82	4
+	+	70	85
+	+	76	58
+	+	61	137
+	+	66	105
+	+	68	105
+	+	72	105
+	+	74	105
+	+	66	90
+	+	68	90
+	+	72	90
+	+	74	90
+	+	76	0
+	+	63	91
+	+	83	91
+	+	79	0
+	+	79	0
+	+	79	0
+	+	76	0
+	+	56	31
+	+	57	108
+	+	58	115
+	+	59	44
+	+	71	54
+	+	49	91
+	+	49	0
+	+	27	0
+	+	39	28
+	+	42	29
+	+	43	44
+	+	45	139
+	+	47	0
+	+	19	0
+	+	20	24
+	+	25	52
+	+	27	0
+	+	26	0
+	+	27	0
+	+	27	84
+	+	27	0
+	+	28	78
+	+	29	35
+	+	27	45
+	+	29	69
+	+	32	0
+	+	29	34
+	+	27	47
+	+	29	64
+	+	27	39
+	+	28	30
+	+	31	13
+	+	30	111
+	+	31	22
+	+	27	64
+	+	29	71
+	+	29	37
+	+	33	12
+	+	53	0
+	+	36	0
+	+	36	0
+	+	37	0
+	+	42	0
+	+	35	0
+	+	35	0
+	+	37	27
+	+	53	25
+	+	27	25
+	+	29	68
+	+	33	21
+	+	34	0
+	+	34	0
+	+	33	50
+	+	27	63
+	+	34	0
+	+	27	46
+
+> /media/cur_project/TemporalConsistentDepth/scripts/eval_LSTM_stereo.sh
+	"	46	4
+	^	23	22
+	.	23	21
+	+	1	18
+	+	1	18
+	+	43	0
+	+	43	0
+	+	2	0
+	+	8	0
+	+	9	16
+	+	3	0
+	+	33	19
+	+	28	21
+	+	33	48
+	+	29	25
+	+	31	0
+	+	30	0
+	+	43	0
+	+	28	23
+	+	32	19
+	+	27	75
+	+	14	70
+	+	47	21
+	+	23	21
+
+> /media/cur_project/TemporalConsistentDepth/test_LSTM.py
+	"	137	0
+	^	186	68
+	.	186	67
+	+	190	70
+	+	190	34
+	+	190	85
+	+	150	0
+	+	163	0
+	+	162	47
+	+	162	0
+	+	190	0
+	+	12	16
+	+	14	28
+	+	190	44
+	+	190	13
+	+	12	37
+	+	14	0
+	+	11	0
+	+	11	9
+	+	12	31
+	+	190	0
+	+	190	0
+	+	112	29
+	+	101	31
+	+	102	35
+	+	127	100
+	+	128	0
+	+	113	178
+	+	113	0
+	+	113	101
+	+	114	0
+	+	102	77
+	+	103	100
+	+	104	109
+	+	105	52
+	+	106	26
+	+	113	0
+	+	107	52
+	+	109	53
+	+	101	0
+	+	101	0
+	+	100	0
+	+	109	25
+	+	107	73
+	+	109	0
+	+	107	101
+	+	108	100
+	+	110	0
+	+	109	0
+	+	110	98
+	+	101	0
+	+	106	0
+	+	109	0
+	+	51	112
+	+	50	59
+	+	48	55
+	+	49	61
+	+	50	0
+	+	53	67
+	+	54	58
+	+	55	41
+	+	56	56
+	+	57	66
+	+	59	0
+	+	27	86
+	+	28	85
+	+	112	0
+	+	113	0
+	+	112	0
+	+	114	34
+	+	112	0
+	+	108	29
+	+	10	18
+	+	108	67
+	+	105	72
+	+	114	0
+	+	190	0
+	+	148	0
+	+	145	31
+	+	148	0
+	+	159	36
+	+	162	0
+	+	148	0
+	+	146	0
+	+	148	0
+	+	160	0
+	+	162	0
+	+	160	40
+	+	146	46
+	+	160	28
+	+	175	0
+	+	174	0
+	+	175	30
+	+	176	40
+	+	179	59
+	+	13	40
+	+	188	0
+	+	189	0
+	+	187	0
+	+	187	0
+	+	186	66
+	+	187	27
+	+	186	67
+	n	133	44
+
+> /media/cur_project/TemporalConsistentDepth/train_depth_l
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/eval_utils/eval_depth_video.py
+	"	64	0
+	^	64	0
+	.	64	0
+	+	1	0
+	+	232	0
+	+	181	0
+	+	11	34
+	+	10	20
+	+	9	19
+	+	10	0
+	+	36	0
+	+	64	10
+	+	64	6
+	+	64	0
+	+	64	0
+	+	64	0
+	+	36	0
+	+	35	0
+	+	36	0
+	+	35	0
+	+	64	0
+
+> /media/cur_project/TemporalConsistentDepth/eval_utils/eval_depth_2015.py
+	"	42	0
+	.	43	0
+	+	1	0
+	+	15	0
+	+	1	18
+	+	2	19
+	+	4	9
+	+	5	30
+	+	6	12
+	+	7	10
+	+	15	0
 	+	16	0
-	+	9	70
-	+	18	0
+	+	45	0
+	+	53	0
+	+	71	0
+	+	9	0
+	+	8	0
+	+	42	0
+	+	42	0
+	+	42	0
+	+	43	0
+
+> /media/cur_project/TemporalConsistentDepth/eval_utils/eval_depth_eigen
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/eval_utils/eval_depth_eigen.py
+	"	64	0
+	^	35	0
+	.	36	0
+	+	9	0
+	+	9	0
+	+	10	0
+	+	233	0
+	+	182	0
+	+	35	0
+	+	35	0
+	+	36	0
+
+> /media/cur_project/TemporalConsistentDepth/eval_utils/eval_depth_vie
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/dataloader.py
+	"	309	0
+	^	268	17
+	.	268	16
+	+	134	0
+	+	132	0
+	+	132	0
+	+	82	17
+	+	83	18
+	+	132	0
+	+	84	47
+	+	86	32
+	+	87	13
+	+	88	32
+	+	89	38
+	+	90	40
+	+	89	18
+	+	90	19
+	+	91	0
+	+	91	0
+	+	98	0
+	+	104	0
+	+	110	0
+	+	119	0
+	+	94	67
+	+	95	69
+	+	94	26
+	+	95	27
+	+	101	26
+	+	102	27
+	+	101	73
+	+	102	75
+	+	107	75
+	+	108	27
+	+	107	26
+	+	116	26
+	+	117	75
+	+	116	73
+	+	124	0
+	+	121	18
+	+	122	41
+	+	121	39
+	+	125	0
+	+	124	56
+	+	85	34
+	+	81	26
+	+	76	0
+	+	76	0
+	+	85	0
+	+	127	0
+	+	126	0
+	+	128	28
+	+	91	0
+	+	83	60
+	+	113	43
+	+	92	14
+	+	96	14
+	+	286	0
+	+	286	13
+	+	286	0
+	+	286	0
+	+	286	53
+	+	286	40
+	+	286	51
+	+	286	34
+	+	286	31
+	+	286	32
+	+	286	0
+	+	286	39
+	+	286	41
+	+	286	23
+	+	286	24
+	+	286	0
+	+	286	12
+	+	286	12
+	+	286	12
+	+	286	12
+	+	286	68
+	+	286	71
+	+	286	34
+	+	286	45
+	+	286	0
+	+	286	0
+	+	286	25
+	+	286	8
+	+	286	8
+	+	286	51
+	+	286	17
+	+	286	18
+	+	286	65
+	+	286	17
+	+	286	18
+	+	286	72
+	+	286	90
+	+	286	0
+	+	286	33
+	+	286	16
+	+	286	0
+	+	286	0
+	+	286	0
+	+	268	0
+	+	267	0
+	+	286	0
+	+	268	16
+
+> /media/cur_project/TemporalConsistentDepth/filename/Kitti_raw_stereo_video_test.txt
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/Recent_saved_model/133/run_rsync.sh
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/networks/PWC_net_mode
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/filename/Kitti_raw_stereo_video.txt
+	"	38758	0
+	.	42382	0
+	+	1	0
+	+	42382	0
+
+> /media/cur_project/TemporalConsistentDepth/filename/Kitti_raw_stereo_video
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/networks/ConvLSTM.py
+	"	36	8
+	^	1	2
+	.	8	0
+	+	52	26
+	+	1	1
+	+	2	0
+	+	1	1
+	+	38	0
+	+	8	0
+
+> /media/cur_project/TemporalConsistentDepth/filename/gen_stereo_video_test_file.py
+	"	21	62
+	^	21	63
+	.	21	62
+	+	7	20
+	+	21	34
+	+	7	42
+	+	21	62
+
+> /media/cur_project/TemporalConsistentDepth/filename/gen_stereo_video_file.py
+	"	6	12
+	^	21	38
+	.	21	37
+	+	2	9
+	+	5	56
+	+	28	5
+	+	2	0
+	+	28	0
+	+	28	0
+	+	28	0
+	+	28	30
+	+	8	29
+	+	28	8
+	+	4	42
+	+	5	37
+	+	9	16
+	+	28	22
+	+	28	0
+	+	9	48
+	+	4	39
+	+	28	0
+	+	28	8
+	+	5	7
+	+	8	12
+	+	9	11
+	+	10	22
+	+	28	0
+	+	10	31
+	+	12	37
+	+	13	29
+	+	28	0
+	+	28	0
+	+	12	38
+	+	13	0
+	+	28	0
+	+	13	39
+	+	28	0
+	+	13	0
+	+	28	0
+	+	28	0
+	+	28	0
+	+	28	30
+	+	8	0
+	+	6	19
+	+	11	25
+	+	28	0
+	+	28	0
+	+	28	0
+	+	14	61
+	+	28	29
+	+	15	60
+	+	16	62
+	+	28	30
+	+	28	31
+	+	28	0
+	+	17	26
+	+	18	49
+	+	28	0
+	+	28	0
+	+	28	0
+	+	15	63
+	+	16	64
+	+	18	19
+	+	28	0
+	+	19	31
+	+	20	32
+	+	22	41
+	+	25	69
+	+	25	35
+	+	25	71
+	+	25	75
+	+	28	40
+	+	28	41
+	+	22	45
+	+	28	0
+	+	25	64
+	+	7	43
+	+	26	32
+	+	27	12
+	+	28	0
+	+	26	0
+	+	26	0
+	+	25	60
+	+	23	84
+	+	24	83
+	+	26	0
+	+	25	0
+	+	25	0
+	+	23	48
+	+	24	49
+	+	23	49
+	+	24	50
+	+	25	0
+	+	26	0
+	+	26	0
+	+	7	47
+	+	26	0
+	+	25	70
+	+	21	41
+	+	22	25
+	+	21	36
+	+	22	0
+	+	21	37
+
+> /media/cur_project/TemporalConsistentDepth/filename/gen_
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/filename/train.txt
+	"	28967	0
+	.	28968	0
+	+	7698	599
+	+	7698	899
+	+	7699	0
+	+	7716	599
+	+	7716	899
+	+	7716	1199
+	+	7716	1499
+	+	7716	0
+	+	28968	0
+
+> /media/cur_project/TemporalConsistentDepth/filename/train.txrt
+	"	1	0
+
+> ~/catkin_ws/src/block_pose/src/main.cc
+	"	68	16
+	^	14	0
+	.	26	0
+	+	34	0
+	+	34	0
+	+	34	0
+	+	31	0
+	+	34	0
+	+	34	0
+	+	31	0
+	+	31	102
+	+	31	123
+	+	31	0
+	+	34	50
+	+	31	0
+	+	31	40
+	+	31	9
+	+	12	0
+	+	31	0
+	+	31	0
+	+	31	40
+	+	10	0
+	+	10	52
+	+	12	0
+	+	44	31
+	+	46	42
+	+	64	8
+	+	34	72
+	+	34	45
+	+	34	92
+	+	38	0
+	+	39	0
+	+	34	42
+	+	34	51
+	+	31	0
+	+	10	0
+	+	44	35
+	+	46	42
+	+	64	9
+	+	46	44
+	+	64	11
+	+	58	12
+	+	10	0
+	+	10	0
+	+	10	0
+	+	10	99
+	+	31	51
+	+	34	93
+	+	10	0
+	+	10	0
+	+	10	0
+	+	10	0
+	+	10	100
+	+	34	0
+	+	31	0
+	+	31	40
+	+	31	49
+	+	34	82
+	+	10	0
+	+	10	0
+	+	10	0
+	+	10	83
+	+	34	19
+	+	31	0
+	+	34	14
+	+	31	41
+	+	34	72
+	+	10	73
+	+	31	41
+	+	34	72
+	+	10	72
+	+	31	41
+	+	34	14
+	+	31	0
+	+	34	0
+	+	34	0
+	+	31	0
+	+	34	0
+	+	34	0
+	+	31	0
+	+	34	51
+	+	31	38
+	+	34	0
+	+	26	0
+	+	31	0
+	+	35	0
+	+	10	0
+	+	30	13
+	+	28	0
+	+	29	0
+	+	29	0
+	+	30	0
+	+	26	4
+	+	27	4
+	+	26	24
+	+	27	14
+	+	26	24
+	+	27	14
+	+	29	23
+	+	35	17
+	+	11	0
+	+	14	0
+	+	26	0
+
+> ~/catkin_ws/src/block_pose/src/ObjectPose.cc
+	"	772	4
+	.	936	0
+	+	812	55
+	+	813	55
+	+	814	55
+	+	815	55
+	+	816	55
+	+	817	55
+	+	936	4
+	+	936	4
+	+	936	6
+	+	895	0
+	+	899	44
+	+	900	58
+	+	901	51
+	+	917	69
+	+	918	69
+	+	919	69
+	+	917	64
+	+	918	63
+	+	919	64
+	+	920	62
+	+	921	62
+	+	922	62
+	+	920	79
+	+	921	79
+	+	922	79
+	+	936	0
+	+	936	0
+	+	902	0
+	+	898	24
+	+	927	0
+	+	19	0
+	+	928	35
+	+	929	35
+	+	936	62
+	+	256	10
+	+	259	10
+	+	260	10
+	+	261	10
+	+	262	10
+	+	936	44
+	+	928	37
+	+	257	10
+	+	259	8
+	+	927	35
+	+	928	35
+	+	929	37
+	+	936	42
+	+	259	10
+	+	260	8
+	+	927	307
+	+	927	38
+	+	928	36
+	+	929	36
+	+	936	43
+	+	256	8
+	+	260	10
+	+	927	37
+	+	928	37
+	+	929	35
+	+	936	41
+	+	928	37
+	+	936	44
+	+	256	10
+	+	257	10
+	+	259	8
+	+	936	42
+	+	929	37
+	+	928	35
+	+	927	35
+	+	259	10
+	+	260	8
+	+	936	43
+	+	927	36
+	+	928	36
+	+	929	36
+	+	260	10
+	+	261	8
+	+	927	35
+	+	928	0
+	+	927	37
+	+	928	38
+	+	929	35
+	+	936	42
+	+	261	10
+	+	262	8
+	+	936	44
+	+	927	37
+	+	928	35
+	+	929	37
+	+	1174	0
+	+	1174	68
+	+	256	8
+	+	257	8
+	+	259	8
+	+	260	8
+	+	261	8
+	+	1015	15
+	+	936	6
+	+	936	0
+	+	936	0
+
+> /media/cur_project/TemporalConsistentDepth/train_loop.py
+	"	12	0
+	^	21	34
+	.	12	0
+	+	29	83
+	+	29	171
+	+	29	170
+	+	29	83
+	+	29	83
+	+	29	83
+	+	29	83
+	+	29	126
+	+	29	125
+	+	29	169
+	+	29	83
+	+	29	149
+	+	29	83
+	+	29	159
+	+	29	83
+	+	29	83
+	+	29	130
+	+	29	141
+	+	29	83
+	+	29	83
+	+	29	179
+	+	29	115
+	+	26	0
+	+	29	83
+	+	29	83
+	+	29	219
+	+	29	83
+	+	29	83
+	+	29	83
+	+	29	83
+	+	29	83
+	+	29	83
+	+	29	83
+	+	29	83
+	+	29	120
+	+	29	120
+	+	29	128
+	+	29	83
+	+	29	111
+	+	29	131
+	+	29	115
+	+	29	134
+	+	29	133
+	+	29	120
+	+	29	120
+	+	29	129
+	+	29	129
+	+	29	122
+	+	29	122
+	+	29	131
+	+	29	132
+	+	29	145
+	+	29	132
+	+	29	83
+	+	29	135
+	+	29	117
+	+	29	126
+	+	29	126
+	+	29	137
+	+	29	137
+	+	29	146
+	+	29	147
+	+	29	83
+	+	29	142
+	+	29	83
+	+	29	83
+	+	29	83
+	+	29	141
+	+	29	116
+	+	29	83
+	+	29	125
+	+	29	110
+	+	29	129
+	+	29	108
+	+	29	83
+	+	29	83
+	+	29	83
+	+	29	83
+	+	29	107
+	+	9	34
+	+	29	115
+	+	29	117
+	+	9	33
+	+	29	117
+	+	29	83
+	+	29	83
+	+	29	125
+	+	29	107
+	+	29	136
+	+	29	124
+	+	29	83
+	+	29	115
+	+	29	117
+	+	29	83
+	+	29	0
+	+	19	39
+	+	20	40
+	+	22	0
+	+	21	33
+	+	12	0
+	a	172	69
+	m	348	20
+	n	272	63
+
+> /media/cur_project/TemporalConsistentDepth/train_depth.py
+	"	116	106
+	^	116	129
+	.	116	128
+	+	131	70
+	+	130	59
+	+	130	55
+	+	275	23
+	+	265	32
+	+	119	0
+	+	112	42
+	+	113	50
+	+	303	37
+	+	303	0
+	+	293	0
+	+	292	0
+	+	294	0
+	+	294	0
+	+	294	0
+	+	294	0
+	+	294	0
+	+	303	23
+	+	95	0
+	+	95	0
+	+	115	0
+	+	118	0
+	+	117	42
+	+	115	49
+	+	116	0
+	+	113	169
+	+	113	28
+	+	34	0
+	+	35	0
+	+	34	59
+	+	35	0
+	+	123	86
+	+	128	84
+	+	113	45
+	+	132	0
+	+	133	0
+	+	132	55
+	+	133	57
+	+	134	58
+	+	135	56
+	+	294	38
 	+	17	0
-	+	20	0
+	+	303	0
+	+	126	0
+	+	294	0
+	+	295	0
+	+	294	0
+	+	61	97
+	+	62	102
+	+	64	47
+	+	141	46
+	+	142	0
+	+	142	52
+	+	63	37
+	+	14	33
+	+	85	0
+	+	86	0
+	+	86	39
+	+	93	34
+	+	87	70
+	+	92	66
+	+	88	37
+	+	89	47
+	+	90	23
+	+	91	35
+	+	92	53
+	+	89	55
+	+	93	0
+	+	161	53
+	+	165	24
+	+	179	0
+	+	165	0
+	+	165	0
+	+	179	0
+	+	179	0
+	+	178	0
+	+	167	57
+	+	166	0
+	+	167	0
+	+	166	31
+	+	168	36
+	+	10	52
+	+	178	0
+	+	170	0
+	+	178	0
+	+	170	48
+	+	171	47
+	+	173	27
+	+	174	33
+	+	174	0
+	+	175	25
+	+	169	18
+	+	172	18
+	+	175	27
+	+	176	46
+	+	177	25
+	+	175	0
+	+	95	0
+	+	11	31
+	+	116	128
+
+> /media/cur_project/test_lo
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/test_loop.py
+	"	11	32
+	^	11	33
+	.	11	32
+	+	1	14
+	+	1	14
+	+	1	0
+	+	2	0
+	+	4	0
+	+	7	0
+	+	14	0
+	+	15	0
 	+	17	0
+	+	235	0
 	+	20	0
-	+	20	0
+	+	22	55
+	+	23	57
+	+	24	58
+	+	25	0
+	+	27	0
+	+	25	0
+	+	35	0
+	+	35	0
+	+	33	0
+	+	35	0
+	+	41	0
+	+	41	0
+	+	41	0
+	+	41	0
+	+	41	0
+	+	41	0
+	+	42	0
+	+	49	0
+	+	53	0
+	+	60	0
+	+	60	0
+	+	60	0
+	+	60	0
+	+	60	0
+	+	60	0
+	+	61	0
+	+	60	0
+	+	61	0
+	+	230	0
+	+	230	0
+	+	61	0
+	+	235	0
+	+	26	0
+	+	78	0
+	+	91	0
+	+	90	0
+	+	90	0
+	+	33	69
+	+	60	0
+	+	61	0
+	+	85	0
+	+	84	0
+	+	90	0
+	+	230	24
+	+	231	24
+	+	232	22
+	+	235	0
+	+	234	33
+	+	234	23
+	+	60	0
+	+	81	0
+	+	80	0
+	+	81	0
+	+	84	0
+	+	234	0
+	+	233	0
+	+	9	15
+	+	10	0
+	+	17	0
+	+	10	31
+	+	11	32
+
+> /media/cur_project/TemporalConsistentDepth/test_flow.py
+	"	8	15
+	^	8	16
+	.	8	15
+	+	1	0
+	+	2	0
+	+	3	0
+	+	5	0
+	+	4	0
+	+	7	0
+	+	6	0
 	+	11	0
 	+	12	0
+	+	18	0
+	+	205	0
+	+	18	0
+	+	23	0
+	+	27	0
+	+	27	0
+	+	28	0
+	+	27	0
+	+	29	0
+	+	29	0
+	+	29	0
+	+	30	0
+	+	35	0
+	+	36	0
+	+	41	0
+	+	20	55
+	+	21	57
+	+	44	0
+	+	51	0
+	+	49	0
+	+	73	0
+	+	73	0
+	+	85	0
+	+	79	0
+	+	78	0
+	+	205	0
+	+	205	0
+	+	89	16
+	+	88	0
+	+	202	0
+	+	202	0
+	+	29	3
+	+	201	4
+	+	46	0
+	+	85	38
+	+	73	8
+	+	85	0
+	+	77	104
+	+	83	114
+	+	50	10
+	+	55	10
+	+	189	21
+	+	194	52
+	+	190	0
+	+	194	58
+	+	187	23
+	+	67	0
+	+	63	0
+	+	63	0
+	+	187	34
+	+	8	15
+
+> /media/cur_project/TemporalConsistentDepth/test_depth.py
+	"	11	31
+	^	10	32
+	.	10	31
+	+	1	0
+	+	14	0
+	+	9	0
 	+	12	0
 	+	13	0
 	+	14	0
-	+	10	10
-	+	13	0
-	+	15	71
-	+	292	29
-	+	292	0
-	+	292	0
-	+	292	0
-	+	292	0
-	+	291	0
-	+	292	0
-	+	292	0
+	+	16	0
+	+	17	0
+	+	17	0
+	+	19	55
+	+	20	57
+	+	21	71
+	+	21	69
+	+	25	0
+	+	25	0
+	+	25	0
+	+	25	53
+	+	27	0
+	+	27	0
+	+	28	0
+	+	32	0
+	+	22	0
+	+	40	0
+	+	40	0
+	+	43	0
+	+	45	0
+	+	71	0
+	+	70	8
+	+	81	0
+	+	37	0
+	+	121	0
+	+	81	0
+	+	121	0
+	+	128	0
+	+	124	0
+	+	125	0
+	+	125	0
+	+	124	4
+	+	73	0
+	+	25	76
+	+	27	0
+	+	25	0
+	+	24	75
+	+	26	0
+	+	25	23
+	+	24	0
+	+	25	0
+	+	24	76
+	+	76	111
+	+	72	111
+	+	74	0
+	+	75	0
+	+	56	0
+	+	49	0
+	+	54	0
+	+	49	0
+	+	54	0
+	+	54	0
+	+	48	0
+	+	48	0
+	+	50	26
+	+	48	22
+	+	50	47
+	+	53	12
+	+	53	0
+	+	53	58
+	+	114	0
+	+	119	0
+	+	115	33
+	+	10	15
+	+	11	32
+	+	10	31
 
-> ~/.gitignore
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/train_s
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/networks_old/PWCnet.py
-	"	33	0
+> /media/cur_project/TemporalConsistentDepth/eval_utils/eval_depth_VO.py
+	"	11	0
+	.	15	0
+	+	188	30
+	+	247	31
+	+	15	15
+	+	15	0
+	+	15	0
 
 > /media/cur_project/TemporalConsistentDepth/networks/__init__.py
 	"	1	0
-	.	2	0
+
+> /media/cur_project/TemporalConsistentDepth/eval_utils/eval_depth.py
+	"	17	4
+	^	25	19
+	.	17	0
+	+	25	18
+	+	16	0
+	+	90	0
+	+	91	0
+	+	90	0
+	+	92	0
+	+	91	0
+	+	17	0
+
+> /media/cur_project/TemporalConsistentDepth/eval_utils/eval_depth
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/filename/eigen_test_files.txt
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/eval_utils/NERD_tree_1
+	"	1	0
+	.	1	0
 	+	1	0
+
+> /media/dataset/kitti_vo/dataset/sequences/17/calib.txt
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/eval_depth_VO.py
+	"	40	0
+	^	34	0
+	.	34	0
+	+	318	15
+	+	319	13
+	+	15	69
+	+	73	52
+	+	73	53
+	+	93	0
+	+	73	19
+	+	73	0
+	+	74	42
+	+	74	0
+	+	75	0
+	+	18	84
+	+	92	0
+	+	92	0
+	+	74	43
+	+	75	0
+	+	17	0
+	+	17	0
+	+	18	83
+	+	18	79
+	+	18	96
+	+	74	55
+	+	75	0
+	+	92	30
+	+	16	62
+	+	17	39
+	+	18	73
+	+	74	32
+	+	83	30
+	+	74	56
+	+	83	31
+	+	92	0
+	+	92	0
+	+	92	0
+	+	77	16
+	+	78	17
+	+	79	16
+	+	80	17
+	+	81	12
+	+	92	0
+	+	85	16
+	+	85	17
+	+	92	0
+	+	85	19
+	+	85	19
+	+	85	20
+	+	92	0
+	+	85	43
+	+	85	43
+	+	92	0
+	+	85	43
+	+	85	43
+	+	85	44
+	+	92	0
+	+	85	56
+	+	85	12
+	+	83	11
+	+	85	43
+	+	84	38
+	+	85	49
+	+	92	0
+	+	92	0
+	+	84	13
+	+	86	51
+	+	87	22
+	+	86	47
+	+	87	33
+	+	88	66
+	+	89	40
+	+	90	21
+	+	18	71
+	+	17	41
+	+	18	41
+	+	18	87
+	+	74	46
+	+	18	41
+	+	83	25
+	+	85	43
+	+	88	51
+	+	92	0
+	+	88	0
+	+	88	0
+	+	92	0
+	+	92	0
+	+	88	77
+	+	89	54
+	+	92	0
+	+	91	0
+	+	91	0
+	+	92	0
+	+	18	44
+	+	73	0
+	+	18	0
+	+	72	30
+	+	82	67
+	+	88	39
+	+	82	78
+	+	98	0
+	+	19	0
+	+	34	0
+
+> /media/cur_project/TemporalConsistentDepth/eval_depth.py
+	"	44	8
+	^	223	4
+	.	223	0
+	+	143	0
+	+	144	0
+	+	145	0
+	+	134	0
+	+	140	41
+	+	137	32
+	+	138	45
+	+	137	45
+	+	140	63
+	+	141	0
+	+	150	0
+	+	153	0
+	+	145	11
+	+	150	13
+	+	149	0
+	+	148	0
+	+	109	17
+	+	110	19
+	+	155	0
+	+	157	0
+	+	157	0
+	+	157	0
+	+	157	0
+	+	157	0
+	+	157	0
+	+	157	0
+	+	157	0
+	+	157	0
+	+	157	0
+	+	156	0
+	+	158	0
+	+	153	0
+	+	109	12
+	+	102	0
+	+	104	0
+	+	134	0
+	+	134	0
+	+	134	0
+	+	134	0
+	+	113	0
+	+	134	0
+	+	157	34
+	+	134	32
+	+	135	36
+	+	133	9
+	+	135	30
+	+	134	42
+	+	125	9
+	+	156	89
+	+	157	0
+	+	102	5
+	+	103	19
+	+	121	0
+	+	157	34
+	+	127	70
+	+	122	38
+	+	126	39
+	+	127	61
+	+	121	8
+	+	123	0
+	+	124	0
+	+	157	0
+	+	103	5
+	+	102	4
+	+	156	0
+	+	156	0
+	+	157	0
+	+	157	121
+	+	158	79
+	+	158	79
+	+	158	80
+	+	159	0
+	+	158	78
+	+	157	65
+	+	157	65
+	+	157	66
+	+	158	0
+	+	157	64
+	+	41	0
+	+	44	54
+	+	46	0
+	+	44	55
+	+	46	0
+	+	45	0
+	+	44	63
+	+	254	0
+	+	255	0
+	+	215	87
+	+	215	1
+	+	215	87
+	+	217	0
+	+	216	0
+	+	217	18
+	+	214	0
+	+	217	22
+	+	225	0
+	+	228	0
+	+	231	0
+	+	233	0
+	+	223	0
+
+> /media/cur_project/TemporalConsistentDepth/eval_depth
+	"	1	0
+	^	309	20
+	.	309	19
+	+	309	19
+
+> /media/cur_project/TemporalConsistentDepth/test__l
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/train-
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/ma
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/networks/PWC_net
+	"	1	0
+
+> ~/.ssh/known_hosts
+	"	1	0
+	.	2	0
 	+	2	0
 
-> /media/cur_project/TemporalConsistentDepth/networks/__
+> /media/Coursework/getRTfromE.m
+	"	24	11
+
+> /media/Coursework/SfmMain.m
+	"	83	0
+
+> /media/Coursework/GlobalBundleAdjustment.m
+	"	27	4
+	.	26	0
+	+	26	0
+
+> /media/Coursework/Ransac_5ptE.m
+	"	17	0
+
+> ~/matching_project/main.cc
+	"	52	4
+	^	6	18
+	.	52	0
+	+	161	0
+	+	161	0
+	+	161	18
+	+	161	0
+	+	161	0
+	+	161	0
+	+	161	0
+	+	161	17
+	+	161	17
+	+	161	17
+	+	161	4
+	+	161	4
+	+	161	4
+	+	161	4
+	+	161	0
+	+	161	0
+	+	161	0
+	+	161	4
+	+	161	4
+	+	161	4
+	+	161	4
+	+	52	0
+	+	52	9
+	+	52	0
+	+	52	0
+	+	52	0
+	+	52	0
+	+	52	0
+	+	52	0
+	+	52	0
+	+	52	0
+	+	52	0
+	+	12	124
+	+	13	0
+	+	64	0
+	+	64	0
+	+	64	158
+	+	65	0
+	+	86	0
+	+	86	0
+	+	66	21
+	+	84	5
+	+	86	0
+	+	66	9
+	+	68	0
+	+	74	0
+	+	76	18
+	+	75	18
+	+	74	18
+	+	76	51
+	+	74	0
+	+	68	0
+	+	82	0
+	+	82	0
+	+	82	0
+	+	83	0
+	+	77	0
+	+	82	0
+	+	85	0
+	+	78	30
+	+	81	5
+	+	80	26
+	+	161	0
+	+	161	0
+	+	161	0
+	+	161	0
+	+	52	0
+	+	74	56
+	+	64	2
+	+	64	47
+	+	64	31
+	+	64	0
+	+	64	0
+	+	65	0
+	+	56	0
+	+	57	0
+	+	58	0
+	+	58	0
+	+	162	0
+	+	88	0
+	+	87	0
+	+	135	16
+	+	134	0
+	+	135	33
+	+	136	0
+	+	76	16
+	+	67	0
+	+	67	49
+	+	76	48
+	+	75	16
+	+	136	29
+	+	51	37
+	+	50	0
+	+	50	33
+	+	51	4
+	+	136	0
+	+	6	22
+	+	52	0
+	+	6	17
+	+	52	0
+
+> ~/matching_project/ma
 	"	1	0
+
+> ~/matching_project/CMakeLists.txt
+	"	5	19
+	^	5	20
+	.	5	19
+	+	12	48
+	+	3	23
+	+	11	39
+	+	12	39
+	+	5	19
+
+> ~/matching_project/build/run.sh
+	"	2	11
+	^	2	12
+	.	2	11
+	+	1	13
+	+	3	18
+	+	1	9
+	+	3	21
+	+	3	21
+	+	3	22
+	+	4	0
+	+	3	31
+	+	2	11
+
+> ~/catkin_ws/src/block_pose/include/SystemHandler.h
+	"	29	0
+	^	33	90
+	.	65	0
+	+	86	0
+	+	78	19
+	+	34	15
+	+	78	19
+	+	34	116
+	+	34	56
+	+	56	4
+	+	38	4
+	+	86	28
+	+	86	22
+	+	86	33
+	+	21	0
+	+	21	0
+	+	22	0
+	+	87	0
+	+	87	0
+	+	76	0
+	+	76	0
+	+	87	0
+	+	22	0
+	+	77	0
+	+	27	0
+	+	27	0
+	+	86	1
+	+	86	13
+	+	86	4
+	+	27	0
+	+	86	0
+	+	86	0
+	+	87	0
+	+	86	0
+	+	86	12
+	+	86	12
+	+	86	12
+	+	86	12
+	+	86	15
+	+	86	27
+	+	86	21
+	+	86	31
+	+	86	13
+	+	86	14
+	+	86	16
+	+	86	24
+	+	27	8
+	+	27	8
+	+	27	8
+	+	27	8
+	+	27	8
+	+	27	8
+	+	27	8
+	+	27	8
+	+	27	8
+	+	27	8
+	+	27	8
+	+	27	8
+	+	34	8
+	+	34	0
+	+	34	0
+	+	86	30
+	+	86	19
+	+	34	8
+	+	34	0
+	+	17	22
+	+	18	25
+	+	86	24
+	+	86	14
+	+	34	28
+	+	34	18
+	+	34	0
+	+	34	0
+	+	28	0
+	+	87	0
+	+	84	10
+	+	84	67
+	+	29	15
+	+	84	0
+	+	85	30
+	+	30	26
+	+	25	65
+	+	29	20
+	+	30	26
+	+	84	4
+	+	85	4
+	+	36	14
+	+	36	0
+	+	35	0
+	+	36	0
+	+	36	0
+	+	36	0
+	+	31	0
+	+	34	0
+	+	37	0
+	+	25	41
+	+	29	19
+	+	30	20
+	+	22	18
+	+	25	13
+	+	32	72
+	+	33	89
+	+	65	0
+
+> ~/catkin_ws/src/block_pose/include/ObjectPose.h
+	"	76	21
+	^	76	19
+	.	76	18
+	+	76	18
+
+> /media/cur_project/TemporalConsistentDepth/test_L
+	"	1	0
+
+> /media/cur_project/TemporalConsistentDepth/scripts/eval_flow.sh
+	"	11	0
+
+> ~/catkin_ws/src/block_pose/msg/RedBlock.msg
+	"	1	13
+	^	1	14
+	.	1	13
+	+	1	13
+
+> ~/catkin_ws/src/block_pose/include/ma
+	"	1	0
+
+> ~/catkin_ws/src/block_pose/include/DominantPlane.h
+	"	57	0
+
+> ~/catkin_ws/src/block_pose/ma
+	"	1	0
+
+> ~/catkin_ws/src/block_pose/CMakeLists.txt
+	"	76	0
+	^	16	22
+	.	76	0
+	+	2	17
+	+	207	25
+	+	210	32
+	+	55	0
+	+	56	0
+	+	57	0
+	+	58	0
+	+	58	0
+	+	57	10
+	+	75	0
+	+	77	0
+	+	78	0
+	+	16	21
+	+	112	0
+	+	76	0
+
+> ~/catkin_ws/src/block_pose/src/m
+	"	1	0
+
+> ~/catkin_ws/src/block_pose/package.xml
+	"	5	29
+	^	5	30
+	.	5	29
+	+	3	17
+	+	5	29
+
+> ~/catkin_ws/src/Block_Pose/src/main.cc
+	"	49	35
+	^	53	4
+	.	21	0
+	+	109	0
+	+	110	17
+	+	110	6
+	+	111	0
+	+	77	0
+	+	79	0
+	+	78	7
+	+	76	0
+	+	77	17
+	+	1	0
+	+	16	25
+	+	21	0
+	+	21	0
+	+	33	0
+	+	34	0
+	+	25	23
+	+	34	17
+	+	19	0
+	+	16	0
+	+	1	0
+	+	14	0
+	+	1	0
+	+	16	0
+	+	16	0
+	+	15	25
+	+	17	0
+	+	19	0
+	+	19	0
+	+	77	33
+	+	39	4
+	+	39	4
+	+	39	0
+	+	40	0
+	+	21	6
+	+	21	6
+	+	21	0
+	+	39	0
+	+	21	0
+	+	21	0
+	+	21	0
+	+	21	0
+	+	45	0
+	+	44	0
+	+	45	3
+	+	45	3
+	+	45	4
+	+	45	0
+	+	45	4
+	+	45	0
+	+	45	0
+	+	45	4
+	+	21	0
+	+	26	19
+	+	30	0
+	+	27	0
+	+	28	25
+	+	30	0
+	+	28	26
+	+	26	0
+	+	29	0
+	+	29	0
+	+	45	0
+	+	75	6
+	+	42	0
+	+	41	0
+	+	69	6
+	+	49	6
+	+	52	6
+	+	56	5
+	+	69	5
+	+	73	3
+	+	49	4
+	+	52	4
+	+	56	0
+	+	69	4
+	+	75	4
+	+	49	31
+	+	69	10
+	+	75	9
+	+	70	0
+	+	72	0
+	+	52	105
+	+	73	1
+	+	71	23
+	+	36	0
+	+	37	0
+	+	46	0
+	+	47	13
+	+	50	0
+	+	51	13
+	+	54	0
+	+	55	13
+	+	71	13
+	+	67	0
+	+	68	13
+	+	48	38
+	+	49	0
+	+	62	5
+	+	52	67
+	+	21	0
+
+> ~/catkin_ws/src/Block_Pose/include/DominantPlane.h
+	"	81	27
+	^	93	38
+	.	93	37
+	+	11	16
+	+	11	8
+	+	11	8
+	+	11	8
+	+	11	8
+	+	11	8
+	+	11	8
+	+	11	8
+	+	11	8
+	+	11	8
+	+	11	8
+	+	11	8
+	+	11	8
+	+	11	8
+	+	94	0
+	+	93	37
+
+> ~/catkin_ws/src/Block_Pose/src/DominantPlane.cc
+	"	2	0
+	^	253	0
+	.	2	0
+	+	1	0
+	+	1	8
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	48
+	+	1	37
+	+	1	49
+	+	1	37
+	+	1	6
+	+	1	22
+	+	1	23
+	+	1	22
+	+	1	20
+	+	1	44
+	+	1	31
+	+	1	8
+	+	1	0
+	+	1	20
+	+	1	21
+	+	1	15
+	+	1	52
+	+	1	25
+	+	1	53
+	+	1	22
+	+	1	22
+	+	1	22
+	+	1	49
+	+	1	22
+	+	1	22
+	+	1	22
+	+	1	48
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	16
+	+	1	0
+	+	1	0
+	+	1	31
+	+	1	0
+	+	1	24
+	+	1	55
+	+	1	22
+	+	1	18
+	+	1	16
+	+	1	17
+	+	1	56
+	+	1	0
+	+	1	24
+	+	1	26
+	+	252	1
+	+	2	0
+
+> ~/catkin_ws/src/Block_Pose/include/ObjectPose.h
+	"	78	32
+
+> ~/catkin_ws/src/Block_Pose/include/SystemHandler.h
+	"	43	18
+	^	42	29
+	.	43	18
+	+	98	0
+	+	22	0
+	+	22	0
+	+	24	0
+	+	20	31
+	+	20	0
+	+	2	0
+	+	2	0
+	+	20	0
+	+	20	0
+	+	24	0
+	+	24	0
+	+	24	6
+	+	24	0
+	+	21	0
+	+	21	0
+	+	20	0
+	+	20	0
+	+	20	0
+	+	20	0
+	+	4	0
+	+	20	0
+	+	18	0
+	+	20	0
+	+	102	17
+	+	103	19
+	+	119	0
+	+	23	0
+	+	23	0
+	+	104	30
+	+	105	4
+	+	46	20
+	+	45	0
+	+	53	0
+	+	45	0
+	+	48	0
+	+	53	0
+	+	22	0
+	+	22	0
+	+	53	0
+	+	53	0
+	+	53	0
+	+	53	0
+	+	54	0
+	+	42	0
+	+	44	0
+	+	43	8
+	+	42	8
+	+	23	0
+	+	30	0
+	+	42	0
+	+	106	0
+	+	106	12
+	+	107	12
+	+	108	12
+	+	109	12
+	+	110	15
+	+	111	27
+	+	112	21
+	+	113	31
+	+	114	13
+	+	115	14
+	+	116	16
+	+	117	24
+	+	30	8
+	+	31	8
+	+	32	8
+	+	33	8
+	+	34	8
+	+	35	8
+	+	36	8
+	+	37	8
+	+	38	8
+	+	39	8
+	+	40	8
+	+	41	8
+	+	43	10
+	+	42	10
+	+	104	6
+	+	105	6
+	+	104	4
+	+	42	8
+	+	25	0
+	+	25	0
+	+	42	42
+	+	41	28
+	+	42	10
+	+	104	24
+	+	42	28
+	+	105	15
+	+	43	8
+	+	105	15
+	+	38	0
+	+	42	28
+	+	43	18
+	+	42	28
+	+	43	8
+	+	42	0
+	+	42	28
+	+	43	18
+
+> ~/catkin_ws/src/Block_Pose/include/ma
+	"	1	0
+
+> ~/catkin_ws/src/Block_Pose/msg/RedBlock.msg
+	"	1	11
+	^	1	12
+	.	1	11
+	+	1	11
+
+> ~/catkin_ws/src/Block_Pose/ma
+	"	1	0
+
+> ~/catkin_ws/src/Block_Pose/include/TopicHandler.h
+	"	3	0
+	.	4	0
+	+	1	36
+	+	1	19
+	+	1	0
+	+	1	20
+	+	3	36
+	+	3	0
+	+	3	12
+	+	3	26
+	+	3	19
+	+	3	61
+	+	3	0
+	+	3	0
+	+	3	0
+	+	3	0
+	+	3	0
+	+	3	0
+	+	3	0
+	+	3	0
+	+	3	0
+	+	3	0
+	+	3	0
+	+	3	29
+	+	3	0
+	+	3	0
+	+	3	0
+	+	4	0
+
+> ~/catkin_ws/src/Block_Pose/CMakeLists.txt
+	"	1	0
+
+> ~/catkin_ws/src/Block_Pose/Cm
+	"	1	0
+
+> ~/.bashrc
+	"	121	28
+	^	121	29
+	.	121	28
+	+	124	0
+	+	121	0
+	+	124	0
+	+	122	0
+	+	125	0
+	+	121	28
+
+> /opt/ros/kinetic/lib/python2.7/dist-packages/roslz4/__init__.py
+	"	27	0
