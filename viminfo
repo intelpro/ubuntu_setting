@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/use_lstm
+~MSle0~/opt
 
 # Last Substitute Search Pattern:
 ~MSle0&unit_length
@@ -17,15 +17,25 @@
 $Unit_Cube_L
 
 # Command Line History (newest to oldest):
-:wq
-:W
 :Wq
+:wq
 :w
-:vs train_flow.py
 :q!
-:we
+:W
+:x
+:112
+:133
+:!33
 :noh
 :vs train_depth_LSTM.py
+:279
+:420
+:150
+:vs test_depth_LSTM.py
+:vs ../train_depth_LSTM.py
+:'<,'>W
+:vs train_flow.py
+:we
 :ㅈ
 :WQ
 :151
@@ -33,8 +43,6 @@ $Unit_Cube_L
 :121
 :yu
 :415
-:133
-:!33
 :85
 :sp ../train_flow_LSTM.py
 :vs flow_run.sh
@@ -52,7 +60,6 @@ $Unit_Cube_L
 :vs eval_depth_2015.py
 :vs eval_depth_video.py
 :187
-:112
 :^kjkkkkkkk
 :252
 :12
@@ -60,15 +67,9 @@ $Unit_Cube_L
 :vs test_LSTM.py
 :vs ../test_lo
 :vs ../eval_utils/
-:vs eval_depth.py
-:q1
-:26
-:29
-:.w
-:vs eval_depth_VO.py
-:d
 
 # Search String History (newest to oldest):
+?/opt
 ?/use_lstm
 ?/self.flow_model
 ?/left_image
@@ -118,7 +119,6 @@ $Unit_Cube_L
 ?/download
 ?/initmodel
 ?/models
-?/occ
 
 # Expression History (newest to oldest):
 
@@ -128,197 +128,531 @@ $Unit_Cube_L
 
 # Registers:
 "0	CHAR	0
-	    def train_test_flow(self, input_height, input_width):
-	        self.flow_model.eval()
-	        total_error_all, total_error_noc, total_error_occ, fl_error_all, fl_error_noc, fl_error_occ = [0]*6
-	        num_test = 0
-	        save_flow = False
-	        for batch_idx, (former, latter, gt_noc, gt_occ, mask_noc, mask_occ, h, w) in enumerate(self.flow_2015_test_loader, 0):
-	            former_batch = torch.cat((former, torch.from_numpy(np.flip(former.numpy(), 3).copy())), 0)
-	            latter_batch = torch.cat((latter, torch.from_numpy(np.flip(latter.numpy(), 3).copy())), 0)
+	            if epoch > 5:
+	                self.args.Mask_type='fb'
+	                self.args.SIM_patch_width = 3
 	
-	            former = Variable(former_batch.cuda())
-	            latter = Variable(latter_batch.cuda())
-	
-	            model_input = torch.cat((former, latter), 1)
-	            flow_est_scale = self.flow_model(model_input)
-	
-	            flow_ori_scale = nn.UpsamplingBilinear2d(size=(int(h), int(w)))(flow_est_scale[0])
-	            flow_ori_scale[0,0] = flow_ori_scale[0,0] * int(w) / input_width
-	            flow_ori_scale[0,1] = flow_ori_scale[0,1] * int(h) / input_height
-	
-	            error_all, fl_all = evaluate_flow(flow_ori_scale[0].data.cpu().numpy(), gt_occ[0].numpy(), mask_occ.numpy())
-	            error_occ, fl_occ = evaluate_flow(flow_ori_scale[0].data.cpu().numpy(), gt_occ[0].numpy(), mask_occ.numpy()-mask_noc.numpy())
-	            error_noc, fl_noc = evaluate_flow(flow_ori_scale[0].data.cpu().numpy(), gt_noc[0].numpy(), mask_noc.numpy())
-	
-	            total_error_all += error_all
-	            total_error_noc += error_noc
-	            total_error_occ += error_occ
-	            fl_error_noc += fl_noc
-	            fl_error_all += fl_all
-	            fl_error_occ += fl_occ
-	            if save_flow:
-	                flow_imsave_dir = os.path.join(args.flow_save_dir, 'plot_display_epoch_'+str(self.epoch))
-	                if not os.path.exists(flow_imsave_dir):
-	                    os.makedirs(flow_imsave_dir)
-	                flow_save_dir = os.path.join(flow_imsave_dir, str(num_test).zfill(5) + ".png")
-	                flow_cpu = flow_ori_scale[0,:,:,:].detach().to("cpu").numpy().squeeze()
-	                flow_cpu = flow_to_image(np.transpose(flow_cpu, (1,2,0)))
-	                cv2.imwrite(flow_save_dir, flow_cpu)
-	            num_test += 1
-	
-	        total_error_all /= num_test
-	        fl_error_all /= num_test
-	        total_error_noc /= num_test
-	        fl_error_noc /= num_test
-	        total_error_occ /= num_test
-	        fl_error_occ /= num_test
-	        
-	        print("\n{:>10}: ".format('KITTI 2015 Opitcal Flow evaluation'))
-	        print("{:>10}, {:>12}, {:>9}, {:>12}, {:>9}, {:>12}".format('All EPE', 'Fl-All(%)', 'Noc EPE', 'Fl-Noc(%)', 'Occ EPE', 'Fl-Occ(%)'))
-	        print("{:10.3f}, {:10.2f}, {:11.3f}, {:10.2f}, {:11.3f}, {:10.2f}".format(total_error_all.mean(),\
-	              fl_error_all.mean()*100, total_error_noc.mean(), fl_error_noc.mean()*100, total_error_occ.mean(), fl_error_occ.mean()*100))
-"1	LINE	0
+""1	LINE	0
 	
 "2	LINE	0
 	
+	PATH=$PATH:~/.local/bin/
 "3	LINE	0
-	    
+	    import pdb; pdb.set_trace()
 "4	LINE	0
+	    L
+"5	LINE	0
+	    ncc_sort_dict = np.sort(ncc_dict)
+"6	LINE	0
+	    plt.figure()
+"7	CHAR	0
+	    plt.title('ncc difference')
+	    plt.hist(ncc_sort_dict, range=[0,1], bins=30, density=True)
+	    plt.xlabel('zncc value')
+	    plt.ylabel('density')
 	
-"5	CHAR	0
-	    elif args.mode == 'train_flow':
-	        model.train_flow()
-"6	CHAR	0
-	    if args.mode=='train_flow_LSTM':
-	        args.use_LSTM=True
-	    elif args.mode=='train_flow':
-	        args.use_LSTM=False
-	
-"7	LINE	0
-	
-"8	LINE	0
+"8	CHAR	0
+	    x_ncc, count_ncc = np.unique(ncc_sort_dict, return_counts=1)
+	    x_ncc = np.arange(0, len(x_ncc))
 	
 "9	LINE	0
-	        print('not impletmeted error')
-""-	CHAR	0
-	test_flow
+	
+"-	CHAR	0
+	7
 
 # File marks:
-'0  789  8  /media/cur_project/TemporalConsistentDepth/networks/PWC_net_modified.py
-'1  246  31  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
-'2  449  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
-'3  4  7  /media/cur_project/TemporalConsistentDepth/eval_utils/eval_flow.py
-'4  1  0  /media/cur_project/TemporalConsistentDepth/eval_utils/train_flow_LSTM.py
-'5  14  25  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
-'6  469  33  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
-'7  66  27  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
-'8  382  8  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
-'9  352  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+'0  125  0  ~/.bashrc
+'1  201  0  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+'2  123  10  ~/.bashrc
+'3  1  0  ~/.bahsrc
+'4  121  31  ~/.bashrc
+'5  114  30  /media/cur_project/scripts/compare.py
+'6  115  50  /media/cur_project/scripts/compare.py
+'7  117  8  /media/cur_project/scripts/compare.py
+'8  112  30  /media/cur_project/scripts/compare.py
+'9  113  22  /media/cur_project/scripts/compare.py
 
 # Jumplist (newest first):
+-'  125  0  ~/.bashrc
+-'  119  0  ~/.bashrc
+-'  123  10  ~/.bashrc
+-'  201  0  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  171  0  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  111  7  ~/.bashrc
+-'  28  3  ~/.bashrc
+-'  24  2  ~/.bashrc
+-'  16  2  ~/.bashrc
+-'  12  23  ~/.bashrc
+-'  120  0  ~/.bashrc
+-'  121  31  ~/.bashrc
+-'  1  0  ~/.bahsrc
+-'  1  0  ~/.bashrc
+-'  114  30  /media/cur_project/scripts/compare.py
+-'  115  50  /media/cur_project/scripts/compare.py
+-'  117  8  /media/cur_project/scripts/compare.py
+-'  112  30  /media/cur_project/scripts/compare.py
+-'  113  22  /media/cur_project/scripts/compare.py
+-'  91  4  /media/cur_project/scripts/compare.py
+-'  82  12  /media/cur_project/scripts/compare.py
+-'  63  4  /media/cur_project/scripts/compare.py
+-'  105  35  /media/cur_project/scripts/compare.py
+-'  95  43  /media/cur_project/scripts/compare.py
+-'  92  4  /media/cur_project/scripts/compare.py
+-'  128  4  /media/cur_project/scripts/compare.py
+-'  88  24  /media/cur_project/scripts/compare.py
+-'  89  17  /media/cur_project/scripts/compare.py
+-'  52  33  /media/cur_project/scripts/compare.py
+-'  23  0  /media/cur_project/scripts/compare.py
+-'  75  19  /media/cur_project/scripts/compare.py
+-'  51  11  /media/cur_project/scripts/compare.py
+-'  1  0  /media/cur_project/scripts/compare.py
+-'  107  57  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  62  27  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  151  27  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  248  31  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  441  12  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  11  40  /media/cur_project/TemporalConsistentDepth/eval_utils/eval_depth_video.py
+-'  279  18  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  76  76  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  27  0  /media/cur_project/TemporalConsistentDepth/utils/utils.py
+-'  152  46  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  33  0  /media/cur_project/TemporalConsistentDepth/utils/utils.py
+-'  148  51  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  39  0  /media/cur_project/TemporalConsistentDepth/utils/utils.py
+-'  145  41  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  131  25  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  37  4  /media/cur_project/TemporalConsistentDepth/utils/utils.py
+-'  47  17  /media/cur_project/TemporalConsistentDepth/utils/utils.py
+-'  42  57  /media/cur_project/TemporalConsistentDepth/utils/utils.py
+-'  40  4  /media/cur_project/TemporalConsistentDepth/utils/utils.py
+-'  346  0  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
+-'  48  24  /media/cur_project/TemporalConsistentDepth/utils/utils.py
+-'  215  24  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  118  57  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  65  27  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  346  121  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  333  126  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  233  121  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  220  126  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  173  21  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  78  4  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  63  4  /media/cur_project/TemporalConsistentDepth/scripts/stereo_LSTM_run.sh
+-'  1  0  /media/cur_project/TemporalConsistentDepth/scripts/stereo_LSTM_run.sh
+-'  372  30  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  172  39  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  397  8  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
 -'  789  8  /media/cur_project/TemporalConsistentDepth/networks/PWC_net_modified.py
 -'  38  6  /media/cur_project/TemporalConsistentDepth/networks/PWC_net_modified.py
--'  246  31  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  449  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  451  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
 -'  14  25  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
 -'  4  7  /media/cur_project/TemporalConsistentDepth/eval_utils/eval_flow.py
 -'  1  0  /media/cur_project/TemporalConsistentDepth/eval_utils/train_flow_LSTM.py
 -'  1  0  /media/cur_project/TemporalConsistentDepth/eval_utils/eval_flow.py
--'  469  33  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  471  33  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
 -'  66  27  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  556  18  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  554  16  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  279  20  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  555  12  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  558  18  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  556  16  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  281  20  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  557  12  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
 -'  123  27  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  558  23  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  451  8  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  348  31  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  165  38  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  164  38  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  152  12  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  560  23  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  453  8  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  350  31  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  167  38  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  166  38  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  154  12  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
 -'  134  46  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
 -'  92  12  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
 -'  86  36  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
 -'  85  26  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
 -'  84  12  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
 -'  82  12  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  509  31  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  352  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  382  8  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
--'  263  30  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
--'  172  17  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  511  31  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  354  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+-'  284  30  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+-'  174  17  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
 -'  487  0  /media/cur_project/TemporalConsistentDepth/networks/PWC_net.py
--'  158  24  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  243  0  /media/cur_project/TemporalConsistentDepth/utils/loss_utils.py
--'  139  8  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  130  34  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  115  45  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
--'  112  12  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
--'  57  22  /media/cur_project/TemporalConsistentDepth/utils/utils.py
--'  162  16  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  157  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  120  18  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  125  0  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
--'  130  30  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
--'  122  135  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  119  15  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  61  0  /media/cur_project/TemporalConsistentDepth/utils/utils.py
--'  73  4  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  60  0  /media/cur_project/TemporalConsistentDepth/utils/utils.py
--'  94  39  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  93  57  /media/cur_project/TemporalConsistentDepth/train_flow.py
--'  55  0  /media/cur_project/TemporalConsistentDepth/utils/utils.py
--'  133  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  135  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  60  66  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  41  33  /media/cur_project/TemporalConsistentDepth/scripts/flow_LSTM_run.sh
--'  72  18  /media/cur_project/TemporalConsistentDepth/scripts/flow_LSTM_run.sh
--'  37  4  /media/cur_project/TemporalConsistentDepth/scripts/flow_LSTM_run.sh
--'  13  0  /media/cur_project/TemporalConsistentDepth/scripts/flow_LSTM_run.sh
--'  69  27  /media/cur_project/TemporalConsistentDepth/scripts/flow_LSTM_run.sh
--'  1  0  /media/cur_project/TemporalConsistentDepth/scripts/flow_LSTM_run.sh
--'  71  0  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
--'  86  53  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
--'  82  0  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
--'  35346  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video_train.txt
--'  38720  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video_train.txt
--'  38758  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video.txt
--'  1  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video
--'  28  78  /media/cur_project/TemporalConsistentDepth/utils/filename/gen_train_file_list.py
--'  27866  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video.txt
--'  1303  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video_train.txt
--'  1  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video_train.txt
--'  30  12  /media/cur_project/TemporalConsistentDepth/utils/filename/gen_train_file_list.py
--'  2  0  /media/cur_project/TemporalConsistentDepth/utils/filename/gen_stereo_video_file.py
--'  1  0  /media/cur_project/TemporalConsistentDepth/utils/filename/gen_stereo_video_file.py
--'  1  0  /media/cur_project/TemporalConsistentDepth/utils/filename/gen_train_file_list.py
--'  7  36  /media/cur_project/TemporalConsistentDepth/utils/filename/gen_flow_file_list.py
--'  1  0  /media/cur_project/TemporalConsistentDepth/utils/filename/gen_flow_file_list.py
--'  3277  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video.txt
--'  1  0  /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video.txt
--'  136  8  /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
--'  32  27  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  109  72  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  109  0  /media/cur_project/TemporalConsistentDepth/tags
--'  1  0  /media/cur_project/TemporalConsistentDepth/tags
--'  1  0  ~/.vimtags
--'  90  71  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  5  46  /media/cur_project/TemporalConsistentDepth/README.md
--'  1  0  /media/cur_project/TemporalConsistentDepth/README.md
--'  30  27  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  40  27  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  80  40  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  1  0  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
--'  225  16  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
--'  73  76  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
--'  10  27  /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
--'  6  5  /media/cur_project/TemporalConsistentDepth/utils/loss_utils.py
--'  1  0  /media/cur_project/TemporalConsistentDepth/utils/loss_utils.py
--'  246  31  /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
 
 # History of marks within files (newest to oldest):
+
+> ~/.bashrc
+	"	125	0
+	^	123	2
+	.	125	0
+	+	121	31
+	+	123	1
+	+	125	0
+
+> /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
+	"	201	0
+	^	15	33
+	.	15	32
+	+	217	0
+	+	216	0
+	+	49	65
+	+	50	0
+	+	168	34
+	+	492	0
+	+	123	50
+	+	124	38
+	+	490	4
+	+	490	28
+	+	491	0
+	+	490	28
+	+	134	146
+	+	130	128
+	+	490	29
+	+	490	0
+	+	490	0
+	+	490	27
+	+	491	0
+	+	502	0
+	+	93	48
+	+	12	56
+	+	287	34
+	+	12	30
+	+	179	0
+	+	170	25
+	+	171	39
+	+	170	24
+	+	93	48
+	+	12	56
+	+	287	26
+	+	280	0
+	+	282	0
+	+	287	40
+	+	93	48
+	+	12	56
+	+	292	66
+	+	295	0
+	+	293	0
+	+	295	0
+	+	295	0
+	+	12	56
+	+	93	48
+	+	287	30
+	+	288	30
+	+	93	48
+	+	12	10
+	+	10	10
+	+	12	0
+	+	10	24
+	+	12	0
+	+	14	0
+	+	14	0
+	+	16	0
+	+	11	0
+	+	11	9
+	+	70	71
+	+	72	71
+	+	74	76
+	+	31	60
+	+	36	34
+	+	78	0
+	+	84	0
+	+	490	0
+	+	397	0
+	+	173	25
+	+	217	0
+	+	144	0
+	+	145	63
+	+	145	35
+	+	145	88
+	+	145	35
+	+	145	88
+	+	147	0
+	+	145	135
+	+	146	0
+	+	148	106
+	+	151	0
+	+	148	104
+	+	149	54
+	+	148	105
+	+	150	0
+	+	133	0
+	+	130	48
+	+	148	51
+	+	152	46
+	+	76	0
+	+	78	0
+	+	77	63
+	+	76	73
+	+	156	0
+	+	140	0
+	+	143	0
+	+	491	0
+	+	397	0
+	+	444	0
+	+	444	0
+	+	444	0
+	+	445	0
+	+	15	32
+
+> ~/.bahsrc
+	"	1	0
+
+> /media/cur_project/scripts/compare.py
+	"	114	30
+	^	114	31
+	.	114	30
+	+	24	0
+	+	91	0
+	+	89	0
+	+	109	0
+	+	103	0
+	+	109	0
+	+	102	0
+	+	129	0
+	+	128	0
+	+	95	0
+	+	113	15
+	+	115	0
+	+	113	22
+	+	112	30
+	+	67	6
+	+	74	6
+	+	112	0
+	+	115	64
+	+	114	30
+
+> /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
+	"	107	57
+	^	150	0
+	.	151	0
+	+	119	126
+	+	119	48
+	+	74	0
+	+	69	0
+	+	73	0
+	+	118	0
+	+	119	0
+	+	120	0
+	+	69	81
+	+	71	80
+	+	65	51
+	+	65	0
+	+	159	43
+	+	159	43
+	+	159	38
+	+	159	38
+	+	174	0
+	+	174	33
+	+	174	0
+	+	174	125
+	+	174	125
+	+	174	27
+	+	174	0
+	+	174	0
+	+	174	0
+	+	160	0
+	+	159	0
+	+	157	53
+	+	158	53
+	+	160	53
+	+	161	53
+	+	163	65
+	+	164	67
+	+	183	0
+	+	169	0
+	+	168	0
+	+	174	0
+	+	166	35
+	+	167	36
+	+	166	36
+	+	167	36
+	+	452	24
+	+	244	33
+	+	511	29
+	+	465	29
+	+	173	0
+	+	171	0
+	+	123	38
+	+	124	0
+	+	354	0
+	+	246	0
+	+	258	0
+	+	258	53
+	+	258	53
+	+	258	0
+	+	258	0
+	+	258	53
+	+	258	0
+	+	274	0
+	+	267	33
+	+	268	33
+	+	267	33
+	+	268	33
+	+	554	35
+	+	554	25
+	+	554	32
+	+	554	26
+	+	552	0
+	+	554	0
+	+	554	0
+	+	557	0
+	+	560	28
+	+	560	0
+	+	560	34
+	+	560	0
+	+	560	0
+	+	560	23
+	+	283	0
+	+	25	80
+	+	24	97
+	+	25	98
+	+	24	74
+	+	25	75
+	+	555	0
+	+	560	0
+	+	557	4
+	+	557	0
+	+	556	30
+	+	557	0
+	+	558	33
+	+	559	0
+	+	559	27
+	+	145	33
+	+	14	25
+	+	355	0
+	+	451	0
+	+	248	31
+	+	150	0
+	+	152	0
+	+	151	0
+
+> /media/cur_project/TemporalConsistentDepth/utils/utils.py
+	"	27	0
+	^	39	24
+	.	39	23
+	+	7	5
+	+	8	6
+	+	79	0
+	+	79	0
+	+	79	0
+	+	80	0
+	+	61	0
+	+	65	5
+	+	61	4
+	+	62	40
+	+	62	0
+	+	62	0
+	+	62	0
+	+	65	0
+	+	38	0
+	+	39	52
+	+	48	0
+	+	44	0
+	+	44	0
+	+	47	0
+	+	47	0
+	+	40	0
+	+	40	0
+	+	42	0
+	+	42	0
+	+	52	39
+	+	52	0
+	+	43	21
+	+	27	19
+	+	33	19
+	+	27	17
+	+	33	17
+	+	39	23
+
+> /media/cur_project/TemporalConsistentDepth/test_depth_LSTM.py
+	"	49	0
+
+> /media/cur_project/TemporalConsistentDepth/eval_utils/eval_depth_video.py
+	"	11	40
+	^	11	41
+	.	11	40
+	+	1	0
+	+	232	0
+	+	181	0
+	+	11	34
+	+	10	20
+	+	9	19
+	+	10	0
+	+	36	0
+	+	64	10
+	+	64	6
+	+	64	0
+	+	64	0
+	+	64	0
+	+	36	0
+	+	35	0
+	+	36	0
+	+	35	0
+	+	64	0
+	+	11	40
+
+> /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
+	"	346	0
+	^	115	46
+	.	115	45
+	+	9	5
+	+	191	0
+	+	71	0
+	+	70	0
+	+	71	35
+	+	81	19
+	+	82	20
+	+	83	19
+	+	84	20
+	+	82	62
+	+	83	58
+	+	84	60
+	+	85	34
+	+	85	52
+	+	86	53
+	+	85	0
+	+	89	14
+	+	91	0
+	+	90	36
+	+	91	38
+	+	92	39
+	+	91	21
+	+	103	16
+	+	104	0
+	+	103	29
+	+	92	21
+	+	104	78
+	+	109	78
+	+	110	29
+	+	118	78
+	+	119	78
+	+	123	21
+	+	124	21
+	+	126	47
+	+	130	30
+	+	86	53
+	+	115	45
+
+> /media/cur_project/TemporalConsistentDepth/scripts/stereo_LSTM_run.sh
+	"	63	4
+	^	94	40
+	.	40	0
+	+	27	15
+	+	28	19
+	+	29	14
+	+	53	0
+	+	56	0
+	+	91	47
+	+	92	17
+	+	95	0
+	+	92	19
+	+	92	20
+	+	95	0
+	+	92	31
+	+	93	19
+	+	93	20
+	+	95	0
+	+	93	31
+	+	94	24
+	+	94	24
+	+	94	25
+	+	95	0
+	+	94	39
+	+	40	0
 
 > /media/cur_project/TemporalConsistentDepth/networks/PWC_net_modified.py
 	"	789	8
@@ -424,111 +758,6 @@ $Unit_Cube_L
 	+	264	0
 	+	277	24
 	+	38	24
-
-> /media/cur_project/TemporalConsistentDepth/train_flow_LSTM.py
-	"	246	31
-	^	246	32
-	.	246	31
-	+	553	35
-	+	558	41
-	+	118	0
-	+	119	126
-	+	119	48
-	+	74	0
-	+	69	0
-	+	73	0
-	+	118	0
-	+	119	0
-	+	120	0
-	+	69	81
-	+	71	80
-	+	65	51
-	+	65	0
-	+	157	43
-	+	157	43
-	+	157	38
-	+	157	38
-	+	172	0
-	+	172	33
-	+	172	0
-	+	172	125
-	+	172	125
-	+	172	27
-	+	172	0
-	+	172	0
-	+	172	0
-	+	158	0
-	+	157	0
-	+	155	53
-	+	156	53
-	+	158	53
-	+	159	53
-	+	161	65
-	+	162	67
-	+	181	0
-	+	167	0
-	+	166	0
-	+	172	0
-	+	164	35
-	+	165	36
-	+	164	36
-	+	165	36
-	+	450	24
-	+	242	33
-	+	509	29
-	+	463	29
-	+	171	0
-	+	169	0
-	+	123	38
-	+	124	0
-	+	352	0
-	+	244	0
-	+	256	0
-	+	256	53
-	+	256	53
-	+	256	0
-	+	256	0
-	+	256	53
-	+	256	0
-	+	272	0
-	+	265	33
-	+	266	33
-	+	265	33
-	+	266	33
-	+	552	35
-	+	552	25
-	+	552	32
-	+	552	26
-	+	550	0
-	+	552	0
-	+	552	0
-	+	555	0
-	+	558	28
-	+	558	0
-	+	558	34
-	+	558	0
-	+	558	0
-	+	558	23
-	+	281	0
-	+	25	80
-	+	24	97
-	+	25	98
-	+	24	74
-	+	25	75
-	+	553	0
-	+	558	0
-	+	555	4
-	+	555	0
-	+	554	30
-	+	555	0
-	+	556	33
-	+	557	0
-	+	557	27
-	+	145	33
-	+	14	25
-	+	353	0
-	+	449	0
-	+	246	31
 
 > /media/cur_project/TemporalConsistentDepth/train_flow.py
 	"	226	0
@@ -645,111 +874,6 @@ $Unit_Cube_L
 > /media/cur_project/TemporalConsistentDepth/eval_utils/train_flow_LSTM.py
 	"	1	0
 
-> /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
-	"	382	8
-	^	35	35
-	.	35	34
-	+	399	0
-	+	400	30
-	+	401	0
-	+	402	32
-	+	403	0
-	+	403	29
-	+	161	66
-	+	402	16
-	+	161	0
-	+	170	0
-	+	173	0
-	+	176	0
-	+	169	0
-	+	172	0
-	+	175	0
-	+	347	0
-	+	275	0
-	+	275	0
-	+	271	49
-	+	271	20
-	+	271	0
-	+	271	22
-	+	271	0
-	+	271	0
-	+	274	0
-	+	295	0
-	+	302	0
-	+	301	47
-	+	302	0
-	+	296	75
-	+	297	45
-	+	301	0
-	+	296	78
-	+	298	46
-	+	299	65
-	+	300	67
-	+	292	54
-	+	308	0
-	+	182	0
-	+	196	0
-	+	194	0
-	+	48	65
-	+	49	0
-	+	147	34
-	+	412	0
-	+	114	50
-	+	115	38
-	+	409	4
-	+	410	28
-	+	411	0
-	+	410	28
-	+	124	146
-	+	121	128
-	+	410	29
-	+	410	0
-	+	410	0
-	+	410	27
-	+	411	0
-	+	422	0
-	+	84	48
-	+	12	56
-	+	266	34
-	+	12	30
-	+	157	0
-	+	149	25
-	+	150	39
-	+	149	24
-	+	84	48
-	+	12	56
-	+	266	26
-	+	259	0
-	+	261	0
-	+	266	40
-	+	84	48
-	+	12	56
-	+	271	66
-	+	274	0
-	+	272	0
-	+	274	0
-	+	274	0
-	+	12	56
-	+	84	48
-	+	266	30
-	+	267	30
-	+	84	48
-	+	12	10
-	+	10	10
-	+	12	0
-	+	10	24
-	+	12	0
-	+	14	0
-	+	14	0
-	+	15	0
-	+	11	0
-	+	11	9
-	+	69	71
-	+	71	71
-	+	73	76
-	+	30	60
-	+	35	34
-
 > /media/cur_project/TemporalConsistentDepth/networks/PWC_net.py
 	"	487	0
 	^	124	26
@@ -814,67 +938,6 @@ $Unit_Cube_L
 	.	6	5
 	+	6	5
 
-> /media/cur_project/TemporalConsistentDepth/utils/utils.py
-	"	57	22
-	^	57	50
-	.	60	0
-	+	7	5
-	+	8	6
-	+	74	0
-	+	74	0
-	+	74	0
-	+	75	0
-	+	56	0
-	+	60	5
-	+	56	4
-	+	57	40
-	+	57	0
-	+	57	0
-	+	57	0
-	+	60	0
-
-> /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
-	"	115	45
-	^	115	46
-	.	115	45
-	+	9	5
-	+	191	0
-	+	71	0
-	+	70	0
-	+	71	35
-	+	81	19
-	+	82	20
-	+	83	19
-	+	84	20
-	+	82	62
-	+	83	58
-	+	84	60
-	+	85	34
-	+	85	52
-	+	86	53
-	+	85	0
-	+	89	14
-	+	91	0
-	+	90	36
-	+	91	38
-	+	92	39
-	+	91	21
-	+	103	16
-	+	104	0
-	+	103	29
-	+	92	21
-	+	104	78
-	+	109	78
-	+	110	29
-	+	118	78
-	+	119	78
-	+	123	21
-	+	124	21
-	+	126	47
-	+	130	30
-	+	86	53
-	+	115	45
-
 > /media/cur_project/TemporalConsistentDepth/scripts/flow_LSTM_run.sh
 	"	41	33
 	^	41	34
@@ -909,9 +972,6 @@ $Unit_Cube_L
 	+	41	33
 
 > /media/cur_project/TemporalConsistentDepth/scripts/flow_run.sh
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/scripts/stereo_LSTM_run.sh
 	"	1	0
 
 > /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video_train.txt
@@ -1226,29 +1286,6 @@ $Unit_Cube_L
 
 > /media/cur_project/TemporalConsistentDepth/train_depth_l
 	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/eval_utils/eval_depth_video.py
-	"	64	0
-	^	64	0
-	.	64	0
-	+	1	0
-	+	232	0
-	+	181	0
-	+	11	34
-	+	10	20
-	+	9	19
-	+	10	0
-	+	36	0
-	+	64	10
-	+	64	6
-	+	64	0
-	+	64	0
-	+	64	0
-	+	36	0
-	+	35	0
-	+	36	0
-	+	35	0
-	+	64	0
 
 > /media/cur_project/TemporalConsistentDepth/eval_utils/eval_depth_2015.py
 	"	42	0
@@ -3126,23 +3163,3 @@ $Unit_Cube_L
 	+	3	0
 	+	3	0
 	+	4	0
-
-> ~/catkin_ws/src/Block_Pose/CMakeLists.txt
-	"	1	0
-
-> ~/catkin_ws/src/Block_Pose/Cm
-	"	1	0
-
-> ~/.bashrc
-	"	121	28
-	^	121	29
-	.	121	28
-	+	124	0
-	+	121	0
-	+	124	0
-	+	122	0
-	+	125	0
-	+	121	28
-
-> /opt/ros/kinetic/lib/python2.7/dist-packages/roslz4/__init__.py
-	"	27	0
