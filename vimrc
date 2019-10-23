@@ -39,6 +39,8 @@ Plugin 'vim-python/python-syntax'
 " colorscheme
 Plugin 'junegunn/seoul256.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+" latex
+Plugin 'xuhdev/vim-latex-live-preview'
 call vundle#end()            " required
 "NERDTree ON 단축키를 "\nt"로 설정
 map <Leader>nt <ESC>:NERDTree<CR>
@@ -169,3 +171,5 @@ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-a> :TmuxNavigatePrevious<cr>
 set shell=/bin/bash
+" set latex 
+autocmd Filetype tex setl updatetime=1
