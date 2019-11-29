@@ -43,8 +43,10 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'xuhdev/vim-latex-live-preview'
 call vundle#end()            " required
 "NERDTree ON 단축키를 "\nt"로 설정
-map <Leader>nt <ESC>:NERDTree<CR>
-let NERDTreeShowHidden=1
+map <C-n> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " let NERDTreeQuitOnOpen=1
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|vendor$',
@@ -111,9 +113,6 @@ set mouse=a
 " 한글 입력 설정
 set encoding=utf-8
 set termencoding=utf-8
-" 상태바 표시를 항상한다
-set laststatus=2 
-set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
 " 검색 설정
 set ignorecase
 " 마지막으로 수정된 곳에 커서를 위치함
@@ -150,9 +149,6 @@ set autochdir
 :cmap Q! q!
 
 " vim syntatinc
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -171,5 +167,5 @@ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-a> :TmuxNavigatePrevious<cr>
 set shell=/bin/bash
-" set latex 
-autocmd Filetype tex setl updatetime=1
+" disalbe statline syntatics
+let g:statline_syntastic = 0
