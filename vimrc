@@ -27,7 +27,9 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 " All of your Plugins must be added before the following line
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 " YCM install
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -41,17 +43,26 @@ Plugin 'junegunn/seoul256.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 " latex
 Plugin 'xuhdev/vim-latex-live-preview'
+" buffet
 call vundle#end()            " required
+
+let g:tablineclosebutton=1
 "NERDTree ON 단축키를 "\nt"로 설정
 map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let NERDTreeMapOpenInTab='<ENTER>'
 
 " let NERDTreeQuitOnOpen=1
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|vendor$',
     \ 'file': '\v\.(exe|so|dll)$'
 \ }
+let g:nerdtree_tabs_open_on_console_startup=0
+" vim airline
+let g:airline_theme='simple'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 " tags 설정
 set tags=./tags
 set tags+=../tags
@@ -63,8 +74,9 @@ let g:easytags_file = '~/.vimtags'
 
 noremap <c-]> 2<c-]>
 " ycm 환경 설정 
-let g:ycm_show_diagnostics_ui = 1 
-let g:ycm_enable_diagnostic_signs = 1 
+let g:ycm_show_diagnostics_ui = 1
+let g:ycm_echo_current_diagnostic = 0
+let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0 
 let g:ycm_confirm_extra_conf = 1 
 let g:ycm_key_list_select_completion = ['', '']
@@ -76,7 +88,6 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_collect_identifiers_from_tags_files = 1
 highlight YcmErrorSign guibg=#3f0000
 
-
 " nnoremap gi :YcmCompleter GoToInclude
 " nnoremap gD : YcmCompleter GoToDefinition
 " nnoremap gd :YcmCompleter GoToDeclaration
@@ -87,6 +98,10 @@ nmap <C-H> <C-W>h                           "왼쪽 창으로 이동
 nmap <C-J> <C-W>j                           "아래 창으로 이동
 nmap <C-K> <C-W>k                           "윗 창으로 이동
 nmap <C-L> <C-W>l                           "오른쪽 창으로 이동
+" tabnew normap
+ca tn tabnew
+noremap <S-l> gt
+noremap <S-h> gT
 " detail information 
 set nu
 set title
@@ -155,9 +170,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 "color
+set t_Co=256
 let g:seoul256_background = 235
 colo seoul256
-"set split with crtlp
+" set split with crtlp
 set splitright
 " tmux navigation 
 let g:tmux_navigator_no_mappings = 1
@@ -169,3 +185,4 @@ nnoremap <silent> <c-a> :TmuxNavigatePrevious<cr>
 set shell=/bin/bash
 " disalbe statline syntatics
 let g:statline_syntastic = 0
+
