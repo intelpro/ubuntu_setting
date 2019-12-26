@@ -40,10 +40,12 @@ Plugin 'xolox/vim-misc'
 Plugin 'vim-python/python-syntax'
 " colorscheme
 Plugin 'junegunn/seoul256.vim'
+Plugin 'sainnhe/gruvbox-material'
+" vim tmux navigator
 Plugin 'christoomey/vim-tmux-navigator'
 " latex
 Plugin 'xuhdev/vim-latex-live-preview'
-" buffet
+" colorscheme
 call vundle#end()            " required
 
 let g:tablineclosebutton=1
@@ -60,7 +62,7 @@ let g:ctrlp_custom_ignore = {
 \ }
 let g:nerdtree_tabs_open_on_console_startup=0
 " vim airline
-let g:airline_theme='simple'
+let g:airline_theme='base16'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 " tags 설정
@@ -170,9 +172,16 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 "color
-set t_Co=256
-let g:seoul256_background = 235
-colo seoul256
+" set termguicolors
+set background=dark
+" set contrast
+let g:gruvbox_material_background = 'medium'
+colorscheme gruvbox-material
+let g:airline_theme = 'gruvbox_material'
+" set t_Co=256
+" let g:seoul256_background = 235
+" let base16colorspace=256   " Access colors present in 256 colorspace
+" colorscheme base16-default-dark
 " set split with crtlp
 set splitright
 " tmux navigation 
