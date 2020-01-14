@@ -11,119 +11,189 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/\V\<mbInitial\>
+~MSle0~/\V\<border_mask\>
 
 # Last Substitute Search Pattern:
-~MSle0&Debug_Object
+~MSle0&imLeft
 
 # Last Substitute String:
-$Debug_Object_verbose_flag
+$left_image
 
 # Command Line History (newest to oldest):
-:Wq
-|2,0,1577348293,,"Wq"
-:W
-|2,0,1577348291,,"W"
-:w
-|2,0,1577348277,,"w"
-:sp ../include/Frame.h
-|2,0,1577348265,,"sp ../include/Frame.h"
 :wq
-|2,0,1577348204,,"wq"
-:set nopaste
-|2,0,1577348178,,"set nopaste"
-:set paste
-|2,0,1577348171,,"set paste"
-:tabnew Frame.cc
-|2,0,1577347460,,"tabnew Frame.cc"
+|2,0,1578973642,,"wq"
+:w
+|2,0,1578973628,,"w"
+:Wq
+|2,0,1578973579,,"Wq"
+:W
+|2,0,1578972364,,"W"
 :noh
-|2,0,1577346770,,"noh"
-:q!
-|2,0,0,,"q!"
-:PluginInstall
-|2,0,0,,"PluginInstall"
-:Plugin
-|2,0,0,,"Plugin"
-:tabnew SystemHandler.cc
-|2,0,0,,"tabnew SystemHandler.cc"
-:colorscheme base16-default-dark
-|2,0,0,,"colorscheme base16-default-dark"
-:colorscheme base16-default
-|2,0,0,,"colorscheme base16-default"
-:Q!
-|2,0,0,,"Q!"
-:WQ
-|2,0,0,,"WQ"
-:kjjj
-|2,0,0,,"kjjj"
-:LL
-|2,0,0,,"LL"
-:92
-|2,0,0,,"92"
-:81
-|2,0,0,,"81"
-:74
-|2,0,0,,"74"
-:65
-|2,0,0,,"65"
-:sp ../include/ORBmatcher.h
-|2,0,0,,"sp ../include/ORBmatcher.h"
-:sp ../include/ORBextractor.h
-|2,0,0,,"sp ../include/ORBextractor.h"
-:tabnew ../src/ORBmatcher.cc
-|2,0,0,,"tabnew ../src/ORBmatcher.cc"
-:tabnew ORBextractor.cc
-|2,0,0,,"tabnew ORBextractor.cc"
-:66
-|2,0,0,,"66"
+|2,0,1578972192,,"noh"
+:sp ../include/KeyFrame.h
+|2,0,1578483380,,"sp ../include/KeyFrame.h"
+:93
+|2,0,1578483347,,"93"
+:tabnew KeyFrame.cc
+|2,0,1578482741,,"tabnew KeyFrame.cc"
+:kkkk
+|2,0,1577462128,,"kkkk"
 :16
-|2,0,0,,"16"
-:>>
-|2,0,0,,">>"
+|2,0,1577461829,,"16"
+:nohj
+|2,0,1577461802,,"nohj"
+::
+|2,0,1577461690,,":"
+:tabnew MapPoint.h
+|2,0,1577461656,,"tabnew MapPoint.h"
+:40
+|2,0,1577461637,,"40"
+:tabnew ../include/KeyFrame.h
+|2,0,1577461499,,"tabnew ../include/KeyFrame.h"
+:tabnew ../include/Tracker.h
+|2,0,1577461277,,"tabnew ../include/Tracker.h"
+:14
+|2,0,1577460980,,"14"
+:!4
+|2,0,1577460978,,"!4"
+:set nopaste
+|2,0,1577458304,,"set nopaste"
+:set paste
+|2,0,1577458298,,"set paste"
+:19
+|2,0,1577458271,,"19"
+:12
+|2,0,1577458124,,"12"
+:11
+|2,0,1577458109,,"11"
+:!1
+|2,0,1577458107,,"!1"
+:.
+|2,0,1577457732,,"."
+:LW
+|2,0,1577457633,,"LW"
+:tabnew ../src/Map.cc
+|2,0,1577457609,,"tabnew ../src/Map.cc"
+:q!
+|2,0,1577457602,,"q!"
+:tabnew Map.cc
+|2,0,1577457601,,"tabnew Map.cc"
+:tn 
+|2,0,1577457595,,"tn "
+:Qq
+|2,0,1577457429,,"Qq"
+:qq
+|2,0,1577457427,,"qq"
+:tabnew Map.h
+|2,0,1577457406,,"tabnew Map.h"
+:23
+|2,0,1577457351,,"23"
+:nboh
+|2,0,1577457026,,"nboh"
+:tabnew ../include/MapPoint.h
+|2,0,1577455406,,"tabnew ../include/MapPoint.h"
+:tabnew ../include/Map.h
+|2,0,1577455396,,"tabnew ../include/Map.h"
+:h
+|2,0,1577455231,,"h"
+:20
+|2,0,1577438876,,"20"
+:wa;:
+|2,0,1577438621,,"wa;:"
+:ㅈ
+|2,0,1577437881,,"ㅈ"
+:ㅉ
+|2,0,1577437497,,"ㅉ"
+:sp ../src/Frame.cc
+|2,0,1577436429,,"sp ../src/Frame.cc"
+:sp ../include/Frame.h
+|2,0,1577436178,,"sp ../include/Frame.h"
+:vs ../src/Frame.cc
+|2,0,1577435898,,"vs ../src/Frame.cc"
+:tabnew ../src/Frame.cc
+|2,0,1577435891,,"tabnew ../src/Frame.cc"
+:tabnew Frame.h
+|2,0,1577435880,,"tabnew Frame.h"
 :tabnew ../include/Frame.h
-|2,0,0,,"tabnew ../include/Frame.h"
-:W1
-|2,0,0,,"W1"
-:Wa
-|2,0,0,,"Wa"
-:tabnew ORBmatcher.cc
-|2,0,0,,"tabnew ORBmatcher.cc"
-:sp 
-|2,0,0,,"sp "
-:tabnew ../include/ORBmatcher.h
-|2,0,0,,"tabnew ../include/ORBmatcher.h"
-:AirlineTheme base16
-|2,0,0,,"AirlineTheme base16"
-:s
-|2,0,0,,"s"
-:sp ../include/SystemHandler.h
-|2,0,0,,"sp ../include/SystemHandler.h"
-:tabnew ../include/SystemHandler.h
-|2,0,0,,"tabnew ../include/SystemHandler.h"
-:q
-|2,0,0,,"q"
-:tabnew ../
-|2,0,0,,"tabnew ../"
-:tabnew ../CMakeLists.txt
-|2,0,0,,"tabnew ../CMakeLists.txt"
-:N
-|2,0,0,,"N"
-:AirlineTheme simple
-|2,0,0,,"AirlineTheme simple"
-:AirlineTheme silver
-|2,0,0,,"AirlineTheme silver"
-:AirlineTheme solarized
-|2,0,0,,"AirlineTheme solarized"
-:AirlineTheme tommorrow
-|2,0,0,,"AirlineTheme tommorrow"
-:AirlineTheme base16_nord
-|2,0,0,,"AirlineTheme base16_nord"
-:AirlineTheme base16_flat
-|2,0,0,,"AirlineTheme base16_flat"
+|2,0,1577435447,,"tabnew ../include/Frame.h"
+:tabnew Frame.cc
+|2,0,1577435440,,"tabnew Frame.cc"
+:102
+|2,0,1577429035,,"102"
 
 # Search String History (newest to oldest):
+?/_type
+|2,1,1578970952,47,"_type"
+?/type
+|2,1,1578970938,47,"type"
+?/fix_flownet
+|2,1,1578969717,47,"fix_flownet"
+? \<self\>
+|2,1,1578968307,,"\\<self\\>"
+?/mvpMapPoints
+|2,1,1578482871,47,"mvpMapPoints"
+?/mMutexFeatures
+|2,1,1578482822,47,"mMutexFeatures"
+?/mpMap
+|2,1,1577461721,47,"mpMap"
+?/mObservation
+|2,1,1577460926,47,"mObservation"
+?/mObservations
+|2,1,1577458386,47,"mObservations"
+?/clear
+|2,1,1577458051,47,"clear"
+?/sit
+|2,1,1577457984,47,"sit"
+?/mspMapPoints
+|2,1,1577457699,47,"mspMapPoints"
+?/normal
+|2,1,1577456993,47,"normal"
+?/mHalfBaseline
+|2,1,1577438636,47,"mHalfBaseline"
+?/mv
+|2,1,1577436468,47,"mv"
+?/mvu
+|2,1,1577436434,47,"mvu"
+?/mvDepth
+|2,1,1577436396,47,"mvDepth"
+?/mvudepth
+|2,1,1577436358,47,"mvudepth"
+?/mvuDEpth
+|2,1,1577436354,47,"mvuDEpth"
+?/m
+|2,1,1577436319,47,"m"
+?/mDescriptors
+|2,1,1577436303,47,"mDescriptors"
+?/mnFrameId
+|2,1,1577436027,47,"mnFrameId"
 ?/mb
-|2,1,1577346167,47,"mb"
+|2,1,1577435852,47,"mb"
+?/mTh
+|2,1,1577435820,47,"mTh"
+?/mThDepth
+|2,1,1577435815,47,"mThDepth"
+? \<Frame\>
+|2,1,1577435783,,"\\<Frame\\>"
+?/mbf
+|2,1,1577435731,47,"mbf"
+?/mTcw
+|2,1,1577435517,47,"mTcw"
+?/id
+|2,1,1577435510,47,"id"
+?//id
+|2,1,1577435508,47,"/id"
+?/mnid
+|2,1,1577435391,47,"mnid"
+?/mnId
+|2,1,1577435388,47,"mnId"
+?/static
+|2,1,1577435211,47,"static"
+?/mNextId
+|2,1,1577435144,47,"mNextId"
+?/Frame
+|2,1,1577358181,47,"Frame"
+? imLeft
+|2,1,1577352107,,"imLeft"
 ?/gruvbox
 |2,1,0,47,"gruvbox"
 ?/colo
@@ -134,12 +204,8 @@ $Debug_Object_verbose_flag
 |2,1,0,47,"colorsche"
 ?/histo
 |2,1,0,47,"histo"
-?/mvu
-|2,1,0,47,"mvu"
 ?/mvKeys
 |2,1,0,47,"mvKeys"
-?/m
-|2,1,0,47,"m"
 ?/simple
 |2,1,0,47,"simple"
 ?/airline
@@ -156,72 +222,6 @@ $Debug_Object_verbose_flag
 |2,1,0,47,"mo"
 ?//Check settings file
 |2,1,0,47,"/Check settings file"
-??L
-|2,1,0,63,"L"
-?/ycm
-|2,1,0,47,"ycm"
-?/green
-|2,1,0,47,"green"
-?/imshow
-|2,1,0,47,"imshow"
-?/cat
-|2,1,0,47,"cat"
-?/honcat
-|2,1,0,47,"honcat"
-?/projected_image
-|2,1,0,47,"projected_image"
-?/c
-|2,1,0,47,"c"
-?/verbose
-|2,1,0,47,"verbose"
-?/b
-|2,1,0,47,"b"
-?/block_center_red
-|2,1,0,47,"block_center_red"
-?/Cloud_for_viewer
-|2,1,0,47,"Cloud_for_viewer"
-?/Cloud
-|2,1,0,47,"Cloud"
-?/cout
-|2,1,0,47,"cout"
-?/cour
-|2,1,0,47,"cour"
-?/cout << color
-|2,1,0,47,"cout << color"
-?/cout << "Grid
-|2,1,0,47,"cout << \"Grid"
-? Debug_Object
-|2,1,0,,"Debug_Object"
-?/Debug_object_verbose
-|2,1,0,47,"Debug_object_verbose"
-?/Debug_object
-|2,1,0,47,"Debug_object"
-?/Debug_Object
-|2,1,0,47,"Debug_Object"
-?/Debug
-|2,1,0,47,"Debug"
-?/cout << Grid
-|2,1,0,47,"cout << Grid"
-?/_color_string
-|2,1,0,47,"_color_string"
-??>
-|2,1,0,63,">"
-?/change_flag
-|2,1,0,47,"change_flag"
-? x
-|2,1,0,,"x"
-?/lw'jk]
-|2,1,0,47,"lw'jk]"
-?/Projected
-|2,1,0,47,"Projected"
-?/_Rect
-|2,1,0,47,"_Rect"
-?/gray
-|2,1,0,47,"gray"
-? gray
-|2,1,0,,"gray"
-?/Proje
-|2,1,0,47,"Proje"
 
 # Expression History (newest to oldest):
 
@@ -230,275 +230,849 @@ $Debug_Object_verbose_flag
 # Debug Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	            mfGridElementWidthInv = static_cast<float>(FRAME_GRID_COLS/mnMaxX - mnMinX);
-|3,0,0,1,1,0,1577348233,"            mfGridElementWidthInv = static_cast<float>(FRAME_GRID_COLS/mnMaxX - mnMinX);"
+"0	CHAR	0
+	
+	                left = torch.cat((left_t1, left_t2), 0).cuda()
+	                right = torch.cat((right_t1, right_t2), 0).cuda()
+	
+	                model_input = Variable(torch.cat((left, right), 1).cuda())
+	
+|3,0,0,0,6,0,1578971914,"","                left = torch.cat((left_t1, left_t2), 0).cuda()","                right = torch.cat((right_t1, right_t2), 0).cuda()","","                model_input = Variable(torch.cat((left, right), 1).cuda())",""
 "1	LINE	0
-	            // keypoints are assigned to cells in a grid to reduce matching complexity when projecting Mapoints
-|3,0,1,1,1,0,1577348175,"            // keypoints are assigned to cells in a grid to reduce matching complexity when projecting Mapoints"
-"2	LINE	0
-	            /
-|3,0,2,1,1,0,1577348170,"            /"
-"3	LINE	0
 	
-|3,0,3,1,1,0,1577348125,""
+|3,0,1,1,1,0,1578972363,""
+"2	CHAR	0
+	    def train_loop_LSTM(self):
+	        if self.args.first_eval_flag:
+	            self.train_test_depth_2(self.args.input_height, self.args.input_width)
+	            self.train_test_flow_2(self.args.input_height, self.args.input_width)
+	        start_time = time.time()
+	        for epoch in range(self.args.epochs):
+	            self.epoch = epoch
+	            self.scheduler.step()
+	            total_loss, total_flow_loss, total_disp_loss, total_loop_loss, tot_x_dist_mean, tot_y_dist_mean = [0.0]*6
+	            index = 0
+	            self.flow_model.train()
+	            self.disp_model.train()
+	            LSTM_state_flow1 = [None]*self.flow_model.LSTM_n
+	            LSTM_state_flow2 = [None]*self.flow_model.LSTM_n
+	            LSTM_state_depth = [None]*self.disp_model.LSTM_n
+	            for data in self.train_loader:
+	                self.optimizer.zero_grad()
+	                left_t1 = data['left_image_t1']
+	                left_t2 = data['left_image_t2']
+	                right_t1 = data['right_image_t1']
+	                right_t2 = data['right_image_t2']
+	
+	                former = torch.cat((left_t1, right_t1), 0).cuda()
+	                latter = torch.cat((left_t2, right_t2), 0).cuda()
+	
+	                former_pyramid = scale_pyramid(former, 4)
+	                latter_pyramid = scale_pyramid(latter, 4)
+	
+	                model_input = Variable(torch.cat((former, latter), 1).cuda())
+	                model_input_2 = Variable(torch.cat((latter, former), 1).cuda())
+	
+	                loss_flow = self.flow_loss(model_input, model_input_2)
+	
+	                left = torch.cat((left_t1, left_t2), 0).cuda()
+	                right = torch.cat((right_t1, right_t2), 0).cuda()
+	
+	                model_input = Variable(torch.cat((left, right), 1).cuda())
+	
+	                x_dist_dict, y_dist_dict = self.loop_loss(disp_est_scale_left, disp_est_scale_right, disp_est_scale_fw, disp_est_scale_bw)
+	                # Loop loss
+	                x_dist_mean = sum(x_dist_dict)/len(x_dist_dict)
+	                y_dist_mean = sum(y_dist_dict)/len(y_dist_dict)
+	                loss_loop = self.args.loop_scale*(self.args.x_weight*x_dist_mean + self.args.y_weight*y_dist_mean)
+	
+	                loss = self.args.disp_w*loss_disp + self.args.flow_w*loss_flow + loss_loop
+	
+	                loss.backward()
+	                self.optimizer.step()
+	                total_loss += loss.item()
+	                total_disp_loss += self.args.disp_w*loss_disp.item()
+|3,0,2,0,50,0,1578972361,"    def train_loop_LSTM(self):","        if self.args.first_eval_flag:","            self.train_test_depth_2(self.args.input_height, self.args.input_width)","            self.train_test_flow_2(self.args.input_height, self.args.input_width)","        start_time = time.time()","        for epoch in range(self.args.epochs):","            self.epoch = epoch","            self.scheduler.step()",>119
+|<"            total_loss, total_flow_loss, total_disp_loss, total_loop_loss, tot_x_dist_mean, tot_y_dist_mean = [0.0]*6","            index = 0","            self.flow_model.train()","            self.disp_model.train()","            LSTM_state_flow1 = [None]*self.flow_model.LSTM_n","            LSTM_state_flow2 = [None]*self.flow_model.LSTM_n","            LSTM_state_depth = [None]*self.disp_model.LSTM_n","            for data in self.train_loader:",>44
+|<"                self.optimizer.zero_grad()","                left_t1 = data['left_image_t1']","                left_t2 = data['left_image_t2']","                right_t1 = data['right_image_t1']","                right_t2 = data['right_image_t2']","","                former = torch.cat((left_t1, right_t1), 0).cuda()","                latter = torch.cat((left_t2, right_t2), 0).cuda()","","                former_pyramid = scale_pyramid(former, 4)",>59
+|<"                latter_pyramid = scale_pyramid(latter, 4)","","                model_input = Variable(torch.cat((former, latter), 1).cuda())","                model_input_2 = Variable(torch.cat((latter, former), 1).cuda())","","                loss_flow = self.flow_loss(model_input, model_input_2)","","                left = torch.cat((left_t1, left_t2), 0).cuda()","                right = torch.cat((right_t1, right_t2), 0).cuda()","",>76
+|<"                model_input = Variable(torch.cat((left, right), 1).cuda())","","                x_dist_dict, y_dist_dict = self.loop_loss(disp_est_scale_left, disp_est_scale_right, disp_est_scale_fw, disp_est_scale_bw)","                # Loop loss","                x_dist_mean = sum(x_dist_dict)/len(x_dist_dict)","                y_dist_mean = sum(y_dist_dict)/len(y_dist_dict)",>116
+|<"                loss_loop = self.args.loop_scale*(self.args.x_weight*x_dist_mean + self.args.y_weight*y_dist_mean)","","                loss = self.args.disp_w*loss_disp + self.args.flow_w*loss_flow + loss_loop","","                loss.backward()","                self.optimizer.step()","                total_loss += loss.item()","                total_disp_loss += self.args.disp_w*loss_disp.item()"
+"3	CHAR	0
+	        # border_mask
+	        if self.args.Loop_Mask_type=='border':
+	            border_mask = create_border_mask(flow_left_bw, self.args.border_ratio)
+	            border_mask = border_mask.detach()
+	
+	
+|3,0,3,0,6,0,1578972332,"        # border_mask","        if self.args.Loop_Mask_type=='border':","            border_mask = create_border_mask(flow_left_bw, self.args.border_ratio)","            border_mask = border_mask.detach()","",""
 "4	LINE	0
-	            mfGrid
-|3,0,4,1,1,0,1577348124,"            mfGrid"
-"5	LINE	0
+	        elif self.args.Loop_Mask_type=='fb':
+|3,0,4,1,1,0,1578972321,"        elif self.args.Loop_Mask_type=='fb':"
+"5	CHAR	0
+	        if self.args.Loop_Mask_type=='border':
+	            x_dist_dict.append(torch.mean(border_mask.squeeze(1)*x_dist_4))
+	            y_dist_dict.append(torch.mean(border_mask.squeeze(1)*y_dist_4))
+	        elif self.args.Loop_Mask_type=='outgoing':
+	            occ1_4 = occ_right_t2.detach()
+	            occ2_4 = Resample2d()(occ_bw_left, x1_4).detach()
+	            occ3_4 = Resample2d()(occ_left_t1, x1_4 + x2_4).detach()
+	            occ4_4 = Resample2d()(occ_fw_right, x1_4 + x2_4 + x3_4).detach()
+	            occ_tot_4 = occ1_4*occ2_4*occ3_4*occ4_4
+	            occ_tot_4 = occ_tot_4.detach()
+	            x_dist_dict.append(torch.mean(occ_tot_4.squeeze()*x_dist_4.squeeze())/torch.mean(occ_tot_4))
+	            y_dist_dict.append(torch.mean(occ_tot_4.squeeze()*y_dist_4.squeeze())/torch.mean(occ_tot_4))
 	
-|3,0,5,1,1,0,1577348097,""
+|3,0,5,0,13,0,1578972320,"        if self.args.Loop_Mask_type=='border':","            x_dist_dict.append(torch.mean(border_mask.squeeze(1)*x_dist_4))","            y_dist_dict.append(torch.mean(border_mask.squeeze(1)*y_dist_4))","        elif self.args.Loop_Mask_type=='outgoing':","            occ1_4 = occ_right_t2.detach()","            occ2_4 = Resample2d()(occ_bw_left, x1_4).detach()","            occ3_4 = Resample2d()(occ_left_t1, x1_4 + x2_4).detach()",>78
+|<"            occ4_4 = Resample2d()(occ_fw_right, x1_4 + x2_4 + x3_4).detach()","            occ_tot_4 = occ1_4*occ2_4*occ3_4*occ4_4","            occ_tot_4 = occ_tot_4.detach()","            x_dist_dict.append(torch.mean(occ_tot_4.squeeze()*x_dist_4.squeeze())/torch.mean(occ_tot_4))","            y_dist_dict.append(torch.mean(occ_tot_4.squeeze()*y_dist_4.squeeze())/torch.mean(occ_tot_4))",""
 "6	LINE	0
+	        elif self.args.Loop_Mask_type=='fb':
+|3,0,6,1,1,0,1578972309,"        elif self.args.Loop_Mask_type=='fb':"
+"7	CHAR	0
+	        if self.args.Loop_Mask_type=='border':
+	            x_dist_dict.append(torch.mean(border_mask.squeeze(1)*x_dist_3))
+	            y_dist_dict.append(torch.mean(border_mask.squeeze(1)*y_dist_3))
+	        elif self.args.Loop_Mask_type=='outgoing':
+	            occ1_3 = occ_bw_right.detach()
+	            occ2_3 = Resample2d()(occ_right_t1, x1_3).detach()
+	            occ3_3 = Resample2d()(occ_fw_left, x1_3 + x2_3).detach()
+	            occ4_3 = Resample2d()(occ_left_t2, x1_3 + x2_3 + x3_3).detach()
+	            occ_tot_3 = occ1_3*occ2_3*occ3_3*occ4_3
+	            occ_tot_3 = occ_tot_3.detach()
+	            x_dist_dict.append(torch.mean(occ_tot_3.squeeze()*x_dist_3.squeeze())/torch.mean(occ_tot_3))
+	            y_dist_dict.append(torch.mean(occ_tot_3.squeeze()*y_dist_3.squeeze())/torch.mean(occ_tot_3))
 	
-|3,0,6,1,1,0,1577348085,""
-"7	LINE	0
+|3,0,7,0,13,0,1578972308,"        if self.args.Loop_Mask_type=='border':","            x_dist_dict.append(torch.mean(border_mask.squeeze(1)*x_dist_3))","            y_dist_dict.append(torch.mean(border_mask.squeeze(1)*y_dist_3))","        elif self.args.Loop_Mask_type=='outgoing':","            occ1_3 = occ_bw_right.detach()","            occ2_3 = Resample2d()(occ_right_t1, x1_3).detach()","            occ3_3 = Resample2d()(occ_fw_left, x1_3 + x2_3).detach()",>77
+|<"            occ4_3 = Resample2d()(occ_left_t2, x1_3 + x2_3 + x3_3).detach()","            occ_tot_3 = occ1_3*occ2_3*occ3_3*occ4_3","            occ_tot_3 = occ_tot_3.detach()","            x_dist_dict.append(torch.mean(occ_tot_3.squeeze()*x_dist_3.squeeze())/torch.mean(occ_tot_3))","            y_dist_dict.append(torch.mean(occ_tot_3.squeeze()*y_dist_3.squeeze())/torch.mean(occ_tot_3))",""
+"8	LINE	0
+	        elif self.args.Loop_Mask_type=='fb':
+|3,0,8,1,1,0,1578972288,"        elif self.args.Loop_Mask_type=='fb':"
+"9	CHAR	0
+	        elif self.args.Loop_Mask_type=='outgoing':
+	            occ1_2 = occ_left_t1.detach()
+	            occ2_2 = Resample2d()(occ_fw_right, x1_2).detach()
+	            occ3_2 = Resample2d()(occ_right_t2, x1_2 + x2_2).detach()
+	            occ4_2 = Resample2d()(occ_bw_left, x1_2 + x2_2 + x3_2).detach()
+	            occ_tot_2 = occ1_2*occ2_2*occ3_2*occ4_2
+	            occ_tot_2 = occ_tot_2.detach()
+	            x_dist_dict.append(torch.mean(occ_tot_2.squeeze()*x_dist_2.squeeze())/torch.mean(occ_tot_2))
+	            y_dist_dict.append(torch.mean(occ_tot_2.squeeze()*y_dist_2.squeeze())/torch.mean(occ_tot_2))
 	
-|3,0,7,1,1,0,1577348074,""
-"8	CHAR	0
-	        if(mDistCoef.at<float>(0)!=0.0)
-	        {
-	            cv::Mat mat(4,2,CV_32F);
-	            mat.at<float>(0,0)=0.0;
-	            mat.at<float>(0,1)=0.0;
-	            mat.at<float>(0,2)=0.0;
-	
-	        }
-|3,0,8,0,8,0,1577348043,"        if(mDistCoef.at<float>(0)!=0.0)","        {","            cv::Mat mat(4,2,CV_32F);","            mat.at<float>(0,0)=0.0;","            mat.at<float>(0,1)=0.0;","            mat.at<float>(0,2)=0.0;","","        }"
-"9	LINE	0
-	            
-|3,0,9,1,1,0,1577347409,"            "
+|3,0,9,0,10,0,1578972287,"        elif self.args.Loop_Mask_type=='outgoing':","            occ1_2 = occ_left_t1.detach()","            occ2_2 = Resample2d()(occ_fw_right, x1_2).detach()","            occ3_2 = Resample2d()(occ_right_t2, x1_2 + x2_2).detach()","            occ4_2 = Resample2d()(occ_bw_left, x1_2 + x2_2 + x3_2).detach()","            occ_tot_2 = occ1_2*occ2_2*occ3_2*occ4_2","            occ_tot_2 = occ_tot_2.detach()",>106
+|<"            x_dist_dict.append(torch.mean(occ_tot_2.squeeze()*x_dist_2.squeeze())/torch.mean(occ_tot_2))","            y_dist_dict.append(torch.mean(occ_tot_2.squeeze()*y_dist_2.squeeze())/torch.mean(occ_tot_2))",""
 ""-	CHAR	0
-	X
-|3,1,36,0,1,0,1577348252,"X"
+	2
+|3,1,36,0,1,0,1578972374,"2"
 
 # File marks:
-'0  29  19  /media/cur_project/slam_practice/myslam/src/main.cc
-|4,48,29,19,1577348293,"/media/cur_project/slam_practice/myslam/src/main.cc"
-'1  52  4  /media/cur_project/slam_practice/myslam/src/Frame.cc
-|4,49,52,4,1577347455,"/media/cur_project/slam_practice/myslam/src/Frame.cc"
-'2  47  4  /media/cur_project/slam_practice/myslam/src/Frame.cc
-|4,50,47,4,1577347455,"/media/cur_project/slam_practice/myslam/src/Frame.cc"
-'3  131  49  /media/cur_project/slam_practice/myslam/src/Frame.cc
-|4,51,131,49,1577346040,"/media/cur_project/slam_practice/myslam/src/Frame.cc"
-'4  121  49  /media/cur_project/slam_practice/myslam/src/Frame.cc
-|4,52,121,49,1577346040,"/media/cur_project/slam_practice/myslam/src/Frame.cc"
-'5  101  49  /media/cur_project/slam_practice/myslam/src/Frame.cc
-|4,53,101,49,1577346040,"/media/cur_project/slam_practice/myslam/src/Frame.cc"
-'6  91  49  /media/cur_project/slam_practice/myslam/src/Frame.cc
-|4,54,91,49,1577346040,"/media/cur_project/slam_practice/myslam/src/Frame.cc"
-'7  181  0  ~/.vimrc
-|4,55,181,0,1577345806,"~/.vimrc"
-'8  29  19  /media/cur_project/slam_practice/myslam/src/main.cc
-|4,56,29,19,1577345800,"/media/cur_project/slam_practice/myslam/src/main.cc"
-'9  29  19  /media/cur_project/slam_practice/myslam/src/main.cc
-|4,57,29,19,1577345800,"/media/cur_project/slam_practice/myslam/src/main.cc"
+'L  20  12  /media/cur_project/slam_practice/myslam/include/Frame.h
+|4,76,20,12,1577429028,"/media/cur_project/slam_practice/myslam/include/Frame.h"
+'0  89  4  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,48,89,4,1578973642,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+'1  34  31  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,49,34,31,1578973579,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+'2  34  31  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,50,34,31,1578973579,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+'3  293  57  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,51,293,57,1578971124,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+'4  457  57  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,52,457,57,1578971124,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+'5  293  57  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,53,293,57,1578971124,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+'6  457  57  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,54,457,57,1578971124,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+'7  279  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,55,279,12,1578970357,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+'8  283  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,56,283,12,1578970357,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+'9  400  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,57,400,12,1578970357,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
 
 # Jumplist (newest first):
--'  29  19  /media/cur_project/slam_practice/myslam/src/main.cc
-|4,39,29,19,1577348293,"/media/cur_project/slam_practice/myslam/src/main.cc"
--'  47  4  /media/cur_project/slam_practice/myslam/src/Frame.cc
-|4,39,47,4,1577347455,"/media/cur_project/slam_practice/myslam/src/Frame.cc"
--'  47  4  /media/cur_project/slam_practice/myslam/src/Frame.cc
-|4,39,47,4,1577347455,"/media/cur_project/slam_practice/myslam/src/Frame.cc"
--'  32  11  /media/cur_project/slam_practice/myslam/src/Frame.cc
-|4,39,32,11,1577346769,"/media/cur_project/slam_practice/myslam/src/Frame.cc"
--'  32  11  /media/cur_project/slam_practice/myslam/src/Frame.cc
-|4,39,32,11,1577346769,"/media/cur_project/slam_practice/myslam/src/Frame.cc"
--'  29  19  /media/cur_project/slam_practice/myslam/src/main.cc
-|4,39,29,19,1577346061,"/media/cur_project/slam_practice/myslam/src/main.cc"
--'  101  49  /media/cur_project/slam_practice/myslam/src/Frame.cc
-|4,39,101,49,1577346040,"/media/cur_project/slam_practice/myslam/src/Frame.cc"
--'  91  49  /media/cur_project/slam_practice/myslam/src/Frame.cc
-|4,39,91,49,1577346040,"/media/cur_project/slam_practice/myslam/src/Frame.cc"
--'  101  49  /media/cur_project/slam_practice/myslam/src/Frame.cc
-|4,39,101,49,1577346040,"/media/cur_project/slam_practice/myslam/src/Frame.cc"
--'  91  49  /media/cur_project/slam_practice/myslam/src/Frame.cc
-|4,39,91,49,1577346040,"/media/cur_project/slam_practice/myslam/src/Frame.cc"
--'  29  19  /media/cur_project/slam_practice/myslam/src/main.cc
-|4,39,29,19,1577346017,"/media/cur_project/slam_practice/myslam/src/main.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577346013,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577346013,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577346013,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577346013,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  181  0  ~/.vimrc
-|4,39,181,0,1577345806,"~/.vimrc"
--'  181  0  ~/.vimrc
-|4,39,181,0,1577345806,"~/.vimrc"
--'  181  0  ~/.vimrc
-|4,39,181,0,1577345806,"~/.vimrc"
--'  181  0  ~/.vimrc
-|4,39,181,0,1577345806,"~/.vimrc"
--'  181  0  ~/.vimrc
-|4,39,181,0,1577345806,"~/.vimrc"
--'  181  0  ~/.vimrc
-|4,39,181,0,1577345806,"~/.vimrc"
--'  181  0  ~/.vimrc
-|4,39,181,0,1577345806,"~/.vimrc"
--'  181  0  ~/.vimrc
-|4,39,181,0,1577345806,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345802,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345802,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345802,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345802,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345802,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345802,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345802,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345802,"~/.vimrc"
--'  29  19  /media/cur_project/slam_practice/myslam/src/main.cc
-|4,39,29,19,1577345800,"/media/cur_project/slam_practice/myslam/src/main.cc"
--'  29  19  /media/cur_project/slam_practice/myslam/src/main.cc
-|4,39,29,19,1577345800,"/media/cur_project/slam_practice/myslam/src/main.cc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  178  42  ~/.vimrc
-|4,39,178,42,1577345774,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  175  1  ~/.vimrc
-|4,39,175,1,1577345769,"~/.vimrc"
--'  29  19  /media/cur_project/slam_practice/myslam/src/main.cc
-|4,39,29,19,1577345767,"/media/cur_project/slam_practice/myslam/src/main.cc"
--'  29  19  /media/cur_project/slam_practice/myslam/src/main.cc
-|4,39,29,19,1577345767,"/media/cur_project/slam_practice/myslam/src/main.cc"
--'  29  19  /media/cur_project/slam_practice/myslam/src/main.cc
-|4,39,29,19,1577345767,"/media/cur_project/slam_practice/myslam/src/main.cc"
--'  29  19  /media/cur_project/slam_practice/myslam/src/main.cc
-|4,39,29,19,1577345767,"/media/cur_project/slam_practice/myslam/src/main.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
--'  17  0  /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-|4,39,17,0,1577345764,"/media/cur_project/slam_practice/myslam/src/SystemHandler.cc"
+-'  89  4  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,89,4,1578973642,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  34  31  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,34,31,1578973627,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  34  31  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,34,31,1578973579,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  549  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,549,0,1578972317,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  549  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,549,0,1578972317,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  456  26  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,456,26,1578972281,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  456  26  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,456,26,1578972281,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  293  56  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,293,56,1578972252,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  293  56  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,293,56,1578972252,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  559  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,559,8,1578972227,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  559  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,559,8,1578972227,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  597  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,597,8,1578972224,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  597  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,597,8,1578972224,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  291  17  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,291,17,1578972196,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  210  17  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,210,17,1578972196,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  291  17  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,291,17,1578972196,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  210  17  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,210,17,1578972196,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  245  56  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,245,56,1578971992,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  245  56  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,245,56,1578971992,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  236  60  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,236,60,1578971885,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  234  20  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,234,20,1578971885,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  236  60  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,236,60,1578971885,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  234  20  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,234,20,1578971885,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  381  62  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,381,62,1578971884,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  376  31  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,376,31,1578971884,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  381  62  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,381,62,1578971884,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  376  31  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,376,31,1578971884,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  233  20  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,233,20,1578971880,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  233  20  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,233,20,1578971880,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  434  20  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,434,20,1578971524,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  434  20  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,434,20,1578971524,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  409  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,409,8,1578971523,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  409  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,409,8,1578971523,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  433  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,433,8,1578971510,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  433  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,433,8,1578971510,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  379  28  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,379,28,1578971418,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  379  28  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,379,28,1578971418,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  457  57  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,457,57,1578971124,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  457  57  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,457,57,1578971124,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  502  16  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,502,16,1578970997,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  502  16  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,502,16,1578970997,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  574  40  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,574,40,1578970957,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  572  38  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,572,38,1578970957,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  574  40  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,574,40,1578970957,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  572  38  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,572,38,1578970957,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  365  44  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,365,44,1578970956,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  363  42  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,363,42,1578970956,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  365  44  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,365,44,1578970956,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  363  42  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,363,42,1578970956,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  63  36  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,63,36,1578970955,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  63  36  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,63,36,1578970955,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  63  36  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,63,36,1578970955,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  61  36  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,61,36,1578970954,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  61  36  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,61,36,1578970954,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  61  36  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,61,36,1578970954,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  36  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,36,0,1578970952,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  36  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,36,0,1578970952,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  36  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,36,0,1578970952,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  72  4  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,72,4,1578970943,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  72  4  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,72,4,1578970943,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  72  4  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,72,4,1578970943,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  66  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,66,0,1578970940,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  66  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,66,0,1578970940,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  66  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,66,0,1578970940,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  65  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,65,0,1578970939,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  65  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,65,0,1578970939,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  65  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,65,0,1578970939,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  279  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,279,12,1578970898,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  400  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,400,12,1578970898,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  279  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,279,12,1578970898,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  400  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,400,12,1578970898,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  283  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,283,12,1578970357,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  404  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,404,12,1578970357,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  283  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,283,12,1578970357,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  404  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,404,12,1578970357,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  218  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,218,12,1578970327,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  220  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,220,12,1578970327,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  222  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,222,12,1578970327,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  218  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,218,12,1578970327,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  220  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,220,12,1578970327,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  218  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,218,12,1578970327,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  222  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,222,12,1578970327,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  222  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,222,12,1578969875,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  101  66  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,101,66,1578969773,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  105  66  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,105,66,1578969773,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  101  66  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,101,66,1578969773,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  105  66  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,105,66,1578969773,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  101  66  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,101,66,1578969773,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  105  66  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,105,66,1578969773,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  105  66  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,105,66,1578969773,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  45  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,45,0,1578969763,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  45  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,45,0,1578969763,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  45  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,45,0,1578969763,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  45  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,45,0,1578969763,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  45  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,45,0,1578969736,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  142  16  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,142,16,1578969718,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  148  16  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,148,16,1578969718,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  146  16  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,146,16,1578969718,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  152  16  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,152,16,1578969718,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  142  16  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+|4,39,142,16,1578969718,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
 
 # History of marks within files (newest to oldest):
 
+> /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
+	*	1578973641	0
+	"	89	4
+	.	292	32
+	+	1	54
+	+	1	0
+	+	1	150
+	+	1	0
+	+	2	0
+	+	618	0
+	+	293	0
+	+	293	51
+	+	293	0
+	+	293	49
+	+	176	42
+	+	202	0
+	+	207	0
+	+	245	0
+	+	245	97
+	+	245	33
+	+	245	0
+	+	142	0
+	+	65	0
+	+	101	0
+	+	101	83
+	+	102	96
+	+	103	84
+	+	133	0
+	+	134	0
+	+	133	0
+	+	134	0
+	+	133	0
+	+	65	0
+	+	31	0
+	+	293	0
+	+	301	0
+	+	376	19
+	+	379	0
+	+	220	0
+	+	377	0
+	+	379	0
+	+	376	43
+	+	293	0
+	+	434	0
+	+	435	23
+	+	293	0
+	+	293	27
+	+	293	0
+	+	309	0
+	+	310	35
+	+	312	0
+	+	373	0
+	+	374	23
+	+	220	0
+	+	311	0
+	+	245	0
+	+	235	0
+	+	236	0
+	+	237	0
+	+	241	35
+	+	244	0
+	+	242	0
+	+	243	63
+	+	245	0
+	+	436	0
+	+	437	0
+	+	436	0
+	+	437	17
+	+	559	0
+	+	302	0
+	+	309	0
+	+	559	0
+	+	697	0
+	+	559	24
+	+	597	23
+	+	293	33
+	+	293	32
+	+	293	0
+	+	293	57
+	+	470	0
+	+	469	0
+	+	505	0
+	+	527	0
+	+	549	0
+	+	457	0
+	+	294	0
+	+	293	0
+	+	291	33
+	+	292	32
+
+> /media/cur_project/TemporalConsistentDepth/NERD_tree_1
+	*	1578968302	0
+	"	24	0
+	.	1	0
+	+	1	0
+
+> /media/cur_project/slam_practice/myslam/src/Tracker.cc
+	*	1578904207	0
+	"	88	11
+	^	101	45
+	.	101	44
+	+	29	16
+	+	31	30
+	+	32	39
+	+	34	34
+	+	35	0
+	+	36	47
+	+	37	17
+	+	38	16
+	+	57	0
+	+	39	0
+	+	40	15
+	+	41	22
+	+	42	24
+	+	43	0
+	+	44	63
+	+	45	70
+	+	46	57
+	+	47	64
+	+	48	62
+	+	57	0
+	+	48	64
+	+	49	0
+	+	50	103
+	+	51	104
+	+	52	0
+	+	53	57
+	+	48	14
+	+	65	8
+	+	107	0
+	+	2	0
+	+	69	0
+	+	70	24
+	+	81	0
+	+	66	0
+	+	67	15
+	+	68	0
+	+	54	0
+	+	55	36
+	+	72	32
+	+	56	30
+	+	74	0
+	+	73	0
+	+	74	0
+	+	73	36
+	+	74	0
+	+	75	27
+	+	76	0
+	+	77	34
+	+	80	0
+	+	79	34
+	+	80	0
+	+	81	0
+	+	82	0
+	+	83	40
+	+	83	38
+	+	83	78
+	+	83	38
+	+	83	41
+	+	83	38
+	+	107	0
+	+	83	35
+	+	107	0
+	+	106	0
+	+	107	0
+	+	83	15
+	+	108	0
+	+	85	42
+	+	106	0
+	+	87	61
+	+	89	29
+	+	106	13
+	+	106	14
+	+	106	13
+	+	106	0
+	+	90	65
+	+	106	0
+	+	106	12
+	+	106	0
+	+	105	0
+	+	106	0
+	+	91	0
+	+	92	41
+	+	93	38
+	+	94	57
+	+	105	0
+	+	104	0
+	+	96	50
+	+	97	22
+	+	103	0
+	+	99	64
+	+	103	0
+	+	99	67
+	+	100	72
+	+	101	53
+	+	103	0
+	+	73	0
+	+	74	0
+	+	102	50
+	+	93	32
+	+	101	44
+
+> /media/cur_project/slam_practice/myslam/src/KeyFrame.cc
+	*	1578483456	0
+	"	17	30
+	^	34	30
+	.	34	29
+	+	1	0
+	+	1	19
+	+	2	0
+	+	3	16
+	+	14	0
+	+	6	31
+	+	13	0
+	+	1	0
+	+	12	14
+	+	36	0
+	+	5	25
+	+	13	0
+	+	12	15
+	+	11	5
+	+	12	0
+	+	5	21
+	+	13	16
+	+	13	8
+	+	13	17
+	+	13	13
+	+	13	19
+	+	13	0
+	+	6	49
+	+	5	32
+	+	12	15
+	+	13	0
+	+	6	130
+	+	11	0
+	+	6	146
+	+	12	12
+	+	7	19
+	+	6	0
+	+	7	134
+	+	7	0
+	+	7	134
+	+	8	37
+	+	7	115
+	+	8	141
+	+	9	105
+	+	10	73
+	+	9	105
+	+	10	72
+	+	9	34
+	+	36	0
+	+	15	41
+	+	36	0
+	+	29	0
+	+	17	43
+	+	18	23
+	+	19	53
+	+	20	43
+	+	21	29
+	+	22	21
+	+	23	0
+	+	24	44
+	+	25	36
+	+	26	21
+	+	25	51
+	+	26	43
+	+	26	0
+	+	28	19
+	+	27	0
+	+	29	0
+	+	27	66
+	+	18	24
+	+	24	26
+	+	17	29
+	+	15	8
+	+	20	44
+	+	2	0
+	+	6	41
+	+	10	86
+	+	30	0
+	+	36	1
+	+	31	63
+	+	35	0
+	+	33	47
+	+	35	0
+	+	34	29
+
+> /media/cur_project/slam_practice/myslam/include/KeyFrame.h
+	*	1578483440	0
+	"	41	19
+	^	7	20
+	.	7	19
+	+	1	17
+	+	2	17
+	+	73	5
+	+	3	0
+	+	4	14
+	+	10	0
+	+	11	16
+	+	72	0
+	+	15	17
+	+	72	0
+	+	55	0
+	+	18	25
+	+	5	16
+	+	18	31
+	+	73	5
+	+	8	23
+	+	9	21
+	+	71	5
+	+	18	30
+	+	19	64
+	+	22	8
+	+	23	14
+	+	24	40
+	+	26	45
+	+	27	0
+	+	41	32
+	+	41	71
+	+	41	0
+	+	41	34
+	+	41	33
+	+	41	12
+	+	55	20
+	+	41	0
+	+	41	11
+	+	55	15
+	+	54	0
+	+	56	42
+	+	57	23
+	+	58	23
+	+	59	22
+	+	60	0
+	+	60	22
+	+	41	80
+	+	41	30
+	+	41	0
+	+	25	34
+	+	41	13
+	+	54	13
+	+	41	0
+	+	28	0
+	+	41	0
+	+	31	0
+	+	41	0
+	+	38	39
+	+	60	0
+	+	61	19
+	+	62	33
+	+	63	40
+	+	64	37
+	+	41	0
+	+	54	0
+	+	65	27
+	+	72	0
+	+	66	17
+	+	20	13
+	+	20	16
+	+	6	14
+	+	18	37
+	+	68	22
+	+	13	13
+	+	15	0
+	+	69	49
+	+	71	12
+	+	70	47
+	+	71	0
+	+	21	62
+	+	14	18
+	+	7	19
+
+> /media/cur_project/slam_practice/myslam/include/MapPoint.h
+	*	1578483385	0
+	"	12	0
+	^	11	19
+	.	11	18
+	+	1	17
+	+	73	5
+	+	2	17
+	+	3	19
+	+	4	16
+	+	8	3
+	+	71	0
+	+	12	17
+	+	70	0
+	+	14	14
+	+	70	5
+	+	71	0
+	+	5	14
+	+	15	70
+	+	16	83
+	+	52	15
+	+	51	0
+	+	54	29
+	+	55	0
+	+	56	79
+	+	57	52
+	+	61	0
+	+	63	24
+	+	62	12
+	+	63	12
+	+	64	0
+	+	65	32
+	+	66	28
+	+	72	0
+	+	18	16
+	+	17	0
+	+	18	58
+	+	19	39
+	+	20	48
+	+	58	0
+	+	59	37
+	+	60	33
+	+	68	22
+	+	67	0
+	+	68	37
+	+	69	32
+	+	19	14
+	+	20	14
+	+	51	13
+	+	51	0
+	+	52	0
+	+	19	12
+	+	20	12
+	+	19	12
+	+	20	12
+	+	21	0
+	+	23	20
+	+	15	14
+	+	7	0
+	+	10	13
+	+	3	0
+	+	6	12
+	+	50	34
+	+	24	0
+	+	49	0
+	+	28	0
+	+	57	52
+	+	15	12
+	+	16	14
+	+	15	56
+	+	11	18
+
+> /media/cur_project/slam_practice/myslam/src/MapPoint.cc
+	*	1578483139	0
+	"	16	0
+	^	9	29
+	.	9	0
+	+	1	19
+	+	4	0
+	+	2	0
+	+	3	21
+	+	2	0
+	+	5	0
+	+	4	14
+	+	5	0
+	+	6	16
+	+	28	0
+	+	10	66
+	+	14	0
+	+	10	70
+	+	12	29
+	+	13	51
+	+	14	0
+	+	15	0
+	+	16	59
+	+	27	0
+	+	18	52
+	+	19	32
+	+	26	14
+	+	19	0
+	+	27	0
+	+	4	0
+	+	9	28
+	+	8	0
+	+	9	0
+	m	19	11
+	n	19	11
+
 > /media/cur_project/slam_practice/myslam/src/main.cc
-	*	1577348292	0
+	*	1578482280	0
 	"	29	19
 	^	26	39
 	.	29	0
@@ -599,184 +1173,23 @@ $Debug_Object_verbose_flag
 	+	29	41
 	+	29	0
 
-> /media/cur_project/slam_practice/myslam/include/Frame.h
-	*	1577348290	0
-	"	54	18
-	^	54	19
-	.	54	18
-	+	53	17
-	+	54	38
-	+	56	21
-	+	58	20
-	+	53	33
-	+	55	32
-	+	57	39
-	+	7	25
-	+	8	25
-	+	59	38
-	+	60	31
-	+	61	31
-	+	62	31
-	+	63	31
-	+	59	0
-	+	15	0
-	+	15	55
-	+	65	110
-	+	69	0
-	+	68	68
-	+	65	0
-	+	64	0
-	+	52	0
-	+	54	18
-
-> /media/cur_project/slam_practice/myslam/src/Frame.cc
-	*	1577348277	0
-	"	32	16
-	^	39	17
-	.	39	17
-	+	111	0
-	+	93	0
-	+	22	23
-	+	23	13
-	+	4	29
-	+	5	0
-	+	4	8
-	+	97	36
-	+	99	0
-	+	99	34
-	+	100	0
-	+	101	34
-	+	102	36
-	+	103	39
-	+	110	0
-	+	104	0
-	+	105	39
-	+	106	54
-	+	108	54
-	+	109	22
-	+	110	0
-	+	109	28
-	+	5	0
-	+	3	21
-	+	144	0
-	+	112	3
-	+	113	31
-	+	142	0
-	+	115	48
-	+	116	46
-	+	117	0
-	+	118	45
-	+	142	0
-	+	118	73
-	+	119	0
-	+	120	45
-	+	142	0
-	+	120	68
-	+	122	12
-	+	121	0
-	+	123	0
-	+	124	33
-	+	125	39
-	+	126	0
-	+	127	41
-	+	128	0
-	+	129	33
-	+	139	0
-	+	113	27
-	+	131	52
-	+	132	38
-	+	133	70
-	+	134	31
-	+	105	19
-	+	139	0
-	+	134	14
-	+	115	48
-	+	116	47
-	+	122	64
-	+	133	46
-	+	134	41
-	+	132	27
-	+	134	31
-	+	135	46
-	+	137	37
-	+	138	46
-	+	142	0
-	+	107	0
-	+	136	0
-	+	140	0
-	+	141	31
-	+	31	32
-	+	32	19
-	+	31	23
-	+	32	31
-	+	40	0
-	+	50	0
-	+	51	53
-	+	79	0
-	+	34	37
-	+	53	38
-	+	53	0
-	+	53	31
-	+	53	13
-	+	53	22
-	+	53	34
-	+	53	28
-	+	79	0
-	+	78	4
-	+	53	0
-	+	79	0
-	+	40	0
-	+	35	0
-	+	36	87
-	+	37	86
-	+	38	0
-	+	39	17
-
-> /media/cur_project/slam_practice/myslam/include/Tracker.h
-	*	1577348259	0
-	"	20	0
-	^	17	28
-	.	17	27
-	+	1	16
-	+	2	16
-	+	27	5
-	+	5	29
-	+	5	42
-	+	5	24
-	+	8	16
-	+	26	0
-	+	10	10
-	+	7	0
-	+	10	16
-	+	25	0
-	+	12	14
-	+	13	61
-	+	3	17
-	+	25	0
-	+	13	49
-	+	19	15
-	+	25	7
-	+	26	0
-	+	25	5
-	+	20	21
-	+	21	21
-	+	22	21
-	+	23	21
-	+	24	21
-	+	5	15
-	+	7	0
-	+	4	15
-	+	13	30
-	+	14	0
-	+	14	88
-	+	14	89
-	+	18	12
-	+	15	0
-	+	17	27
+> /media/cur_project/slam_practice/myslam/src/Map.cc
+	*	1578482264	0
+	"	19	0
+	^	112	2
+	.	112	1
+	+	114	22
+	+	1	0
+	+	2	0
+	+	1	14
+	+	4	16
+	+	114	1
+	+	97	1
+	+	112	1
 
 > /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-	*	1577346012	0
-	"	17	0
+	*	1578482006	0
+	"	19	21
 	^	19	34
 	.	19	33
 	+	1	25
@@ -818,6 +1231,375 @@ $Debug_Object_verbose_flag
 	+	20	0
 	+	17	8
 	+	19	33
+
+> /media/cur_project/slam_practice/myslam/src/Frame.cc
+	*	1578481994	0
+	"	71	8
+	^	215	27
+	.	185	10
+	+	136	25
+	+	137	25
+	+	138	25
+	+	44	0
+	+	43	0
+	+	42	29
+	+	41	0
+	+	119	42
+	+	126	0
+	+	127	47
+	+	119	39
+	+	8	20
+	+	15	0
+	+	8	93
+	+	15	0
+	+	9	86
+	+	10	61
+	+	11	43
+	+	10	52
+	+	11	37
+	+	8	70
+	+	64	8
+	+	65	30
+	+	67	0
+	+	68	37
+	+	83	8
+	+	70	75
+	+	71	50
+	+	72	54
+	+	73	45
+	+	74	0
+	+	75	39
+	+	82	0
+	+	77	48
+	+	78	0
+	+	82	36
+	+	85	0
+	+	86	70
+	+	95	0
+	+	88	67
+	+	50	70
+	+	51	107
+	+	89	68
+	+	90	0
+	+	95	0
+	+	91	77
+	+	92	24
+	+	94	23
+	+	86	12
+	+	79	0
+	+	82	0
+	+	80	50
+	+	81	56
+	+	13	17
+	+	14	5
+	+	15	0
+	+	14	5
+	+	228	0
+	+	229	0
+	+	212	0
+	+	213	49
+	+	227	0
+	+	215	34
+	+	216	14
+	+	224	0
+	+	218	44
+	+	219	44
+	+	224	0
+	+	227	0
+	+	220	42
+	+	221	42
+	+	223	26
+	+	222	60
+	+	223	31
+	+	226	28
+	+	223	27
+	+	104	0
+	+	105	35
+	+	109	0
+	+	107	26
+	+	109	0
+	+	108	28
+	+	110	0
+	+	111	35
+	+	117	0
+	+	113	45
+	+	114	23
+	+	115	37
+	+	116	28
+	+	117	0
+	+	113	44
+	+	12	40
+	+	19	22
+	+	18	19
+	+	15	122
+	+	20	0
+	+	18	26
+	+	185	11
+	+	215	26
+	+	185	10
+	l	48	27
+	n	10	17
+
+> /media/cur_project/slam_practice/myslam/include/Tracker.h
+	*	1577463515	0
+	"	60	22
+	^	60	23
+	.	60	22
+	+	1	16
+	+	2	16
+	+	63	5
+	+	5	29
+	+	5	42
+	+	5	24
+	+	11	16
+	+	62	0
+	+	13	10
+	+	8	0
+	+	13	16
+	+	61	0
+	+	15	14
+	+	16	61
+	+	3	17
+	+	61	0
+	+	16	49
+	+	39	15
+	+	61	7
+	+	62	0
+	+	61	5
+	+	41	21
+	+	42	21
+	+	43	21
+	+	44	21
+	+	46	21
+	+	5	15
+	+	8	0
+	+	4	15
+	+	16	30
+	+	17	0
+	+	17	88
+	+	17	89
+	+	38	12
+	+	19	0
+	+	21	27
+	+	45	32
+	+	40	34
+	+	47	29
+	+	48	21
+	+	49	15
+	+	45	0
+	+	44	20
+	+	49	44
+	+	61	0
+	+	50	26
+	+	51	27
+	+	52	29
+	+	53	28
+	+	54	26
+	+	55	26
+	+	61	0
+	+	56	44
+	+	57	45
+	+	7	22
+	+	22	12
+	+	23	33
+	+	24	0
+	+	10	0
+	+	8	16
+	+	24	12
+	+	18	24
+	+	26	28
+	+	33	0
+	+	28	34
+	+	29	30
+	+	28	35
+	+	29	31
+	+	30	33
+	+	31	20
+	+	32	21
+	+	33	0
+	+	27	17
+	+	35	32
+	+	36	36
+	+	35	0
+	+	33	13
+	+	37	0
+	+	37	39
+	+	9	19
+	+	40	41
+	+	41	0
+	+	34	0
+	+	58	0
+	+	60	22
+
+> /media/cur_project/slam_practice/myslam/include/Frame.h
+	*	1577462261	0
+	"	13	0
+	^	60	34
+	.	60	33
+	+	62	17
+	+	63	38
+	+	65	21
+	+	67	20
+	+	62	33
+	+	64	32
+	+	66	39
+	+	7	25
+	+	8	25
+	+	70	38
+	+	71	31
+	+	72	31
+	+	73	31
+	+	74	31
+	+	70	0
+	+	16	0
+	+	16	55
+	+	76	110
+	+	91	0
+	+	79	68
+	+	76	0
+	+	75	0
+	+	61	0
+	+	63	18
+	+	54	27
+	+	16	40
+	+	16	0
+	+	16	72
+	+	16	0
+	+	16	39
+	+	12	19
+	+	20	0
+	+	20	20
+	+	91	7
+	+	81	15
+	+	80	0
+	+	88	24
+	+	85	53
+	+	89	23
+	+	86	24
+	+	87	24
+	+	90	0
+	+	20	51
+	+	19	0
+	+	83	0
+	+	16	0
+	+	84	0
+	+	16	0
+	+	82	0
+	+	44	25
+	+	45	24
+	+	49	0
+	+	45	0
+	+	49	0
+	+	51	0
+	+	17	0
+	+	17	37
+	+	18	0
+	+	18	37
+	+	47	44
+	+	48	34
+	+	68	48
+	+	69	26
+	+	60	33
+	v	10	4
+
+> /media/cur_project/slam_practice/myslam/include/Map.h
+	*	1577458345	0
+	"	2	0
+	^	9	20
+	.	13	0
+	+	1	26
+	+	1	222
+	+	1	28
+	+	1	68
+	+	1	81
+	+	1	98
+	+	1	116
+	+	1	214
+	+	1	128
+	+	1	212
+	+	1	145
+	+	1	178
+	+	1	209
+	+	1	47
+	+	1	29
+	+	1	216
+	+	1	28
+	+	1	217
+	+	1	3
+	+	63	15
+	+	1	0
+	+	7	0
+	+	4	20
+	+	5	9
+	+	11	16
+	+	16	0
+	+	13	0
+	+	61	20
+	+	64	0
+	+	38	4
+	+	13	0
+	+	8	0
+	+	9	19
+	+	13	0
+
+> /media/cur_project/slam_practice/myslam/include/Map.cc
+	*	1577457602	0
+	"	1	0
+
+> /media/cur_project/slam_practice/myslam/CMakeLists.txt
+	*	1577455369	0
+	"	5	18
+	^	16	19
+	.	16	18
+	+	22	26
+	+	22	21
+	+	22	25
+	+	22	0
+	+	22	24
+	+	22	25
+	+	22	0
+	+	22	36
+	+	18	24
+	+	1	0
+	+	18	20
+	+	22	0
+	+	19	0
+	+	21	0
+	+	19	6
+	+	22	0
+	+	20	0
+	+	17	38
+	+	17	48
+	+	17	0
+	+	21	22
+	+	22	0
+	+	21	49
+	+	17	77
+	+	17	0
+	+	17	2
+	+	17	0
+	+	7	0
+	+	17	0
+	+	5	0
+	+	7	0
+	+	6	23
+	+	6	62
+	+	6	61
+	+	6	62
+	+	7	0
+	+	6	60
+	+	12	40
+	+	8	15
+	+	9	24
+	+	10	18
+	+	12	23
+	+	14	19
+	+	15	14
+	+	16	18
+
+> /media/cur_project/slam_practice/myslam/include/Frame.cc
+	*	1577358288	0
+	"	1	0
 
 > ~/.vimrc
 	*	1577345806	0
@@ -1076,58 +1858,6 @@ $Debug_Object_verbose_flag
 	+	16	0
 	+	15	41
 
-> /media/cur_project/slam_practice/myslam/CMakeLists.txt
-	"	8	40
-	^	8	41
-	.	8	40
-	+	14	26
-	+	14	21
-	+	14	25
-	+	14	0
-	+	14	24
-	+	14	24
-	+	14	25
-	+	14	0
-	+	14	36
-	+	10	24
-	+	1	0
-	+	10	20
-	+	14	0
-	+	11	0
-	+	13	0
-	+	13	0
-	+	11	6
-	+	14	0
-	+	12	0
-	+	12	0
-	+	9	38
-	+	9	48
-	+	9	0
-	+	13	22
-	+	13	22
-	+	14	0
-	+	13	49
-	+	9	77
-	+	9	0
-	+	9	0
-	+	9	2
-	+	9	2
-	+	9	0
-	+	7	0
-	+	7	0
-	+	9	0
-	+	5	0
-	+	5	0
-	+	7	0
-	+	7	0
-	+	6	23
-	+	6	62
-	+	6	61
-	+	6	62
-	+	7	0
-	+	6	60
-	+	8	40
-
 > /media/cur_project/slam_practice/myslam/src/ORB
 	"	1	0
 
@@ -1159,68 +1889,6 @@ $Debug_Object_verbose_flag
 	+	4	0
 	+	3	3
 	+	1	9
-
-> /media/cur_project/slam_practice/myslam/src/Tracker.cc
-	"	25	0
-	^	2	17
-	.	2	16
-	+	4	8
-	+	34	0
-	+	34	0
-	+	34	0
-	+	33	28
-	+	5	20
-	+	34	0
-	+	33	45
-	+	33	0
-	+	33	72
-	+	33	41
-	+	33	41
-	+	33	41
-	+	33	8
-	+	33	41
-	+	33	0
-	+	33	42
-	+	33	26
-	+	33	25
-	+	33	26
-	+	33	16
-	+	33	16
-	+	33	0
-	+	33	22
-	+	32	0
-	+	34	0
-	+	9	0
-	+	32	0
-	+	1	0
-	+	4	0
-	+	1	0
-	+	17	31
-	+	32	0
-	+	24	0
-	+	25	83
-	+	31	0
-	+	31	70
-	+	31	0
-	+	25	8
-	+	31	0
-	+	27	29
-	+	28	41
-	+	29	15
-	+	30	55
-	+	31	81
-	+	29	40
-	+	30	48
-	+	29	40
-	+	3	7
-	+	1	8
-	+	3	20
-	+	6	18
-	+	3	27
-	+	31	0
-	+	3	0
-	+	23	0
-	+	2	16
 
 > /media/cur_project/slam_practice/myslam/include/SystemHandler.h
 	"	13	0
@@ -2247,112 +2915,6 @@ $Debug_Object_verbose_flag
 	+	83	26
 	+	84	24
 
-> /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-	"	193	0
-	^	195	43
-	.	195	42
-	+	1	93
-	+	1	103
-	+	1	103
-	+	1	103
-	+	1	103
-	+	1	103
-	+	1	0
-	+	1	0
-	+	1	80
-	+	1	38
-	+	1	18
-	+	1	75
-	+	1	55
-	+	1	65
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	46
-	+	1	14
-	+	1	14
-	+	1	67
-	+	1	0
-	+	1	96
-	+	1	97
-	+	1	0
-	+	1	132
-	+	1	0
-	+	1	0
-	+	1	118
-	+	1	118
-	+	1	119
-	+	1	0
-	+	1	0
-	+	1	117
-	+	1	118
-	+	1	86
-	+	1	21
-	+	1	98
-	+	1	0
-	+	1	0
-	+	1	21
-	+	1	70
-	+	1	29
-	+	1	54
-	+	1	20
-	+	1	46
-	+	1	45
-	+	1	0
-	+	1	47
-	+	1	76
-	+	1	38
-	+	1	99
-	+	1	71
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	27
-	+	1	83
-	+	1	0
-	+	1	0
-	+	1	43
-	+	1	40
-	+	1	0
-	+	1	0
-	+	1	86
-	+	1	0
-	+	1	0
-	+	1	112
-	+	1	46
-	+	1	113
-	+	1	36
-	+	1	35
-	+	1	0
-	+	1	37
-	+	1	0
-	+	1	0
-	+	1	20
-	+	1	54
-	+	1	0
-	+	1	150
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	0
-	+	1111	0
-	+	644	0
-	+	643	51
-	+	644	0
-	+	643	49
-	+	195	42
-	a	348	99
-
 > /media/Downloads/Untitled Folder/supplemental.tex
 	"	70	0
 
@@ -2886,215 +3448,3 @@ $Debug_Object_verbose_flag
 	+	81	65
 	+	94	84
 	+	91	0
-
-> /media/cur_project/monodepth/monodepth_main.py
-	"	180	0
-
-> /media/cur_project/monodepth/monodepth_model.py
-	"	298	19
-	m	107	25
-
-> /media/cur_project/monodepth/run.sh
-	"	2	65
-	^	2	65
-	.	2	64
-	+	1	28
-	+	3	0
-	+	1	9
-	+	3	0
-	+	2	49
-	+	2	49
-	+	2	50
-	+	3	0
-	+	2	64
-
-> /media/cur_project/monodepth/utils/get_model.sh
-	"	1	0
-
-> /media/cur_project/UnDepthflow/test.py
-	"	41	0
-	^	69	99
-	.	69	98
-	+	145	70
-	+	168	0
-	+	20	31
-	+	160	41
-	+	161	45
-	+	160	44
-	+	176	0
-	+	160	45
-	+	161	46
-	+	160	74
-	+	161	71
-	+	160	76
-	+	161	86
-	+	162	0
-	+	162	84
-	+	163	0
-	+	163	85
-	+	162	44
-	+	163	45
-	+	161	48
-	+	162	47
-	+	163	48
-	+	164	0
-	+	165	0
-	+	166	0
-	+	163	0
-	+	164	36
-	+	165	36
-	+	166	36
-	+	167	0
-	+	164	39
-	+	165	39
-	+	166	39
-	+	167	39
-	+	164	81
-	+	165	81
-	+	166	81
-	+	167	81
-	+	160	41
-	+	161	41
-	+	162	41
-	+	163	41
-	+	164	41
-	+	165	41
-	+	166	41
-	+	167	41
-	+	37	0
-	+	36	0
-	+	37	37
-	+	40	30
-	+	40	47
-	+	43	32
-	+	43	64
-	+	44	0
-	+	49	0
-	+	51	32
-	+	51	64
-	+	52	0
-	+	54	66
-	+	55	0
-	+	54	34
-	+	49	0
-	+	48	33
-	+	63	0
-	+	40	37
-	+	40	12
-	+	40	12
-	+	40	12
-	+	40	12
-	+	40	64
-	+	40	0
-	+	40	23
-	+	40	20
-	+	40	23
-	+	40	0
-	+	40	24
-	+	40	20
-	+	40	81
-	+	40	85
-	+	40	85
-	+	40	0
-	+	40	88
-	+	41	0
-	+	254	26
-	+	255	0
-	+	254	27
-	+	255	0
-	+	261	0
-	+	259	0
-	+	260	34
-	+	69	98
-
-> /media/cur_project/TemporalConsistentDepth/utils/filename/Kitti_raw_stereo_video_test.txt
-	"	1	0
-	^	591	129
-	.	591	128
-	+	43	0
-	+	592	0
-	+	591	128
-
-> /media/cur_project/UnDepthflow/convert_depth_video.py
-	"	10	34
-	^	10	35
-	.	10	34
-	+	14	0
-	+	15	0
-	+	16	0
-	+	14	70
-	+	14	0
-	+	14	106
-	+	7	15
-	+	8	30
-	+	7	39
-	+	8	0
-	+	10	34
-
-> /media/cur_project/UnDepthflow/Kitti_raw_stereo_video_test.txt
-	"	591	0
-
-> /media/cur_project/UnDepthflow/convert_depth.py
-	"	15	74
-	^	22	101
-	.	22	100
-	+	1	0
-	+	32	0
-	+	28	10
-	+	4	21
-	+	24	92
-	+	24	94
-	+	28	0
-	+	24	132
-	+	24	133
-	+	18	129
-	+	11	0
-	+	10	19
-	+	11	0
-	+	11	0
-	+	15	70
-	+	16	70
-	+	17	70
-	+	18	68
-	+	18	102
-	+	18	68
-	+	24	0
-	+	18	70
-	+	15	33
-	+	16	33
-	+	17	33
-	+	18	33
-	+	24	0
-	+	28	0
-	+	25	0
-	+	26	0
-	+	27	0
-	+	25	55
-	+	26	53
-	+	27	56
-	+	25	121
-	+	26	124
-	+	27	124
-	+	24	102
-	+	25	93
-	+	24	97
-	+	25	96
-	+	26	97
-	+	27	97
-	+	26	99
-	+	27	99
-	+	28	0
-	+	23	10
-	+	23	0
-	+	19	81
-	+	20	0
-	+	21	0
-	+	22	0
-	+	20	52
-	+	21	51
-	+	22	52
-	+	20	82
-	+	19	99
-	+	20	92
-	+	21	89
-	+	22	100
