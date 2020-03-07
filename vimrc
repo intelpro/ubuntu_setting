@@ -177,7 +177,7 @@ set background=dark
 " set contrast
 let g:gruvbox_material_background = 'medium'
 colorscheme gruvbox-material
-let g:airline_theme = 'gruvbox_material'
+let g:airline_theme = 'base16'
 " set t_Co=256
 " let g:seoul256_background = 235
 " let base16colorspace=256   " Access colors present in 256 colorspace
@@ -194,4 +194,3 @@ nnoremap <silent> <c-a> :TmuxNavigatePrevious<cr>
 set shell=/bin/bash
 " disalbe statline syntatics
 let g:statline_syntastic = 0
-
