@@ -33,8 +33,6 @@ Plugin 'jistr/vim-nerdtree-tabs'
 " YCM install
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
-" vim tags 
-Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 " python syntax
 Plugin 'vim-python/python-syntax'
@@ -45,7 +43,8 @@ Plugin 'sainnhe/gruvbox-material'
 Plugin 'christoomey/vim-tmux-navigator'
 " latex
 Plugin 'xuhdev/vim-latex-live-preview'
-" colorscheme
+" vim tags
+Plugin 'ludovicchabant/vim-gutentags'
 call vundle#end()            " required
 
 let g:tablineclosebutton=1
@@ -65,15 +64,10 @@ let g:nerdtree_tabs_open_on_console_startup=0
 let g:airline_theme='base16'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+
 " tags 설정
 set tags=./tags
 set tags+=../tags
-let g:easytags_async=1
-let g:easytags_auto_highlight = 0 
-let g:easytags_include_members = 1
-let g:easytags_dynamic_files = 1 
-let g:easytags_file = '~/.vimtags'
-
 noremap <c-]> 2<c-]>
 " ycm 환경 설정 
 let g:ycm_show_diagnostics_ui = 1
@@ -178,9 +172,9 @@ set background=dark
 let g:gruvbox_material_background = 'medium'
 colorscheme gruvbox-material
 let g:airline_theme = 'base16'
-" set t_Co=256
-" let g:seoul256_background = 235
-" let base16colorspace=256   " Access colors present in 256 colorspace
+set t_Co=256
+let g:seoul256_background = 235
+let base16colorspace=256   " Access colors present in 256 colorspace
 " colorscheme base16-default-dark
 " set split with crtlp
 set splitright
@@ -194,3 +188,6 @@ nnoremap <silent> <c-a> :TmuxNavigatePrevious<cr>
 set shell=/bin/bash
 " disalbe statline syntatics
 let g:statline_syntastic = 0
+" gutentags
+let g:gutentags_project_root = ['.svn','.git','.root', 'COPYING','.project']
+set statusline+=%{gutentags#statusline()}
