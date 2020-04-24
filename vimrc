@@ -148,6 +148,7 @@ set hlsearch
 let g:python_highlight_all = 1
 let g:python_highlight_operators = 0
 let g:python_highlight_space_errors = 0
+let g:python_highlight_func_calls = 0
 
 "set directory 
 set autochdir
