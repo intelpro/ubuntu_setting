@@ -37,7 +37,6 @@ Plugin 'xolox/vim-misc'
 " python syntax
 Plugin 'vim-python/python-syntax'
 " colorscheme
-Plugin 'junegunn/seoul256.vim'
 Plugin 'sainnhe/gruvbox-material'
 " vim tmux navigator
 Plugin 'christoomey/vim-tmux-navigator'
@@ -49,7 +48,7 @@ call vundle#end()            " required
 
 let g:tablineclosebutton=1
 "NERDTree ON 단축키를 "\nt"로 설정
-map <C-n> :NERDTreeToggle<CR>
+map <C-W> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
@@ -173,7 +172,6 @@ let g:gruvbox_material_background = 'medium'
 colorscheme gruvbox-material
 let g:airline_theme = 'base16'
 set t_Co=256
-let g:seoul256_background = 235
 let base16colorspace=256   " Access colors present in 256 colorspace
 " colorscheme base16-default-dark
 " set split with crtlp
@@ -191,3 +189,5 @@ let g:statline_syntastic = 0
 " gutentags
 let g:gutentags_project_root = ['.svn','.git','.root', 'COPYING','.project']
 set statusline+=%{gutentags#statusline()}
+" clipboard
+set clipboard=unnamedplus
