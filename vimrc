@@ -48,7 +48,7 @@ call vundle#end()            " required
 
 let g:tablineclosebutton=1
 "NERDTree ON 단축키를 "\nt"로 설정
-map <C-W> :NERDTreeToggle<CR>
+map <C-e> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
@@ -191,3 +191,11 @@ let g:gutentags_project_root = ['.svn','.git','.root', 'COPYING','.project']
 set statusline+=%{gutentags#statusline()}
 " clipboard
 set clipboard=unnamedplus
+highlight Comment term=bold cterm=bold ctermfg=245
+" indentline
+let g:indentLine_color_gui = '#4c4c4b'
+let g:indentLine_color_term = 239
+let g:indentLine_color_tty_light = 7 " (default: 4)
+let g:indentLine_color_dark = 1 " (default: 2)
+
+

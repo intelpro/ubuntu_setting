@@ -11,217 +11,217 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/\V\<border_mask\>
+~MSle0~/process
 
 # Last Substitute Search Pattern:
-~MSle0&imLeft
+~MSle0&self.left_occ_mask
 
 # Last Substitute String:
-$left_image
+$batch['left_occ_mask']
 
 # Command Line History (newest to oldest):
-:wq
-|2,0,1578973642,,"wq"
-:w
-|2,0,1578973628,,"w"
 :Wq
-|2,0,1578973579,,"Wq"
+|2,0,1589522157,,"Wq"
+:wq
+|2,0,1589522138,,"wq"
+:w
+|2,0,1589522111,,"w"
 :W
-|2,0,1578972364,,"W"
-:noh
-|2,0,1578972192,,"noh"
-:sp ../include/KeyFrame.h
-|2,0,1578483380,,"sp ../include/KeyFrame.h"
-:93
-|2,0,1578483347,,"93"
-:tabnew KeyFrame.cc
-|2,0,1578482741,,"tabnew KeyFrame.cc"
-:kkkk
-|2,0,1577462128,,"kkkk"
-:16
-|2,0,1577461829,,"16"
-:nohj
-|2,0,1577461802,,"nohj"
-::
-|2,0,1577461690,,":"
-:tabnew MapPoint.h
-|2,0,1577461656,,"tabnew MapPoint.h"
-:40
-|2,0,1577461637,,"40"
-:tabnew ../include/KeyFrame.h
-|2,0,1577461499,,"tabnew ../include/KeyFrame.h"
-:tabnew ../include/Tracker.h
-|2,0,1577461277,,"tabnew ../include/Tracker.h"
-:14
-|2,0,1577460980,,"14"
-:!4
-|2,0,1577460978,,"!4"
-:set nopaste
-|2,0,1577458304,,"set nopaste"
-:set paste
-|2,0,1577458298,,"set paste"
-:19
-|2,0,1577458271,,"19"
-:12
-|2,0,1577458124,,"12"
-:11
-|2,0,1577458109,,"11"
-:!1
-|2,0,1577458107,,"!1"
-:.
-|2,0,1577457732,,"."
-:LW
-|2,0,1577457633,,"LW"
-:tabnew ../src/Map.cc
-|2,0,1577457609,,"tabnew ../src/Map.cc"
+|2,0,1589516785,,"W"
 :q!
-|2,0,1577457602,,"q!"
-:tabnew Map.cc
-|2,0,1577457601,,"tabnew Map.cc"
-:tn 
-|2,0,1577457595,,"tn "
-:Qq
-|2,0,1577457429,,"Qq"
-:qq
-|2,0,1577457427,,"qq"
-:tabnew Map.h
-|2,0,1577457406,,"tabnew Map.h"
-:23
-|2,0,1577457351,,"23"
-:nboh
-|2,0,1577457026,,"nboh"
-:tabnew ../include/MapPoint.h
-|2,0,1577455406,,"tabnew ../include/MapPoint.h"
-:tabnew ../include/Map.h
-|2,0,1577455396,,"tabnew ../include/Map.h"
-:h
-|2,0,1577455231,,"h"
-:20
-|2,0,1577438876,,"20"
-:wa;:
-|2,0,1577438621,,"wa;:"
-:ㅈ
-|2,0,1577437881,,"ㅈ"
-:ㅉ
-|2,0,1577437497,,"ㅉ"
-:sp ../src/Frame.cc
-|2,0,1577436429,,"sp ../src/Frame.cc"
-:sp ../include/Frame.h
-|2,0,1577436178,,"sp ../include/Frame.h"
-:vs ../src/Frame.cc
-|2,0,1577435898,,"vs ../src/Frame.cc"
-:tabnew ../src/Frame.cc
-|2,0,1577435891,,"tabnew ../src/Frame.cc"
-:tabnew Frame.h
-|2,0,1577435880,,"tabnew Frame.h"
-:tabnew ../include/Frame.h
-|2,0,1577435447,,"tabnew ../include/Frame.h"
-:tabnew Frame.cc
-|2,0,1577435440,,"tabnew Frame.cc"
-:102
-|2,0,1577429035,,"102"
+|2,0,1589515350,,"q!"
+:a
+|2,0,1589470873,,"a"
+:noh
+|2,0,1589470686,,"noh"
+:bn
+|2,0,1589470668,,"bn"
+:b1
+|2,0,1589470577,,"b1"
+:b3
+|2,0,1589470532,,"b3"
+:b2
+|2,0,1589470531,,"b2"
+:B2
+|2,0,1589470512,,"B2"
+:sp test_LC.py
+|2,0,1589470264,,"sp test_LC.py"
+:sp 
+|2,0,1589470067,,"sp "
+:b5
+|2,0,1589463220,,"b5"
+:tabnew utils/base_trainer.py
+|2,0,1589463213,,"tabnew utils/base_trainer.py"
+:b
+|2,0,1589463205,,"b"
+:'<,'>w
+|2,0,1589463059,,"'<,'>w"
+:tabnew 
+|2,0,1589462857,,"tabnew "
+:bd!
+|2,0,1589462842,,"bd!"
+:bd
+|2,0,1589462818,,"bd"
+:'<,'>wq
+|2,0,1589461851,,"'<,'>wq"
+::w
+|2,0,1589461789,,":w"
+:B1
+|2,0,1589459007,,"B1"
+:sp utils/base_trainer.py
+|2,0,1589458494,,"sp utils/base_trainer.py"
+::wq
+|2,0,1589458487,,":wq"
+:sp ../gen_error_map.py
+|2,0,1589457926,,"sp ../gen_error_map.py"
+:sp ge
+|2,0,1589457921,,"sp ge"
+:b4
+|2,0,1589457856,,"b4"
+:ls
+|2,0,1589457581,,"ls"
+:33
+|2,0,1589456744,,"33"
+:sp train_loop_LSTM.py
+|2,0,1589456496,,"sp train_loop_LSTM.py"
+:sp gen_error_map.py
+|2,0,1589456194,,"sp gen_error_map.py"
+:tabnew test_LC.py
+|2,0,1589456167,,"tabnew test_LC.py"
+:b6
+|2,0,1589431094,,"b6"
+:105
+|2,0,1589430847,,"105"
+:n3
+|2,0,1589430067,,"n3"
+:106
+|2,0,1589430040,,"106"
+:167
+|2,0,1589378794,,"167"
+:53
+|2,0,1589377776,,"53"
+:w2
+|2,0,1589375754,,"w2"
+:nohw
+|2,0,1589341992,,"nohw"
+:287
+|2,0,1589270962,,"287"
+:64
+|2,0,1589269470,,"64"
+:"w
+|2,0,1589269007,,"\"w"
+:72
+|2,0,1589262050,,"72"
+:set t_ut=
+|2,0,1589199584,,"set t_ut="
+:ㅂ!
+|2,0,1589199566,,"ㅂ!"
+:q
+|2,0,1589198684,,"q"
+:redraw
+|2,0,1589198537,,"redraw"
 
 # Search String History (newest to oldest):
-?/_type
-|2,1,1578970952,47,"_type"
-?/type
-|2,1,1578970938,47,"type"
-?/fix_flownet
-|2,1,1578969717,47,"fix_flownet"
-? \<self\>
-|2,1,1578968307,,"\\<self\\>"
-?/mvpMapPoints
-|2,1,1578482871,47,"mvpMapPoints"
-?/mMutexFeatures
-|2,1,1578482822,47,"mMutexFeatures"
-?/mpMap
-|2,1,1577461721,47,"mpMap"
-?/mObservation
-|2,1,1577460926,47,"mObservation"
-?/mObservations
-|2,1,1577458386,47,"mObservations"
-?/clear
-|2,1,1577458051,47,"clear"
-?/sit
-|2,1,1577457984,47,"sit"
-?/mspMapPoints
-|2,1,1577457699,47,"mspMapPoints"
-?/normal
-|2,1,1577456993,47,"normal"
-?/mHalfBaseline
-|2,1,1577438636,47,"mHalfBaseline"
-?/mv
-|2,1,1577436468,47,"mv"
-?/mvu
-|2,1,1577436434,47,"mvu"
-?/mvDepth
-|2,1,1577436396,47,"mvDepth"
-?/mvudepth
-|2,1,1577436358,47,"mvudepth"
-?/mvuDEpth
-|2,1,1577436354,47,"mvuDEpth"
-?/m
-|2,1,1577436319,47,"m"
-?/mDescriptors
-|2,1,1577436303,47,"mDescriptors"
-?/mnFrameId
-|2,1,1577436027,47,"mnFrameId"
-?/mb
-|2,1,1577435852,47,"mb"
-?/mTh
-|2,1,1577435820,47,"mTh"
-?/mThDepth
-|2,1,1577435815,47,"mThDepth"
-? \<Frame\>
-|2,1,1577435783,,"\\<Frame\\>"
-?/mbf
-|2,1,1577435731,47,"mbf"
-?/mTcw
-|2,1,1577435517,47,"mTcw"
-?/id
-|2,1,1577435510,47,"id"
-?//id
-|2,1,1577435508,47,"/id"
-?/mnid
-|2,1,1577435391,47,"mnid"
-?/mnId
-|2,1,1577435388,47,"mnId"
-?/static
-|2,1,1577435211,47,"static"
-?/mNextId
-|2,1,1577435144,47,"mNextId"
-?/Frame
-|2,1,1577358181,47,"Frame"
-? imLeft
-|2,1,1577352107,,"imLeft"
-?/gruvbox
-|2,1,0,47,"gruvbox"
-?/colo
-|2,1,0,47,"colo"
-?/S-l
-|2,1,0,47,"S-l"
-?/colorsche
-|2,1,0,47,"colorsche"
-?/histo
-|2,1,0,47,"histo"
-?/mvKeys
-|2,1,0,47,"mvKeys"
-?/simple
-|2,1,0,47,"simple"
-?/airline
-|2,1,0,47,"airline"
-?/nerd
-|2,1,0,47,"nerd"
-?/tabs
-|2,1,0,47,"tabs"
-?/base16
-|2,1,0,47,"base16"
-?/air
-|2,1,0,47,"air"
-?/mo
-|2,1,0,47,"mo"
-?//Check settings file
-|2,1,0,47,"/Check settings file"
+?/process
+|2,1,1589470771,47,"process"
+?/os.listdir
+|2,1,1589469196,47,"os.listdir"
+?/monodepthNEt
+|2,1,1589457779,47,"monodepthNEt"
+?/bridging
+|2,1,1589455873,47,"bridging"
+?/device
+|2,1,1589434996,47,"device"
+?/arg.ev
+|2,1,1589434696,47,"arg.ev"
+?/true_map
+|2,1,1589380966,47,"true_map"
+?/thresh
+|2,1,1589379177,47,"thresh"
+?/epsilon
+|2,1,1589378706,47,"epsilon"
+?/vi
+|2,1,1589354296,47,"vi"
+?/test
+|2,1,1589342564,47,"test"
+?/t
+|2,1,1589265368,47,"t"
+?/first_eval
+|2,1,1589265798,47,"first_eval"
+?/loop
+|2,1,1589265382,47,"loop"
+?/c-w
+|2,1,1589262855,47,"c-w"
+?/args
+|2,1,1589262104,47,"args"
+?/indentline
+|2,1,1589256968,47,"indentline"
+?/xterm
+|2,1,1589200473,47,"xterm"
+?/256
+|2,1,1589198843,47,"256"
+?/screen
+|2,1,1589198835,47,"screen"
+?/tmux
+|2,1,0,47,"tmux"
+?/tmux-256
+|2,1,0,47,"tmux-256"
+?/dark
+|2,1,0,47,"dark"
+?/set
+|2,1,0,47,"set"
+?/fir
+|2,1,0,47,"fir"
+?/print
+|2,1,0,47,"print"
+?/print_freq
+|2,1,0,47,"print_freq"
+?/test_loop_all
+|2,1,0,47,"test_loop_all"
+?/100
+|2,1,0,47,"100"
+?/25
+|2,1,0,47,"25"
+?/frequency
+|2,1,0,47,"frequency"
+?/freq
+|2,1,0,47,"freq"
+?/loader
+|2,1,0,47,"loader"
+?/save_direc
+|2,1,0,47,"save_direc"
+?/save
+|2,1,0,47,"save"
+?/loop_recon
+|2,1,0,47,"loop_recon"
+?/loop_scale
+|2,1,0,47,"loop_scale"
+?/loop_loss
+|2,1,0,47,"loop_loss"
+? self.left_occ_mask
+|2,1,0,,"self.left_occ_mask"
+? self.right_occ_mask
+|2,1,0,,"self.right_occ_mask"
+? disp_est_scale
+|2,1,0,,"disp_est_scale"
+?/latter_pyramid
+|2,1,0,47,"latter_pyramid"
+? latter_pyramid
+|2,1,0,,"latter_pyramid"
+? former_pyramid
+|2,1,0,,"former_pyramid"
+?/former_
+|2,1,0,47,"former_"
+? disp_est_scale_fw
+|2,1,0,,"disp_est_scale_fw"
+? self.fw_mask
+|2,1,0,,"self.fw_mask"
+?/pdb
+|2,1,0,47,"pdb"
+?/2012
+|2,1,0,47,"2012"
+?/self.fw_mask
+|2,1,0,47,"self.fw_mask"
 
 # Expression History (newest to oldest):
 
@@ -231,3220 +231,2189 @@ $left_image
 
 # Registers:
 "0	CHAR	0
+	        disp_est_scale_up = nn.UpsamplingBilinear2d(size=(int(h), int(w)))(disp_est_scale[0])
+	        # scaling disp
+	        disp_est_scale_left_up = (int(w)/args.input_width)*(disp_est_scale_up[:, 0, :, :])
+	        disp_est_scale_right_up = (int(w)/args.input_width)*(disp_est_scale_up[:, 1, :, :])
 	
-	                left = torch.cat((left_t1, left_t2), 0).cuda()
-	                right = torch.cat((right_t1, right_t2), 0).cuda()
+|3,0,0,0,5,0,1589470667,"        disp_est_scale_up = nn.UpsamplingBilinear2d(size=(int(h), int(w)))(disp_est_scale[0])","        # scaling disp","        disp_est_scale_left_up = (int(w)/args.input_width)*(disp_est_scale_up[:, 0, :, :])","        disp_est_scale_right_up = (int(w)/args.input_width)*(disp_est_scale_up[:, 1, :, :])",""
+""1	LINE	0
 	
-	                model_input = Variable(torch.cat((left, right), 1).cuda())
+|3,1,1,1,1,0,1589522110,""
+"2	LINE	0
 	
-|3,0,0,0,6,0,1578971914,"","                left = torch.cat((left_t1, left_t2), 0).cuda()","                right = torch.cat((right_t1, right_t2), 0).cuda()","","                model_input = Variable(torch.cat((left, right), 1).cuda())",""
-"1	LINE	0
+|3,0,2,1,1,0,1589522110,""
+"3	LINE	0
 	
-|3,0,1,1,1,0,1578972363,""
-"2	CHAR	0
-	    def train_loop_LSTM(self):
-	        if self.args.first_eval_flag:
-	            self.train_test_depth_2(self.args.input_height, self.args.input_width)
-	            self.train_test_flow_2(self.args.input_height, self.args.input_width)
-	        start_time = time.time()
-	        for epoch in range(self.args.epochs):
-	            self.epoch = epoch
-	            self.scheduler.step()
-	            total_loss, total_flow_loss, total_disp_loss, total_loop_loss, tot_x_dist_mean, tot_y_dist_mean = [0.0]*6
-	            index = 0
-	            self.flow_model.train()
-	            self.disp_model.train()
-	            LSTM_state_flow1 = [None]*self.flow_model.LSTM_n
-	            LSTM_state_flow2 = [None]*self.flow_model.LSTM_n
-	            LSTM_state_depth = [None]*self.disp_model.LSTM_n
-	            for data in self.train_loader:
-	                self.optimizer.zero_grad()
-	                left_t1 = data['left_image_t1']
-	                left_t2 = data['left_image_t2']
-	                right_t1 = data['right_image_t1']
-	                right_t2 = data['right_image_t2']
-	
-	                former = torch.cat((left_t1, right_t1), 0).cuda()
-	                latter = torch.cat((left_t2, right_t2), 0).cuda()
-	
-	                former_pyramid = scale_pyramid(former, 4)
-	                latter_pyramid = scale_pyramid(latter, 4)
-	
-	                model_input = Variable(torch.cat((former, latter), 1).cuda())
-	                model_input_2 = Variable(torch.cat((latter, former), 1).cuda())
-	
-	                loss_flow = self.flow_loss(model_input, model_input_2)
-	
-	                left = torch.cat((left_t1, left_t2), 0).cuda()
-	                right = torch.cat((right_t1, right_t2), 0).cuda()
-	
-	                model_input = Variable(torch.cat((left, right), 1).cuda())
-	
-	                x_dist_dict, y_dist_dict = self.loop_loss(disp_est_scale_left, disp_est_scale_right, disp_est_scale_fw, disp_est_scale_bw)
-	                # Loop loss
-	                x_dist_mean = sum(x_dist_dict)/len(x_dist_dict)
-	                y_dist_mean = sum(y_dist_dict)/len(y_dist_dict)
-	                loss_loop = self.args.loop_scale*(self.args.x_weight*x_dist_mean + self.args.y_weight*y_dist_mean)
-	
-	                loss = self.args.disp_w*loss_disp + self.args.flow_w*loss_flow + loss_loop
-	
-	                loss.backward()
-	                self.optimizer.step()
-	                total_loss += loss.item()
-	                total_disp_loss += self.args.disp_w*loss_disp.item()
-|3,0,2,0,50,0,1578972361,"    def train_loop_LSTM(self):","        if self.args.first_eval_flag:","            self.train_test_depth_2(self.args.input_height, self.args.input_width)","            self.train_test_flow_2(self.args.input_height, self.args.input_width)","        start_time = time.time()","        for epoch in range(self.args.epochs):","            self.epoch = epoch","            self.scheduler.step()",>119
-|<"            total_loss, total_flow_loss, total_disp_loss, total_loop_loss, tot_x_dist_mean, tot_y_dist_mean = [0.0]*6","            index = 0","            self.flow_model.train()","            self.disp_model.train()","            LSTM_state_flow1 = [None]*self.flow_model.LSTM_n","            LSTM_state_flow2 = [None]*self.flow_model.LSTM_n","            LSTM_state_depth = [None]*self.disp_model.LSTM_n","            for data in self.train_loader:",>44
-|<"                self.optimizer.zero_grad()","                left_t1 = data['left_image_t1']","                left_t2 = data['left_image_t2']","                right_t1 = data['right_image_t1']","                right_t2 = data['right_image_t2']","","                former = torch.cat((left_t1, right_t1), 0).cuda()","                latter = torch.cat((left_t2, right_t2), 0).cuda()","","                former_pyramid = scale_pyramid(former, 4)",>59
-|<"                latter_pyramid = scale_pyramid(latter, 4)","","                model_input = Variable(torch.cat((former, latter), 1).cuda())","                model_input_2 = Variable(torch.cat((latter, former), 1).cuda())","","                loss_flow = self.flow_loss(model_input, model_input_2)","","                left = torch.cat((left_t1, left_t2), 0).cuda()","                right = torch.cat((right_t1, right_t2), 0).cuda()","",>76
-|<"                model_input = Variable(torch.cat((left, right), 1).cuda())","","                x_dist_dict, y_dist_dict = self.loop_loss(disp_est_scale_left, disp_est_scale_right, disp_est_scale_fw, disp_est_scale_bw)","                # Loop loss","                x_dist_mean = sum(x_dist_dict)/len(x_dist_dict)","                y_dist_mean = sum(y_dist_dict)/len(y_dist_dict)",>116
-|<"                loss_loop = self.args.loop_scale*(self.args.x_weight*x_dist_mean + self.args.y_weight*y_dist_mean)","","                loss = self.args.disp_w*loss_disp + self.args.flow_w*loss_flow + loss_loop","","                loss.backward()","                self.optimizer.step()","                total_loss += loss.item()","                total_disp_loss += self.args.disp_w*loss_disp.item()"
-"3	CHAR	0
-	        # border_mask
-	        if self.args.Loop_Mask_type=='border':
-	            border_mask = create_border_mask(flow_left_bw, self.args.border_ratio)
-	            border_mask = border_mask.detach()
-	
-	
-|3,0,3,0,6,0,1578972332,"        # border_mask","        if self.args.Loop_Mask_type=='border':","            border_mask = create_border_mask(flow_left_bw, self.args.border_ratio)","            border_mask = border_mask.detach()","",""
+|3,0,3,1,1,0,1589516785,""
 "4	LINE	0
-	        elif self.args.Loop_Mask_type=='fb':
-|3,0,4,1,1,0,1578972321,"        elif self.args.Loop_Mask_type=='fb':"
-"5	CHAR	0
-	        if self.args.Loop_Mask_type=='border':
-	            x_dist_dict.append(torch.mean(border_mask.squeeze(1)*x_dist_4))
-	            y_dist_dict.append(torch.mean(border_mask.squeeze(1)*y_dist_4))
-	        elif self.args.Loop_Mask_type=='outgoing':
-	            occ1_4 = occ_right_t2.detach()
-	            occ2_4 = Resample2d()(occ_bw_left, x1_4).detach()
-	            occ3_4 = Resample2d()(occ_left_t1, x1_4 + x2_4).detach()
-	            occ4_4 = Resample2d()(occ_fw_right, x1_4 + x2_4 + x3_4).detach()
-	            occ_tot_4 = occ1_4*occ2_4*occ3_4*occ4_4
-	            occ_tot_4 = occ_tot_4.detach()
-	            x_dist_dict.append(torch.mean(occ_tot_4.squeeze()*x_dist_4.squeeze())/torch.mean(occ_tot_4))
-	            y_dist_dict.append(torch.mean(occ_tot_4.squeeze()*y_dist_4.squeeze())/torch.mean(occ_tot_4))
+	            import pdb; pdb.set_trace()
+|3,0,4,1,1,0,1589516783,"            import pdb; pdb.set_trace()"
+"5@	LINE	0
 	
-|3,0,5,0,13,0,1578972320,"        if self.args.Loop_Mask_type=='border':","            x_dist_dict.append(torch.mean(border_mask.squeeze(1)*x_dist_4))","            y_dist_dict.append(torch.mean(border_mask.squeeze(1)*y_dist_4))","        elif self.args.Loop_Mask_type=='outgoing':","            occ1_4 = occ_right_t2.detach()","            occ2_4 = Resample2d()(occ_bw_left, x1_4).detach()","            occ3_4 = Resample2d()(occ_left_t1, x1_4 + x2_4).detach()",>78
-|<"            occ4_4 = Resample2d()(occ_fw_right, x1_4 + x2_4 + x3_4).detach()","            occ_tot_4 = occ1_4*occ2_4*occ3_4*occ4_4","            occ_tot_4 = occ_tot_4.detach()","            x_dist_dict.append(torch.mean(occ_tot_4.squeeze()*x_dist_4.squeeze())/torch.mean(occ_tot_4))","            y_dist_dict.append(torch.mean(occ_tot_4.squeeze()*y_dist_4.squeeze())/torch.mean(occ_tot_4))",""
+|3,2,5,1,1,0,1589470828,""
 "6	LINE	0
-	        elif self.args.Loop_Mask_type=='fb':
-|3,0,6,1,1,0,1578972309,"        elif self.args.Loop_Mask_type=='fb':"
-"7	CHAR	0
-	        if self.args.Loop_Mask_type=='border':
-	            x_dist_dict.append(torch.mean(border_mask.squeeze(1)*x_dist_3))
-	            y_dist_dict.append(torch.mean(border_mask.squeeze(1)*y_dist_3))
-	        elif self.args.Loop_Mask_type=='outgoing':
-	            occ1_3 = occ_bw_right.detach()
-	            occ2_3 = Resample2d()(occ_right_t1, x1_3).detach()
-	            occ3_3 = Resample2d()(occ_fw_left, x1_3 + x2_3).detach()
-	            occ4_3 = Resample2d()(occ_left_t2, x1_3 + x2_3 + x3_3).detach()
-	            occ_tot_3 = occ1_3*occ2_3*occ3_3*occ4_3
-	            occ_tot_3 = occ_tot_3.detach()
-	            x_dist_dict.append(torch.mean(occ_tot_3.squeeze()*x_dist_3.squeeze())/torch.mean(occ_tot_3))
-	            y_dist_dict.append(torch.mean(occ_tot_3.squeeze()*y_dist_3.squeeze())/torch.mean(occ_tot_3))
+	        import pdb; pdb.set_trace()
+|3,0,6,1,1,0,1589470826,"        import pdb; pdb.set_trace()"
+"7	LINE	0
 	
-|3,0,7,0,13,0,1578972308,"        if self.args.Loop_Mask_type=='border':","            x_dist_dict.append(torch.mean(border_mask.squeeze(1)*x_dist_3))","            y_dist_dict.append(torch.mean(border_mask.squeeze(1)*y_dist_3))","        elif self.args.Loop_Mask_type=='outgoing':","            occ1_3 = occ_bw_right.detach()","            occ2_3 = Resample2d()(occ_right_t1, x1_3).detach()","            occ3_3 = Resample2d()(occ_fw_left, x1_3 + x2_3).detach()",>77
-|<"            occ4_3 = Resample2d()(occ_left_t2, x1_3 + x2_3 + x3_3).detach()","            occ_tot_3 = occ1_3*occ2_3*occ3_3*occ4_3","            occ_tot_3 = occ_tot_3.detach()","            x_dist_dict.append(torch.mean(occ_tot_3.squeeze()*x_dist_3.squeeze())/torch.mean(occ_tot_3))","            y_dist_dict.append(torch.mean(occ_tot_3.squeeze()*y_dist_3.squeeze())/torch.mean(occ_tot_3))",""
+|3,0,7,1,1,0,1589470778,""
 "8	LINE	0
-	        elif self.args.Loop_Mask_type=='fb':
-|3,0,8,1,1,0,1578972288,"        elif self.args.Loop_Mask_type=='fb':"
-"9	CHAR	0
-	        elif self.args.Loop_Mask_type=='outgoing':
-	            occ1_2 = occ_left_t1.detach()
-	            occ2_2 = Resample2d()(occ_fw_right, x1_2).detach()
-	            occ3_2 = Resample2d()(occ_right_t2, x1_2 + x2_2).detach()
-	            occ4_2 = Resample2d()(occ_bw_left, x1_2 + x2_2 + x3_2).detach()
-	            occ_tot_2 = occ1_2*occ2_2*occ3_2*occ4_2
-	            occ_tot_2 = occ_tot_2.detach()
-	            x_dist_dict.append(torch.mean(occ_tot_2.squeeze()*x_dist_2.squeeze())/torch.mean(occ_tot_2))
-	            y_dist_dict.append(torch.mean(occ_tot_2.squeeze()*y_dist_2.squeeze())/torch.mean(occ_tot_2))
+	        self.transform = get_transform()
+|3,0,8,1,1,0,1589470777,"        self.transform = get_transform()"
+"9	LINE	0
 	
-|3,0,9,0,10,0,1578972287,"        elif self.args.Loop_Mask_type=='outgoing':","            occ1_2 = occ_left_t1.detach()","            occ2_2 = Resample2d()(occ_fw_right, x1_2).detach()","            occ3_2 = Resample2d()(occ_right_t2, x1_2 + x2_2).detach()","            occ4_2 = Resample2d()(occ_bw_left, x1_2 + x2_2 + x3_2).detach()","            occ_tot_2 = occ1_2*occ2_2*occ3_2*occ4_2","            occ_tot_2 = occ_tot_2.detach()",>106
-|<"            x_dist_dict.append(torch.mean(occ_tot_2.squeeze()*x_dist_2.squeeze())/torch.mean(occ_tot_2))","            y_dist_dict.append(torch.mean(occ_tot_2.squeeze()*y_dist_2.squeeze())/torch.mean(occ_tot_2))",""
-""-	CHAR	0
-	2
-|3,1,36,0,1,0,1578972374,"2"
+|3,0,9,1,1,0,1589470684,""
+"-	CHAR	0
+	height
+|3,0,36,0,1,0,1589471007,"height"
 
 # File marks:
-'L  20  12  /media/cur_project/slam_practice/myslam/include/Frame.h
-|4,76,20,12,1577429028,"/media/cur_project/slam_practice/myslam/include/Frame.h"
-'0  89  4  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,48,89,4,1578973642,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
-'1  34  31  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,49,34,31,1578973579,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
-'2  34  31  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,50,34,31,1578973579,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
-'3  293  57  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,51,293,57,1578971124,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
-'4  457  57  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,52,457,57,1578971124,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
-'5  293  57  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,53,293,57,1578971124,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
-'6  457  57  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,54,457,57,1578971124,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
-'7  279  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,55,279,12,1578970357,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
-'8  283  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,56,283,12,1578970357,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
-'9  400  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,57,400,12,1578970357,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+'0  1  3  /media/mnt1/ubuntu_setting/.gitignore
+|4,48,1,3,1589522158,"/media/mnt1/ubuntu_setting/.gitignore"
+'1  2  0  /media/mnt1/ubuntu_setting/tmux.conf
+|4,49,2,0,1589522139,"/media/mnt1/ubuntu_setting/tmux.conf"
+'2  134  0  /media/mnt1/ubuntu_setting/vimrc
+|4,50,134,0,1589522119,"/media/mnt1/ubuntu_setting/vimrc"
+'3  69  20  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,51,69,20,1589516837,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+'4  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,52,72,12,1589516790,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+'5  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,53,72,12,1589516790,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+'6  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,54,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+'7  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,55,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
+'8  28  30  /media/mnt1/cur_project/LoopNet/utils/dataloader.py
+|4,56,28,30,1589515337,"/media/mnt1/cur_project/LoopNet/utils/dataloader.py"
+'9  33  73  /media/mnt1/cur_project/LoopNet/utils/dataloader.py
+|4,57,33,73,1589470788,"/media/mnt1/cur_project/LoopNet/utils/dataloader.py"
 
 # Jumplist (newest first):
--'  89  4  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,89,4,1578973642,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  34  31  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,34,31,1578973627,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  34  31  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,34,31,1578973579,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  549  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,549,0,1578972317,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  549  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,549,0,1578972317,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  456  26  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,456,26,1578972281,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  456  26  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,456,26,1578972281,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  293  56  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,293,56,1578972252,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  293  56  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,293,56,1578972252,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  559  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,559,8,1578972227,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  559  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,559,8,1578972227,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  597  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,597,8,1578972224,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  597  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,597,8,1578972224,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  291  17  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,291,17,1578972196,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  210  17  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,210,17,1578972196,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  291  17  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,291,17,1578972196,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  210  17  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,210,17,1578972196,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  245  56  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,245,56,1578971992,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  245  56  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,245,56,1578971992,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  236  60  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,236,60,1578971885,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  234  20  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,234,20,1578971885,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  236  60  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,236,60,1578971885,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  234  20  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,234,20,1578971885,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  381  62  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,381,62,1578971884,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  376  31  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,376,31,1578971884,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  381  62  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,381,62,1578971884,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  376  31  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,376,31,1578971884,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  233  20  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,233,20,1578971880,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  233  20  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,233,20,1578971880,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  434  20  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,434,20,1578971524,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  434  20  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,434,20,1578971524,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  409  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,409,8,1578971523,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  409  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,409,8,1578971523,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  433  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,433,8,1578971510,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  433  8  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,433,8,1578971510,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  379  28  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,379,28,1578971418,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  379  28  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,379,28,1578971418,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  457  57  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,457,57,1578971124,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  457  57  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,457,57,1578971124,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  502  16  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,502,16,1578970997,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  502  16  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,502,16,1578970997,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  574  40  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,574,40,1578970957,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  572  38  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,572,38,1578970957,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  574  40  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,574,40,1578970957,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  572  38  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,572,38,1578970957,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  365  44  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,365,44,1578970956,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  363  42  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,363,42,1578970956,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  365  44  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,365,44,1578970956,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  363  42  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,363,42,1578970956,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  63  36  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,63,36,1578970955,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  63  36  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,63,36,1578970955,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  63  36  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,63,36,1578970955,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  61  36  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,61,36,1578970954,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  61  36  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,61,36,1578970954,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  61  36  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,61,36,1578970954,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  36  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,36,0,1578970952,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  36  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,36,0,1578970952,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  36  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,36,0,1578970952,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  72  4  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,72,4,1578970943,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  72  4  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,72,4,1578970943,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  72  4  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,72,4,1578970943,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  66  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,66,0,1578970940,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  66  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,66,0,1578970940,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  66  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,66,0,1578970940,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  65  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,65,0,1578970939,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  65  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,65,0,1578970939,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  65  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,65,0,1578970939,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  279  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,279,12,1578970898,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  400  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,400,12,1578970898,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  279  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,279,12,1578970898,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  400  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,400,12,1578970898,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  283  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,283,12,1578970357,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  404  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,404,12,1578970357,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  283  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,283,12,1578970357,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  404  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,404,12,1578970357,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  218  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,218,12,1578970327,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  220  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,220,12,1578970327,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  222  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,222,12,1578970327,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  218  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,218,12,1578970327,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  220  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,220,12,1578970327,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  218  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,218,12,1578970327,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  222  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,222,12,1578970327,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  222  12  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,222,12,1578969875,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  101  66  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,101,66,1578969773,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  105  66  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,105,66,1578969773,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  101  66  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,101,66,1578969773,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  105  66  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,105,66,1578969773,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  101  66  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,101,66,1578969773,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  105  66  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,105,66,1578969773,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  105  66  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,105,66,1578969773,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  45  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,45,0,1578969763,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  45  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,45,0,1578969763,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  45  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,45,0,1578969763,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  45  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,45,0,1578969763,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  45  0  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,45,0,1578969736,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  142  16  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,142,16,1578969718,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  148  16  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,148,16,1578969718,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  146  16  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,146,16,1578969718,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  152  16  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,152,16,1578969718,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
--'  142  16  /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-|4,39,142,16,1578969718,"/media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py"
+-'  1  3  /media/mnt1/ubuntu_setting/.gitignore
+|4,39,1,3,1589522158,"/media/mnt1/ubuntu_setting/.gitignore"
+-'  2  0  /media/mnt1/ubuntu_setting/tmux.conf
+|4,39,2,0,1589522139,"/media/mnt1/ubuntu_setting/tmux.conf"
+-'  2  0  /media/mnt1/ubuntu_setting/tmux.conf
+|4,39,2,0,1589522139,"/media/mnt1/ubuntu_setting/tmux.conf"
+-'  1  0  /media/mnt1/ubuntu_setting/tmux.conf
+|4,39,1,0,1589522122,"/media/mnt1/ubuntu_setting/tmux.conf"
+-'  1  0  /media/mnt1/ubuntu_setting/tmux.conf
+|4,39,1,0,1589522122,"/media/mnt1/ubuntu_setting/tmux.conf"
+-'  134  0  /media/mnt1/ubuntu_setting/vimrc
+|4,39,134,0,1589522119,"/media/mnt1/ubuntu_setting/vimrc"
+-'  134  0  /media/mnt1/ubuntu_setting/vimrc
+|4,39,134,0,1589522119,"/media/mnt1/ubuntu_setting/vimrc"
+-'  134  0  /media/mnt1/ubuntu_setting/vimrc
+|4,39,134,0,1589522119,"/media/mnt1/ubuntu_setting/vimrc"
+-'  134  0  /media/mnt1/ubuntu_setting/vimrc
+|4,39,134,0,1589522119,"/media/mnt1/ubuntu_setting/vimrc"
+-'  1  0  /media/mnt1/ubuntu_setting/vimrc
+|4,39,1,0,1589522106,"/media/mnt1/ubuntu_setting/vimrc"
+-'  1  0  /media/mnt1/ubuntu_setting/vimrc
+|4,39,1,0,1589522106,"/media/mnt1/ubuntu_setting/vimrc"
+-'  1  0  /media/mnt1/ubuntu_setting/vimrc
+|4,39,1,0,1589522106,"/media/mnt1/ubuntu_setting/vimrc"
+-'  1  0  /media/mnt1/ubuntu_setting/vimrc
+|4,39,1,0,1589522106,"/media/mnt1/ubuntu_setting/vimrc"
+-'  69  20  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,69,20,1589516837,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  69  20  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,69,20,1589516837,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  69  20  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,69,20,1589516837,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  69  20  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,69,20,1589516837,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  69  20  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,69,20,1589516837,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  69  20  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,69,20,1589516837,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  69  20  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,69,20,1589516837,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  69  20  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,69,20,1589516837,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516831,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516831,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516831,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516831,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516831,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516831,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516831,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516831,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516790,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516790,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516790,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516790,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516790,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516790,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516790,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  72  12  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,72,12,1589516790,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  58  28  /media/mnt1/cur_project/LoopNet/test_stereo.py
+|4,39,58,28,1589516762,"/media/mnt1/cur_project/LoopNet/test_stereo.py"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  5  27  /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+|4,39,5,27,1589515363,"/media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh"
+-'  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,39,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
+-'  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,39,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
+-'  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,39,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
+-'  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,39,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
+-'  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,39,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
+-'  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,39,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
+-'  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,39,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
+-'  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,39,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
+-'  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,39,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
+-'  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,39,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
+-'  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,39,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
+-'  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,39,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
+-'  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,39,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
+-'  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,39,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
+-'  1  0  /media/mnt1/cur_project/LoopNet/test_
+|4,39,1,0,1589515350,"/media/mnt1/cur_project/LoopNet/test_"
 
 # History of marks within files (newest to oldest):
 
-> /media/cur_project/TemporalConsistentDepth/train_loop_LSTM.py
-	*	1578973641	0
-	"	89	4
-	.	292	32
-	+	1	54
-	+	1	0
-	+	1	150
-	+	1	0
-	+	2	0
-	+	618	0
-	+	293	0
-	+	293	51
-	+	293	0
-	+	293	49
-	+	176	42
-	+	202	0
-	+	207	0
-	+	245	0
-	+	245	97
-	+	245	33
-	+	245	0
-	+	142	0
-	+	65	0
-	+	101	0
-	+	101	83
-	+	102	96
-	+	103	84
-	+	133	0
-	+	134	0
-	+	133	0
-	+	134	0
-	+	133	0
-	+	65	0
-	+	31	0
-	+	293	0
-	+	301	0
-	+	376	19
-	+	379	0
-	+	220	0
-	+	377	0
-	+	379	0
-	+	376	43
-	+	293	0
-	+	434	0
-	+	435	23
-	+	293	0
-	+	293	27
-	+	293	0
-	+	309	0
-	+	310	35
-	+	312	0
-	+	373	0
-	+	374	23
-	+	220	0
-	+	311	0
-	+	245	0
-	+	235	0
-	+	236	0
-	+	237	0
-	+	241	35
-	+	244	0
-	+	242	0
-	+	243	63
-	+	245	0
-	+	436	0
-	+	437	0
-	+	436	0
-	+	437	17
-	+	559	0
-	+	302	0
-	+	309	0
-	+	559	0
-	+	697	0
-	+	559	24
-	+	597	23
-	+	293	33
-	+	293	32
-	+	293	0
-	+	293	57
-	+	470	0
-	+	469	0
-	+	505	0
-	+	527	0
-	+	549	0
-	+	457	0
-	+	294	0
-	+	293	0
-	+	291	33
-	+	292	32
+> /media/mnt1/ubuntu_setting/.gitignore
+	*	1589522157	0
+	"	1	3
+	^	1	4
+	.	1	3
+	+	1	3
 
-> /media/cur_project/TemporalConsistentDepth/NERD_tree_1
-	*	1578968302	0
-	"	24	0
+> /media/mnt1/ubuntu_setting/tmux.conf
+	*	1589522137	0
+	"	2	0
+
+> /media/mnt1/ubuntu_setting/vimrc
+	*	1589522118	0
+	"	134	0
+	.	200	0
+	+	200	0
+
+> /media/mnt1/cur_project/LoopNet/test_stereo.py
+	*	1589516836	0
+	"	69	20
+	^	69	21
+	.	69	20
+	+	44	0
+	+	42	23
+	+	44	0
+	+	50	0
+	+	39	0
+	+	37	44
+	+	38	0
+	+	39	0
+	+	40	0
+	+	58	0
+	+	61	0
+	+	58	20
+	+	59	0
+	+	58	40
+	+	43	10
+	+	61	0
+	+	61	42
+	+	62	32
+	+	63	34
+	+	84	34
+	+	62	39
+	+	63	41
+	+	84	0
+	+	64	9
+	+	65	24
+	+	66	0
+	+	84	0
+	+	39	14
+	+	48	0
+	+	39	0
+	+	50	0
+	+	48	26
+	+	49	26
+	+	84	0
+	+	67	0
+	+	81	0
+	+	68	0
+	+	81	0
+	+	77	0
+	+	81	0
+	+	76	10
+	+	83	10
+	+	84	0
+	+	76	0
+	+	60	24
+	+	61	0
+	+	69	78
+	+	73	42
+	+	74	28
+	+	75	21
+	+	71	22
+	+	70	21
+	+	71	48
+	+	76	0
+	+	72	0
+	+	69	20
+
+> /media/mnt1/cur_project/LoopNet/scripts/drving_stero_run.sh
+	*	1589515361	0
+	"	5	27
+	^	5	40
+	.	5	27
+	+	1	5
+	+	2	19
+	+	3	21
+	+	4	63
+	+	6	5
+	+	7	42
+	+	12	0
+	+	7	59
+	+	8	24
+	+	12	0
+	+	8	41
+	+	9	30
+	+	12	0
+	+	9	52
+	+	10	29
+	+	12	0
+	+	10	49
+	+	5	96
+	+	10	51
+	+	8	22
+	+	11	27
+	+	12	0
+	+	11	46
+	+	5	27
+
+> /media/mnt1/cur_project/LoopNet/test_
+	*	1589515350	0
+	"	1	0
+
+> /media/mnt1/cur_project/LoopNet/utils/dataloader.py
+	*	1589515337	0
+	"	28	30
+	^	33	74
+	.	33	73
+	+	353	20
+	+	83	64
+	+	84	64
+	+	85	54
+	+	86	54
+	+	100	66
+	+	101	66
+	+	104	0
+	+	115	46
+	+	116	16
+	+	117	17
+	+	116	46
+	+	117	44
+	+	118	47
+	+	119	30
+	+	120	30
+	+	121	51
+	+	122	48
+	+	100	61
+	+	83	64
+	+	84	64
+	+	85	54
+	+	86	54
+	+	100	80
+	+	101	0
+	+	100	89
+	+	101	90
+	+	121	49
+	+	120	28
+	+	100	0
+	+	115	0
+	+	111	49
+	+	112	49
+	+	111	47
+	+	112	47
+	+	434	0
+	+	434	27
+	+	106	21
+	+	435	0
+	+	12	0
+	+	18	15
+	+	106	32
+	+	111	32
+	+	112	32
+	+	18	0
+	+	102	0
+	+	103	0
+	+	102	11
+	+	103	16
+	+	102	49
+	+	103	49
+	+	102	39
+	+	103	39
+	+	122	52
+	+	123	42
+	+	124	39
+	+	113	28
+	+	106	24
+	+	111	40
+	+	112	40
+	+	113	46
+	+	114	46
+	+	125	0
+	+	124	40
+	+	77	124
+	+	23	0
+	+	22	0
+	+	23	26
+	+	25	32
+	+	26	40
+	+	27	63
+	+	28	65
+	+	31	50
+	+	27	21
+	+	28	42
+	+	27	20
+	+	31	25
+	+	29	0
+	+	27	47
+	+	28	49
+	+	29	86
+	+	31	25
+	+	34	0
+	+	43	0
+	+	44	0
+	+	41	0
+	+	41	45
+	+	42	48
+	+	31	39
+	+	31	30
+	+	32	30
+	+	31	0
+	+	33	0
+	+	33	73
+
+> /media/mnt1/cur_project/LoopNet/test_LC.py
+	*	1589470667	0
+	"	97	0
+	^	290	27
+	.	247	0
+	+	109	53
+	+	109	0
+	+	68	0
+	+	66	57
+	+	67	57
+	+	66	51
+	+	67	52
+	+	65	60
+	+	64	61
+	+	68	0
+	+	109	38
+	+	109	43
+	+	109	0
+	+	105	13
+	+	109	77
+	+	109	43
+	+	105	13
+	+	109	39
+	+	109	13
+	+	109	19
+	+	59	13
+	+	114	34
+	+	59	37
+	+	109	0
+	+	109	40
+	+	109	61
+	+	109	44
+	+	109	16
+	+	114	0
+	+	109	0
+	+	109	12
+	+	109	0
+	+	105	12
+	+	109	0
+	+	109	53
+	+	109	0
+	+	116	83
+	+	109	0
+	+	118	35
+	+	109	0
+	+	59	0
+	+	107	31
+	+	121	0
+	+	118	39
+	+	120	38
+	+	121	41
+	+	123	37
+	+	122	35
+	+	123	67
+	+	118	32
+	+	123	37
+	+	122	0
+	+	25	71
+	+	26	0
+	+	118	35
+	+	120	0
+	+	118	35
+	+	121	75
+	+	122	0
+	+	123	0
+	+	123	37
+	+	126	0
+	+	123	0
+	+	126	0
+	+	123	0
+	+	117	62
+	+	126	30
+	+	173	41
+	+	107	0
+	+	125	10
+	+	124	63
+	+	125	14
+	+	126	0
+	+	107	18
+	+	106	36
+	+	107	0
+	+	108	33
+	+	114	0
+	+	106	18
+	+	125	15
+	+	196	0
+	+	59	0
+	+	114	0
+	+	181	0
+	+	251	0
+	+	397	0
+	+	411	30
+	+	412	0
+	+	413	0
+	+	412	79
+	+	411	31
+	+	248	0
+	+	247	42
+	+	202	42
+	+	292	0
+	+	290	26
+	+	202	0
+	+	247	0
+
+> /media/mnt1/cur_project/LoopNet/utils/base_trainer.py
+	*	1589470112	0
+	"	184	8
+	^	259	138
+	.	259	137
+	+	71	33
+	+	72	37
+	+	85	34
+	+	86	38
+	+	100	128
+	+	260	22
+	+	261	21
+	+	260	22
+	+	263	22
+	+	264	21
+	+	265	21
+	+	267	21
+	+	259	137
+
+> /media/mnt1/cur_project/LoopNet/NERD_tree_1
+	*	1589470084	0
+	"	12	9
 	.	1	0
 	+	1	0
 
-> /media/cur_project/slam_practice/myslam/src/Tracker.cc
-	*	1578904207	0
-	"	88	11
-	^	101	45
-	.	101	44
-	+	29	16
-	+	31	30
-	+	32	39
-	+	34	34
-	+	35	0
-	+	36	47
-	+	37	17
-	+	38	16
-	+	57	0
-	+	39	0
-	+	40	15
-	+	41	22
-	+	42	24
-	+	43	0
-	+	44	63
-	+	45	70
-	+	46	57
-	+	47	64
-	+	48	62
-	+	57	0
-	+	48	64
-	+	49	0
-	+	50	103
-	+	51	104
-	+	52	0
-	+	53	57
-	+	48	14
-	+	65	8
-	+	107	0
-	+	2	0
-	+	69	0
-	+	70	24
-	+	81	0
-	+	66	0
-	+	67	15
-	+	68	0
-	+	54	0
-	+	55	36
-	+	72	32
-	+	56	30
-	+	74	0
-	+	73	0
-	+	74	0
-	+	73	36
-	+	74	0
-	+	75	27
-	+	76	0
-	+	77	34
-	+	80	0
-	+	79	34
-	+	80	0
-	+	81	0
-	+	82	0
-	+	83	40
-	+	83	38
-	+	83	78
-	+	83	38
-	+	83	41
-	+	83	38
-	+	107	0
-	+	83	35
-	+	107	0
-	+	106	0
-	+	107	0
-	+	83	15
-	+	108	0
-	+	85	42
-	+	106	0
-	+	87	61
-	+	89	29
-	+	106	13
-	+	106	14
-	+	106	13
-	+	106	0
-	+	90	65
-	+	106	0
-	+	106	12
-	+	106	0
-	+	105	0
-	+	106	0
-	+	91	0
-	+	92	41
-	+	93	38
-	+	94	57
-	+	105	0
-	+	104	0
-	+	96	50
-	+	97	22
-	+	103	0
-	+	99	64
-	+	103	0
-	+	99	67
-	+	100	72
-	+	101	53
-	+	103	0
-	+	73	0
-	+	74	0
-	+	102	50
-	+	93	32
-	+	101	44
-
-> /media/cur_project/slam_practice/myslam/src/KeyFrame.cc
-	*	1578483456	0
-	"	17	30
-	^	34	30
-	.	34	29
-	+	1	0
-	+	1	19
-	+	2	0
-	+	3	16
-	+	14	0
-	+	6	31
-	+	13	0
-	+	1	0
-	+	12	14
-	+	36	0
-	+	5	25
-	+	13	0
-	+	12	15
-	+	11	5
-	+	12	0
-	+	5	21
-	+	13	16
-	+	13	8
-	+	13	17
-	+	13	13
-	+	13	19
-	+	13	0
-	+	6	49
-	+	5	32
-	+	12	15
-	+	13	0
-	+	6	130
-	+	11	0
-	+	6	146
-	+	12	12
-	+	7	19
-	+	6	0
-	+	7	134
-	+	7	0
-	+	7	134
-	+	8	37
-	+	7	115
-	+	8	141
-	+	9	105
-	+	10	73
-	+	9	105
-	+	10	72
-	+	9	34
-	+	36	0
-	+	15	41
-	+	36	0
-	+	29	0
-	+	17	43
-	+	18	23
-	+	19	53
-	+	20	43
-	+	21	29
-	+	22	21
-	+	23	0
-	+	24	44
-	+	25	36
-	+	26	21
-	+	25	51
-	+	26	43
-	+	26	0
-	+	28	19
-	+	27	0
-	+	29	0
-	+	27	66
-	+	18	24
-	+	24	26
-	+	17	29
-	+	15	8
-	+	20	44
-	+	2	0
-	+	6	41
-	+	10	86
-	+	30	0
-	+	36	1
-	+	31	63
-	+	35	0
-	+	33	47
-	+	35	0
-	+	34	29
-
-> /media/cur_project/slam_practice/myslam/include/KeyFrame.h
-	*	1578483440	0
-	"	41	19
-	^	7	20
-	.	7	19
-	+	1	17
-	+	2	17
-	+	73	5
-	+	3	0
-	+	4	14
-	+	10	0
-	+	11	16
-	+	72	0
-	+	15	17
-	+	72	0
-	+	55	0
-	+	18	25
-	+	5	16
-	+	18	31
-	+	73	5
-	+	8	23
-	+	9	21
-	+	71	5
-	+	18	30
-	+	19	64
-	+	22	8
-	+	23	14
-	+	24	40
-	+	26	45
-	+	27	0
-	+	41	32
-	+	41	71
-	+	41	0
-	+	41	34
-	+	41	33
-	+	41	12
-	+	55	20
-	+	41	0
-	+	41	11
-	+	55	15
-	+	54	0
-	+	56	42
-	+	57	23
-	+	58	23
-	+	59	22
-	+	60	0
-	+	60	22
-	+	41	80
-	+	41	30
-	+	41	0
-	+	25	34
-	+	41	13
-	+	54	13
-	+	41	0
-	+	28	0
-	+	41	0
+> /media/mnt1/cur_project/LoopNet/gen_error_map.py
+	*	1589469965	0
+	"	80	8
+	.	79	0
+	+	26	60
 	+	31	0
+	+	26	64
+	+	36	0
+	+	36	32
 	+	41	0
-	+	38	39
-	+	60	0
-	+	61	19
-	+	62	33
-	+	63	40
-	+	64	37
+	+	81	34
+	+	36	18
+	+	27	94
 	+	41	0
-	+	54	0
-	+	65	27
-	+	72	0
-	+	66	17
-	+	20	13
-	+	20	16
-	+	6	14
-	+	18	37
-	+	68	22
-	+	13	13
-	+	15	0
-	+	69	49
-	+	71	12
-	+	70	47
-	+	71	0
-	+	21	62
-	+	14	18
-	+	7	19
-
-> /media/cur_project/slam_practice/myslam/include/MapPoint.h
-	*	1578483385	0
-	"	12	0
-	^	11	19
-	.	11	18
-	+	1	17
-	+	73	5
-	+	2	17
-	+	3	19
-	+	4	16
-	+	8	3
-	+	71	0
-	+	12	17
-	+	70	0
-	+	14	14
-	+	70	5
-	+	71	0
-	+	5	14
-	+	15	70
-	+	16	83
-	+	52	15
-	+	51	0
-	+	54	29
-	+	55	0
-	+	56	79
-	+	57	52
-	+	61	0
-	+	63	24
-	+	62	12
-	+	63	12
-	+	64	0
-	+	65	32
-	+	66	28
-	+	72	0
-	+	18	16
-	+	17	0
-	+	18	58
-	+	19	39
-	+	20	48
-	+	58	0
-	+	59	37
-	+	60	33
-	+	68	22
-	+	67	0
-	+	68	37
-	+	69	32
-	+	19	14
-	+	20	14
-	+	51	13
-	+	51	0
-	+	52	0
-	+	19	12
-	+	20	12
-	+	19	12
-	+	20	12
-	+	21	0
-	+	23	20
-	+	15	14
-	+	7	0
-	+	10	13
-	+	3	0
-	+	6	12
-	+	50	34
-	+	24	0
-	+	49	0
-	+	28	0
-	+	57	52
-	+	15	12
-	+	16	14
-	+	15	56
-	+	11	18
-
-> /media/cur_project/slam_practice/myslam/src/MapPoint.cc
-	*	1578483139	0
-	"	16	0
-	^	9	29
-	.	9	0
-	+	1	19
-	+	4	0
-	+	2	0
-	+	3	21
-	+	2	0
-	+	5	0
-	+	4	14
-	+	5	0
-	+	6	16
-	+	28	0
-	+	10	66
-	+	14	0
-	+	10	70
-	+	12	29
-	+	13	51
-	+	14	0
-	+	15	0
-	+	16	59
-	+	27	0
-	+	18	52
-	+	19	32
-	+	26	14
-	+	19	0
-	+	27	0
-	+	4	0
-	+	9	28
-	+	8	0
-	+	9	0
-	m	19	11
-	n	19	11
-
-> /media/cur_project/slam_practice/myslam/src/main.cc
-	*	1578482280	0
-	"	29	19
-	^	26	39
-	.	29	0
-	+	2	15
-	+	7	9
-	+	28	0
-	+	29	36
-	+	40	0
-	+	38	1
-	+	29	0
-	+	29	117
-	+	29	119
-	+	29	36
-	+	9	0
-	+	10	54
-	+	10	0
-	+	11	0
-	+	7	0
 	+	39	0
-	+	36	43
-	+	37	44
-	+	37	0
-	+	34	24
-	+	35	25
-	+	34	52
-	+	35	53
-	+	14	17
-	+	18	4
-	+	19	0
-	+	16	36
-	+	17	0
-	+	16	41
-	+	28	0
-	+	14	14
-	+	16	58
-	+	17	0
-	+	16	57
-	+	28	43
-	+	28	44
-	+	36	20
-	+	37	21
-	+	28	68
-	+	28	0
-	+	22	46
-	+	36	28
-	+	36	29
-	+	29	65
-	+	9	29
-	+	37	0
-	+	8	0
-	+	29	65
-	+	9	29
-	+	22	48
-	+	22	75
-	+	28	0
-	+	22	52
-	+	10	27
-	+	9	56
-	+	20	17
-	+	21	17
-	+	20	20
-	+	21	20
-	+	10	27
-	+	9	56
-	+	22	50
-	+	29	0
-	+	14	14
-	+	16	73
-	+	14	14
-	+	5	24
-	+	28	4
-	+	22	0
-	+	22	150
-	+	16	69
-	+	22	176
-	+	22	245
-	+	22	246
-	+	27	0
-	+	24	73
-	+	25	14
-	+	24	15
-	+	25	83
-	+	27	0
-	+	27	37
-	+	22	216
-	+	4	27
-	+	27	26
-	+	22	166
-	+	22	199
-	+	27	0
-	+	28	0
-	+	27	0
-	+	6	0
-	+	26	38
-	+	22	114
-	+	22	202
-	+	23	0
-	+	29	41
-	+	29	0
-
-> /media/cur_project/slam_practice/myslam/src/Map.cc
-	*	1578482264	0
-	"	19	0
-	^	112	2
-	.	112	1
-	+	114	22
-	+	1	0
-	+	2	0
-	+	1	14
-	+	4	16
-	+	114	1
-	+	97	1
-	+	112	1
-
-> /media/cur_project/slam_practice/myslam/src/SystemHandler.cc
-	*	1578482006	0
-	"	19	21
-	^	19	34
-	.	19	33
-	+	1	25
-	+	1	0
-	+	3	16
-	+	5	98
-	+	15	0
-	+	5	97
-	+	1	0
-	+	2	0
-	+	1	25
-	+	2	0
-	+	15	0
-	+	6	0
-	+	7	0
-	+	21	0
-	+	13	4
-	+	7	0
-	+	8	48
-	+	11	72
-	+	8	35
-	+	9	23
-	+	15	0
-	+	14	24
-	+	1	25
-	+	2	19
-	+	14	45
-	+	14	0
-	+	14	10
-	+	2	0
-	+	14	8
-	+	2	0
-	+	14	0
-	+	16	0
-	+	17	69
-	+	20	0
-	+	17	59
-	+	19	58
-	+	20	0
-	+	17	8
-	+	19	33
-
-> /media/cur_project/slam_practice/myslam/src/Frame.cc
-	*	1578481994	0
-	"	71	8
-	^	215	27
-	.	185	10
-	+	136	25
-	+	137	25
-	+	138	25
-	+	44	0
-	+	43	0
-	+	42	29
 	+	41	0
-	+	119	42
-	+	126	0
-	+	127	47
-	+	119	39
-	+	8	20
-	+	15	0
-	+	8	93
-	+	15	0
-	+	9	86
-	+	10	61
-	+	11	43
-	+	10	52
-	+	11	37
-	+	8	70
-	+	64	8
-	+	65	30
-	+	67	0
-	+	68	37
-	+	83	8
-	+	70	75
-	+	71	50
-	+	72	54
-	+	73	45
-	+	74	0
-	+	75	39
-	+	82	0
-	+	77	48
-	+	78	0
-	+	82	36
-	+	85	0
-	+	86	70
-	+	95	0
-	+	88	67
-	+	50	70
-	+	51	107
-	+	89	68
-	+	90	0
-	+	95	0
-	+	91	77
-	+	92	24
-	+	94	23
-	+	86	12
-	+	79	0
-	+	82	0
-	+	80	50
-	+	81	56
-	+	13	17
-	+	14	5
-	+	15	0
-	+	14	5
-	+	228	0
-	+	229	0
-	+	212	0
-	+	213	49
-	+	227	0
-	+	215	34
-	+	216	14
-	+	224	0
-	+	218	44
-	+	219	44
-	+	224	0
-	+	227	0
-	+	220	42
-	+	221	42
-	+	223	26
-	+	222	60
-	+	223	31
-	+	226	28
-	+	223	27
-	+	104	0
-	+	105	35
-	+	109	0
-	+	107	26
-	+	109	0
-	+	108	28
-	+	110	0
-	+	111	35
-	+	117	0
-	+	113	45
-	+	114	23
-	+	115	37
-	+	116	28
-	+	117	0
-	+	113	44
-	+	12	40
-	+	19	22
-	+	18	19
-	+	15	122
-	+	20	0
-	+	18	26
-	+	185	11
-	+	215	26
-	+	185	10
-	l	48	27
-	n	10	17
-
-> /media/cur_project/slam_practice/myslam/include/Tracker.h
-	*	1577463515	0
-	"	60	22
-	^	60	23
-	.	60	22
-	+	1	16
-	+	2	16
-	+	63	5
-	+	5	29
-	+	5	42
-	+	5	24
-	+	11	16
-	+	62	0
-	+	13	10
-	+	8	0
-	+	13	16
-	+	61	0
-	+	15	14
-	+	16	61
-	+	3	17
-	+	61	0
-	+	16	49
-	+	39	15
-	+	61	7
-	+	62	0
-	+	61	5
-	+	41	21
-	+	42	21
-	+	43	21
-	+	44	21
-	+	46	21
-	+	5	15
-	+	8	0
-	+	4	15
-	+	16	30
-	+	17	0
-	+	17	88
-	+	17	89
-	+	38	12
-	+	19	0
-	+	21	27
-	+	45	32
-	+	40	34
-	+	47	29
-	+	48	21
-	+	49	15
-	+	45	0
-	+	44	20
-	+	49	44
-	+	61	0
-	+	50	26
-	+	51	27
-	+	52	29
-	+	53	28
-	+	54	26
-	+	55	26
-	+	61	0
-	+	56	44
-	+	57	45
-	+	7	22
-	+	22	12
-	+	23	33
-	+	24	0
-	+	10	0
-	+	8	16
-	+	24	12
-	+	18	24
-	+	26	28
-	+	33	0
-	+	28	34
-	+	29	30
-	+	28	35
-	+	29	31
-	+	30	33
-	+	31	20
-	+	32	21
-	+	33	0
-	+	27	17
-	+	35	32
-	+	36	36
+	+	37	29
+	+	38	30
+	+	27	56
+	+	39	0
+	+	39	103
+	+	39	0
+	+	40	103
+	+	28	0
+	+	40	79
+	+	28	40
+	+	41	34
+	+	42	34
+	+	44	57
+	+	43	80
 	+	35	0
-	+	33	13
-	+	37	0
-	+	37	39
-	+	9	19
-	+	40	41
-	+	41	0
-	+	34	0
-	+	58	0
-	+	60	22
-
-> /media/cur_project/slam_practice/myslam/include/Frame.h
-	*	1577462261	0
-	"	13	0
-	^	60	34
-	.	60	33
-	+	62	17
-	+	63	38
-	+	65	21
-	+	67	20
-	+	62	33
-	+	64	32
-	+	66	39
-	+	7	25
-	+	8	25
-	+	70	38
-	+	71	31
-	+	72	31
-	+	73	31
-	+	74	31
-	+	70	0
-	+	16	0
-	+	16	55
-	+	76	110
-	+	91	0
-	+	79	68
-	+	76	0
-	+	75	0
-	+	61	0
-	+	63	18
-	+	54	27
-	+	16	40
-	+	16	0
-	+	16	72
-	+	16	0
-	+	16	39
-	+	12	19
-	+	20	0
-	+	20	20
-	+	91	7
-	+	81	15
-	+	80	0
-	+	88	24
-	+	85	53
-	+	89	23
-	+	86	24
-	+	87	24
-	+	90	0
-	+	20	51
-	+	19	0
-	+	83	0
-	+	16	0
-	+	84	0
-	+	16	0
+	+	81	0
+	+	81	105
+	+	95	38
+	+	81	106
+	+	27	93
 	+	82	0
-	+	44	25
-	+	45	24
+	+	84	0
+	+	95	0
+	+	87	0
+	+	86	0
+	+	89	0
+	+	95	0
+	+	94	40
+	+	95	0
+	+	94	29
+	+	95	0
+	+	46	20
+	+	95	35
+	+	136	34
+	+	95	23
+	+	26	62
+	+	136	0
+	+	97	0
+	+	97	5
+	+	136	0
+	+	97	34
+	+	98	27
+	+	105	52
+	+	102	33
+	+	103	33
+	+	136	0
+	+	120	0
+	+	136	0
+	+	124	29
+	+	125	29
+	+	80	10
+	+	96	10
+	+	80	0
+	+	61	0
+	+	80	0
+	+	50	48
+	+	49	12
 	+	49	0
-	+	45	0
-	+	49	0
+	+	58	0
+	+	55	24
+	+	56	0
+	+	55	19
+	+	58	64
+	+	59	0
+	+	58	99
+	+	58	0
+	+	60	10
+	+	79	14
+	+	80	0
+	+	26	62
+	+	48	18
+	+	49	62
+	+	40	15
+	+	58	123
+	+	48	24
+	+	51	32
+	+	52	0
+	+	51	25
+	+	26	62
+	+	110	0
+	+	109	0
+	+	115	21
+	+	47	0
+	+	108	0
+	+	104	0
+	+	79	0
+	j	45	53
+
+> /media/mnt1/cur_project/LoopNet/eval_utils/eval_depth_2015.py
+	*	1589463436	0
+	"	46	56
+	^	46	57
+	.	46	56
+	+	53	0
+	+	50	51
 	+	51	0
-	+	17	0
-	+	17	37
-	+	18	0
-	+	18	37
-	+	47	44
-	+	48	34
-	+	68	48
-	+	69	26
-	+	60	33
-	v	10	4
+	+	50	48
+	+	49	34
+	+	41	0
+	+	49	0
+	+	43	34
+	+	49	0
+	+	43	34
+	+	44	57
+	+	49	0
+	+	46	99
+	+	44	26
+	+	31	33
+	+	45	58
+	+	46	0
+	+	44	18
+	+	45	86
+	+	46	0
+	+	31	34
+	+	46	38
+	+	31	33
+	+	45	0
+	+	47	25
+	+	46	24
+	+	47	46
+	+	43	54
+	+	47	80
+	+	46	0
+	+	47	47
+	+	46	22
+	+	47	22
+	+	46	38
+	+	45	32
+	+	46	0
+	+	46	32
+	+	46	103
+	+	46	0
+	+	46	100
+	+	47	83
+	+	49	38
+	+	46	43
+	+	49	0
+	+	48	83
+	+	31	34
+	+	47	13
+	+	48	13
+	+	46	56
+	+	46	0
+	+	31	33
+	+	46	56
 
-> /media/cur_project/slam_practice/myslam/include/Map.h
-	*	1577458345	0
-	"	2	0
-	^	9	20
-	.	13	0
-	+	1	26
-	+	1	222
-	+	1	28
-	+	1	68
-	+	1	81
-	+	1	98
-	+	1	116
-	+	1	214
-	+	1	128
-	+	1	212
-	+	1	145
-	+	1	178
-	+	1	209
-	+	1	47
-	+	1	29
-	+	1	216
-	+	1	28
-	+	1	217
-	+	1	3
-	+	63	15
-	+	1	0
-	+	7	0
-	+	4	20
-	+	5	9
-	+	11	16
-	+	16	0
-	+	13	0
-	+	61	20
-	+	64	0
-	+	38	4
-	+	13	0
-	+	8	0
-	+	9	19
-	+	13	0
+> /media/mnt1/cur_project/LoopNet/eval_utils/eval_flow.py
+	*	1589462827	0
+	"	44	0
+	^	75	57
+	.	75	57
+	+	76	0
+	+	65	33
+	+	73	34
+	+	73	17
+	+	73	21
+	+	76	0
+	+	74	0
+	+	76	0
+	+	75	57
+	+	43	8
+	+	42	0
+	+	75	57
+	+	43	12
+	+	75	80
+	+	76	0
+	+	43	0
+	+	75	57
+	+	75	38
+	+	75	112
+	+	75	0
+	+	44	50
+	+	43	0
+	+	44	43
+	+	75	104
+	+	75	57
 
-> /media/cur_project/slam_practice/myslam/include/Map.cc
-	*	1577457602	0
+> /media/mnt1/cur_project/LoopNet/utils/utils.py
+	*	1589462821	0
+	"	103	35
+	^	9	14
+	.	9	13
+	+	42	25
+	+	45	0
+	+	46	21
+	+	77	22
+	+	52	8
+	+	53	21
+	+	56	8
+	+	59	8
+	+	62	8
+	+	66	8
+	+	70	47
+	+	75	8
+	+	77	36
+	+	77	35
+	+	77	51
+	+	77	49
+	+	77	11
+	+	45	0
+	+	43	14
+	+	45	0
+	+	43	14
+	+	50	8
+	+	43	17
+	+	50	0
+	+	46	71
+	+	46	0
+	+	47	72
+	+	48	72
+	+	46	70
+	+	47	70
+	+	48	70
+	+	52	33
+	+	53	117
+	+	54	0
+	+	56	40
+	+	78	0
+	+	77	23
+	+	59	40
+	+	62	41
+	+	66	36
+	+	70	47
+	+	72	0
+	+	70	39
+	+	70	45
+	+	70	46
+	+	72	0
+	+	70	107
+	+	71	0
+	+	72	0
+	+	75	46
+	+	56	28
+	+	77	29
+	+	75	20
+	+	44	58
+	+	56	40
+	+	77	23
+	+	49	0
+	+	49	40
+	+	29	0
+	+	30	0
+	+	30	38
+	+	30	4
+	+	130	0
+	+	131	76
+	+	155	16
+	+	131	46
+	+	151	0
+	+	149	0
+	+	150	21
+	+	151	0
+	+	152	20
+	+	153	0
+	+	153	89
+	+	155	0
+	+	31	0
+	+	30	0
+	+	9	13
+
+> /media/mnt1/cur_project/LoopNet/networks/MonodepthNet.py
+	*	1589461932	0
+	"	136	0
+
+> /media/mnt1/cur_project/LoopNet/train_loop_LSTM.py
+	*	1589457868	0
+	"	130	26
+	^	291	0
+	.	244	0
+	+	259	147
+	+	259	146
+	+	261	0
+	+	259	224
+	+	259	28
+	+	259	146
+	+	259	0
+	+	259	144
+	+	259	145
+	+	259	0
+	+	259	146
+	+	259	28
+	+	259	37
+	+	257	34
+	+	259	28
+	+	257	35
+	+	259	97
+	+	261	0
+	+	259	85
+	+	260	36
+	+	259	85
+	+	257	161
+	+	257	50
+	+	249	86
+	+	257	101
+	+	257	89
+	+	257	102
+	+	257	104
+	+	249	72
+	+	259	0
+	+	257	101
+	+	249	73
+	+	190	0
+	+	196	0
+	+	93	0
+	+	249	42
+	+	93	66
+	+	249	0
+	+	133	0
+	+	93	67
+	+	249	59
+	+	93	66
+	+	249	89
+	+	249	0
+	+	196	0
+	+	93	67
+	+	245	79
+	+	246	0
+	+	248	0
+	+	257	105
+	+	258	35
+	+	190	0
+	+	196	0
+	+	196	33
+	+	93	66
+	+	183	0
+	+	183	42
+	+	183	79
+	+	172	39
+	+	171	22
+	+	170	0
+	+	183	13
+	+	183	17
+	+	39	0
+	+	31	0
+	+	93	67
+	+	196	0
+	+	256	0
+	+	254	27
+	+	272	0
+	+	289	0
+	+	28	25
+	+	130	25
+	+	184	22
+	+	296	30
+	+	184	0
+	+	183	0
+	+	130	12
+	+	294	26
+	+	289	0
+	+	28	10
+	+	283	29
+	+	284	60
+	+	283	32
+	+	284	60
+	+	283	46
+	+	284	60
+	+	284	0
+	+	285	0
+	+	63	122
+	+	283	37
+	+	284	70
+	+	279	69
+	+	259	66
+	+	244	21
+	+	295	0
+	+	291	0
+	+	293	0
+	+	294	4
+	+	244	0
+
+> /media/mnt1/cur_project/LoopNet/scripts/eval_LC.sh
+	*	1589456039	0
+	"	8	17
+	^	8	16
+	.	8	17
+	+	5	25
+	+	6	26
+	+	5	44
+	+	7	14
+	+	8	17
+
+> /media/mnt1/cur_project/LoopNet/scripts/eval_
+	*	1589456004	0
 	"	1	0
 
-> /media/cur_project/slam_practice/myslam/CMakeLists.txt
-	*	1577455369	0
-	"	5	18
-	^	16	19
-	.	16	18
-	+	22	26
-	+	22	21
-	+	22	25
-	+	22	0
-	+	22	24
-	+	22	25
-	+	22	0
-	+	22	36
-	+	18	24
-	+	1	0
-	+	18	20
-	+	22	0
-	+	19	0
-	+	21	0
-	+	19	6
-	+	22	0
-	+	20	0
-	+	17	38
-	+	17	48
+> /media/mnt1/cur_project/LoopNet/da
+	*	1589430075	0
+	"	1	0
+
+> /media/mnt1/cur_project/LoopNet/3
+	*	1589430067	0
+	"	1	0
+
+> /media/mnt1/cur_project/LoopNet/scripts/eval_L
+	*	1589377171	0
+	"	1	0
+
+> /media/mnt1/cur_project/LoopNet/utils/2
+	*	1589376053	0
+	"	5	0
+
+> /media/mnt1/cur_project/LoopNet/scripts/loop_LSTM_run.sh
+	*	1589375330	0
+	"	50	26
+	^	50	27
+	.	50	26
+	+	44	23
+	+	3	20
+	+	7	25
+	+	40	15
+	+	3	19
+	+	19	25
+	+	10	15
+	+	50	24
+	+	10	0
+	+	19	25
+	+	3	20
+	+	39	13
+	+	44	55
+	+	45	0
+	+	51	0
+	+	95	0
+	+	94	38
+	+	3	19
+	+	46	20
+	+	3	20
+	+	52	0
+	+	51	0
+	+	86	0
+	+	10	0
+	+	36	0
 	+	17	0
-	+	21	22
-	+	22	0
-	+	21	49
-	+	17	77
-	+	17	0
-	+	17	2
-	+	17	0
-	+	7	0
-	+	17	0
+	+	3	0
+	+	34	0
+	+	75	0
 	+	5	0
+	+	34	19
+	+	46	21
+	+	50	25
+	+	44	26
+	+	34	21
+	+	77	17
+	+	78	17
+	+	46	0
+	+	77	0
+	+	46	0
+	+	10	0
+	+	83	27
+	+	84	29
+	+	41	0
+	+	41	18
+	+	42	15
+	+	87	20
+	+	45	0
+	+	74	18
+	+	73	18
+	+	41	0
+	+	71	22
+	+	72	20
+	+	8	0
+	+	65	23
+	+	8	0
+	+	2	0
+	+	3	0
+	+	6	0
 	+	7	0
-	+	6	23
-	+	6	62
-	+	6	61
-	+	6	62
+	+	4	18
+	+	6	0
 	+	7	0
-	+	6	60
-	+	12	40
-	+	8	15
-	+	9	24
-	+	10	18
-	+	12	23
-	+	14	19
-	+	15	14
-	+	16	18
+	+	10	0
+	+	2	0
+	+	35	0
+	+	31	0
+	+	32	0
+	+	31	0
+	+	3	0
+	+	76	18
+	+	34	19
+	+	62	24
+	+	61	24
+	+	39	0
+	+	41	0
+	+	11	15
+	+	16	0
+	+	2	0
+	+	14	0
+	+	15	24
+	+	16	55
+	+	14	0
+	+	12	29
+	+	14	0
+	+	85	27
+	+	12	22
+	+	13	6
+	+	16	60
+	+	13	21
+	+	13	4
+	+	14	0
+	+	13	4
+	+	72	22
+	+	71	21
+	+	41	0
+	+	74	22
+	+	73	22
+	+	42	0
+	+	50	26
+	n	19	4
 
-> /media/cur_project/slam_practice/myslam/include/Frame.cc
-	*	1577358288	0
+> /media/mnt1/cur_project/LoopNet/utils/flowlib.py
+	*	1589375238	0
+	"	61	0
+
+> /media/mnt1/cur_project/LoopNet/eval_utils/eval_depth_
+	*	1589371241	0
 	"	1	0
+
+> ~/.bashrc
+	*	1589360453	0
+	"	117	25
+	^	117	26
+	.	117	25
+	+	116	15
+	+	117	0
+	+	117	42
+	+	117	0
+	+	117	27
+	+	117	26
+	+	117	31
+	+	118	16
+	+	117	25
+
+> ~/.tmux.conf
+	*	1589354308	0
+	"	37	41
+	^	55	1
+	.	55	0
+	+	1	0
+	+	1	26
+	+	46	0
+	+	1	52
+	+	1	70
+	+	1	0
+	+	46	0
+	+	45	33
+	+	46	31
+	+	46	0
+	+	28	0
+	+	46	40
+	+	46	0
+	+	28	0
+	+	46	30
+	+	46	40
+	+	46	0
+	+	45	0
+	+	43	0
+	+	33	0
+	+	38	0
+	+	51	87
+	+	52	60
+	+	52	0
+	+	53	37
+	+	55	0
+	+	53	26
+	+	54	64
+	+	55	69
+	+	56	0
+	+	55	0
+
+> /media/mnt1/cur_project/LoopNet/train-
+	*	1589342653	0
+	"	1	0
+
+> /media/mnt1/cur_project/LoopNet/scripts/loop_
+	*	1589341964	0
+	"	1	0
+
+> /media/mnt1/cur_project/LoopNet/utils/loop_loss.py
+	*	1589270977	0
+	"	229	0
+	^	121	22
+	.	121	21
+	+	41	58
+	+	43	58
+	+	44	59
+	+	46	63
+	+	47	64
+	+	49	66
+	+	50	66
+	+	87	0
+	+	11	60
+	+	84	0
+	+	84	12
+	+	85	42
+	+	86	93
+	+	85	93
+	+	78	0
+	+	75	11
+	+	76	11
+	+	77	56
+	+	84	53
+	+	85	61
+	+	86	61
+	+	70	47
+	+	87	0
+	+	77	0
+	+	76	0
+	+	77	0
+	+	88	0
+	+	87	0
+	+	94	75
+	+	95	78
+	+	98	76
+	+	99	78
+	+	102	69
+	+	103	70
+	+	106	69
+	+	107	70
+	+	123	0
+	+	121	70
+	+	180	0
+	+	178	24
+	+	210	0
+	+	208	80
+	+	240	0
+	+	238	24
+	+	262	19
+	+	264	18
+	+	266	48
+	+	267	50
+	+	270	47
+	+	271	49
+	+	274	41
+	+	275	41
+	+	278	41
+	+	279	41
+	+	283	55
+	+	282	7
+	+	312	7
+	+	315	9
+	+	316	22
+	+	317	23
+	+	319	22
+	+	320	23
+	+	322	22
+	+	323	22
+	+	325	23
+	+	326	23
+	+	316	38
+	+	317	38
+	+	319	38
+	+	317	0
+	+	320	38
+	+	317	0
+	+	322	40
+	+	323	39
+	+	325	42
+	+	326	41
+	+	337	9
+	+	339	34
+	+	340	34
+	+	342	34
+	+	343	34
+	+	345	22
+	+	346	22
+	+	345	40
+	+	346	39
+	+	348	23
+	+	349	23
+	+	348	42
+	+	349	41
+	+	386	7
+	+	389	9
+	+	398	9
+	+	434	7
+	+	437	9
+	+	446	9
+	+	493	9
+	+	484	9
+	+	481	7
+	+	121	21
+
+> /media/mnt1/cur_project/LoopNet/utils/NERD_tree_1
+	*	1589265286	0
+	"	17	15
+	.	1	0
+	+	1	0
 
 > ~/.vimrc
-	*	1577345806	0
-	"	181	0
-	.	181	0
-	+	33	32
-	+	33	0
-	+	48	26
-	+	51	0
-	+	47	11
-	+	48	26
-	+	48	0
-	+	67	33
-	+	67	0
-	+	48	0
-	+	70	0
-	+	32	39
-	+	32	0
-	+	67	0
-	+	66	27
-	+	33	28
-	+	33	0
-	+	33	32
-	+	33	0
-	+	31	0
-	+	33	0
-	+	65	44
-	+	31	0
-	+	53	26
-	+	54	0
-	+	52	24
-	+	53	0
-	+	52	0
-	+	53	0
-	+	52	25
-	+	52	0
-	+	52	44
-	+	53	0
-	+	68	0
-	+	70	0
-	+	66	12
-	+	69	54
-	+	70	0
-	+	69	57
-	+	67	27
-	+	186	10
-	+	186	0
-	+	185	1
-	+	186	0
-	+	49	12
-	+	50	44
-	+	50	43
-	+	50	44
-	+	51	0
-	+	50	23
-	+	48	12
-	+	49	39
-	+	49	0
-	+	185	0
-	+	185	19
-	+	185	0
-	+	49	5
-	+	48	0
-	+	49	0
-	+	44	0
-	+	44	19
-	+	185	0
-	+	182	0
-	+	185	0
-	+	44	0
-	+	44	32
-	+	44	0
-	+	185	0
-	+	183	0
-	+	185	0
-	+	184	29
-	+	181	1
-	+	183	1
-	+	181	1
-	+	183	27
-	+	185	0
-	+	184	1
-	+	44	0
-	+	184	0
-	+	44	0
-	+	43	31
-	+	44	0
-	+	43	5
-	+	184	0
-	+	181	0
-	+	176	85
-	+	179	27
-	+	176	0
-	+	177	0
-	+	179	0
-	+	176	0
-	+	178	42
-	+	175	16
-	+	178	40
-	+	175	1
-	+	178	42
-	+	180	40
-	+	181	0
-	a	61	0
+	*	1589262889	0
+	"	51	7
+	^	51	8
+	.	51	7
+	+	1	40
+	+	1	1152
+	+	1	1243
+	+	1	0
+	+	1	19
+	+	1	18
+	+	1	17
+	+	1	16
+	+	1	0
+	+	196	3
+	+	196	0
+	+	1	0
+	+	1	15
+	+	1	11
+	+	1	0
+	+	1	8
+	+	1	0
+	+	1	32
+	+	1	0
+	+	1	39
+	+	1	0
+	+	1	53
+	+	1	38
+	+	196	13
+	+	1	0
+	+	196	0
+	+	196	19
+	+	196	0
+	+	1	0
+	+	1	11
+	+	1	0
+	+	196	0
+	+	1	40
+	+	196	0
+	+	193	24
+	+	196	12
+	+	196	0
+	+	194	49
+	+	172	1
+	+	176	1
+	+	172	0
+	+	196	0
+	+	196	4
+	+	196	16
+	+	196	9
+	+	196	37
+	+	195	11
+	+	197	30
+	+	197	33
+	+	201	0
+	+	199	45
+	+	51	7
+	n	174	9
 
-> /media/cur_project/slam_practice/myslam/src/NERD_tree_1
+> ~/NERD_tree_1
+	*	1589262888	0
 	"	4	0
 	.	1	0
 	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
 
-> /media/cur_project/slam_practice/myslam/src/NERD_tree_2
-	"	3	0
+> /media/mnt1/cur_project/LoopNet/utils/lo
+	*	1589262868	0
+	"	1	0
+
+> /media/mnt1/cur_project/LoopNet/.gitignore
+	*	1589262178	0
+	"	14	7
+	^	14	8
+	.	14	7
+	+	14	7
+
+> /NERD_tree_1
+	"	4	0
 	.	1	0
 	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/.vim/vim/bundle/.git
-	"	1	0
 
 > ~/.vimr
 	"	1	0
 
-> ~/.vim/colors/dracula.vim
-	"	308	39
-	^	308	40
-	.	308	39
-	+	308	39
+> ~/.vashrc
+	"	1	0
 
-> ~/examples.desktop
-	"	219	0
-
-> ~/.vim/colors/grb256.vim
-	"	32	0
-	^	32	0
-	.	31	41
-	+	31	41
-
-> /media/cur_project/slam_practice/myslam/src/ORBmatcher.cc
-	"	9	0
-
-> ~/.vim/colors/jellybeans.vim
-	"	384	0
-
-> /media/cur_project/slam_practice/myslam/src/ORBextractor.cc
-	"	562	16
-	^	11	17
-	.	11	16
-	+	1076	1
+> /media/mnt1/cur_project/LoopNet/base_trainer.py
+	"	318	0
+	^	319	0
+	.	319	0
 	+	1	0
-	+	6	24
-	+	7	0
-	+	11	16
-
-> /media/cur_project/slam_practice/myslam/include/ORBextractor.h
-	"	68	0
-	^	9	17
-	.	41	0
-	+	77	0
-	+	1	0
-	+	9	16
-	+	36	101
-	+	36	0
-	+	37	0
-	+	37	0
-	+	36	0
-	+	42	70
-	+	43	0
-	+	43	80
-	+	44	0
-	+	44	75
-	+	45	0
-	+	45	85
-	+	46	0
-	+	45	0
-	+	44	0
-	+	43	0
+	+	31	0
+	+	32	0
 	+	39	0
-	+	41	0
-
-> /media/cur_project/slam_practice/myslam/include/ORBmatcher.h
-	"	15	41
-	^	15	42
-	.	15	41
-	+	1	19
-	+	2	19
-	+	18	18
-	+	2	0
-	+	3	15
-	+	4	30
-	+	5	42
-	+	17	0
-	+	6	17
-	+	8	19
-	+	16	0
-	+	17	0
-	+	10	14
-	+	11	61
-	+	13	35
-	+	14	36
-	+	18	5
-	+	16	0
-	+	15	41
-
-> /media/cur_project/slam_practice/myslam/src/ORB
-	"	1	0
-
-> /media/cur_project/slam_practice/myslam/include/ORBmatcher.cc
-	"	1	0
-	^	11	44
-	.	12	0
-	+	1	21
-	+	2	30
-	+	3	42
-	+	4	0
-	+	14	0
-	+	5	19
-	+	6	0
-	+	7	16
-	+	12	0
-	+	9	35
-	+	10	39
-	+	11	43
-	+	12	0
-
-> /media/cur_project/slam_practice/myslam/.gitignore
-	"	1	9
-	^	1	10
-	.	1	9
-	+	1	6
-	+	2	3
-	+	4	11
-	+	4	0
-	+	3	3
-	+	1	9
-
-> /media/cur_project/slam_practice/myslam/include/SystemHandler.h
-	"	13	0
-	^	13	13
-	.	4	8
-	+	1	16
-	+	9	8
-	+	5	0
-	+	1	16
-	+	9	22
-	+	17	0
-	+	10	4
-	+	17	0
-	+	12	0
-	+	12	91
-	+	17	0
-	+	15	16
-	+	11	0
-	+	9	0
-	+	15	0
-	+	17	5
-	+	2	18
-	+	5	31
-	+	5	0
-	+	2	8
-	+	1	8
-	+	5	0
-	+	9	15
-	+	8	23
-	+	3	0
-	+	17	0
-	+	16	8
-	+	4	0
-	+	4	0
-	+	16	17
-	+	17	0
-	+	16	18
-	+	13	0
-	+	13	0
-	+	14	0
-	+	11	0
-	+	13	12
-	+	4	8
-
-> /media/cur_project/slam_practice/myslam/Cm
-	"	1	0
-
-> /media/cur_project/slam_practice/myslam/include/NERD_tree_1
-	"	4	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/NERD_tree_1
-	"	4	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> /media/cur_project/slam_practice/myslam/src/NERD_tree_3
-	"	4	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> /media/cur_project/slam_practice/myslam/NERD_tree_1
-	"	1	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> /media/cur_project/slam_practice/myslam/NERD_tree_2
-	"	21	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> /media/cur_project/slam_practice/myslam/NERD_tree_3
-	"	4	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> /media/cur_project/slam_practice/myslam/build/run.sh
-	"	1	81
-	^	1	82
-	.	1	81
-	+	1	81
-
-> /media/cur_project/slam_practice/myslam/include/NERD_tree_2
-	"	4	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> /media/cur_project/slam_practice/NERD_tree_1
-	"	7	0
-	.	1	0
-	+	1	0
-
-> /media/cur_project/slam_practice/NERD_tree_2
-	"	12	0
-	.	1	0
-	+	1	0
-
-> /media/cur_project/slam_practice/myslam/src/NERD_tree_4
-	"	3	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> /media/cur_project/slam_practice/myslam/src/NERD_tree_5
-	"	4	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> /media/cur_project/slam_practice/myslam/src/NERD_tree_6
-	"	4	0
-	.	1	0
-	+	1	0
-	+	1	0
-
-> /media/cur_project/slam_practice/myslam/src/NERD_tree_7
-	"	4	0
-	.	1	0
-	+	1	0
-
-> /media/cur_project/slam_practice/myslam/src/NERD_tree_8
-	"	4	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> /media/cur_project/slam_practice/myslam/include/:Wq
-	"	1	0
-
-> /etc/ssh/sshd_config
-	"	5	1
-	^	5	2
-	.	5	1
-	+	6	8
-	+	5	1
-
-> ~/.vim/colors/NERD_tree_1
-	"	4	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/.vim/colors/railscasts.vim
-	"	1	0
-	^	148	87
-	.	148	86
-	+	148	86
-
-> /media/cur_project/slam_practice/myslam/tags
-	"	19	0
-
-> /media/cur_project/slam_practice/myslam/src/SY
-	"	1	0
-
-> ~/.vimtags
-	"	1	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> /media/cur_project/Deep_SLAM/tracking/tracker.py
-	"	5	0
-	.	4	0
-	+	4	0
-
-> /media/cur_project/slam_practice/myslam/settings/KITTI_VO_1.yaml
-	"	1	0
-	^	63	25
-	.	63	25
-	+	65	23
-	+	59	17
-	+	66	0
-	+	1	2
-	+	63	18
-	+	64	18
-	+	63	18
-	+	64	18
-	+	63	25
-
-> /media/cur_project/slam_practice/myslam/include/ControlP
-	"	1	0
-	.	1	0
-	+	1	0
-
-> /media/cur_project/slam_practice/myslam/src/S
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/test_depth_LSTM.py
-	"	137	0
-	^	96	46
-	.	96	45
-	+	80	48
-	+	15	56
-	+	89	0
-	+	88	72
-	+	89	0
-	+	141	28
-	+	220	28
-	+	221	25
-	+	74	0
-	+	42	0
-	+	41	76
-	+	43	76
-	+	44	53
-	+	40	64
-	+	41	0
-	+	41	0
-	+	96	45
-
-> /media/cur_project/TemporalConsistentDepth/eval_utils/eval_depth_eigen.py
-	"	9	0
-	^	11	42
-	.	11	41
-	+	9	0
-	+	9	0
-	+	10	0
-	+	233	0
-	+	182	0
-	+	35	0
-	+	35	0
-	+	36	0
-	+	11	41
-
-> /media/cur_project/TemporalConsistentDepth/test_LC.py
-	"	116	29
-	^	163	25
-	.	96	18
-	+	372	80
-	+	373	80
-	+	374	80
-	+	387	0
-	+	386	56
-	+	387	90
-	+	388	0
-	+	387	56
-	+	388	58
-	+	389	0
-	+	388	56
-	+	389	56
-	+	390	0
-	+	389	56
-	+	371	110
-	+	372	110
-	+	373	110
-	+	374	110
-	+	371	36
-	+	371	122
-	+	372	36
-	+	372	122
-	+	373	35
-	+	373	122
-	+	374	36
-	+	374	122
-	+	371	25
-	+	372	25
-	+	373	25
-	+	374	25
-	+	386	65
-	+	387	65
-	+	388	65
-	+	389	65
-	+	15	23
-	+	347	0
-	+	352	0
-	+	352	0
-	+	346	26
-	+	370	26
-	+	375	27
-	+	376	46
-	+	377	27
-	+	378	52
-	+	381	27
-	+	382	0
-	+	382	47
-	+	379	0
-	+	381	0
-	+	380	46
-	+	383	25
-	+	384	0
-	+	109	24
-	+	134	0
-	+	134	39
-	+	135	0
-	+	136	0
-	+	136	0
-	+	137	0
-	+	23	0
-	+	21	0
-	+	24	0
-	+	22	21
-	+	141	31
-	+	143	86
-	+	143	86
-	+	143	87
-	+	144	0
-	+	143	160
-	+	162	0
-	+	165	0
-	+	164	142
-	+	143	68
-	+	164	103
-	+	143	148
-	+	173	0
-	+	172	113
-	+	172	17
-	+	173	17
-	+	142	31
-	+	143	46
-	+	142	63
-	+	143	0
-	+	143	116
-	+	163	0
-	+	163	84
-	+	164	117
-	+	164	46
-	+	163	43
-	+	164	0
-	+	163	67
-	+	164	0
-	+	163	24
-	+	172	16
-	+	173	16
-	+	266	0
-	+	95	0
-	+	96	0
-	+	408	0
-	+	96	18
-
-> ~/catkin_ws/src/block_pose/src/main.cc
-	"	102	44
-	^	342	33
-	.	342	32
-	+	499	53
-	+	500	52
-	+	501	52
-	+	503	0
-	+	514	20
-	+	85	0
-	+	78	25
-	+	85	0
-	+	85	0
-	+	85	0
-	+	85	0
-	+	85	0
-	+	85	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	341	0
-	+	342	0
-	+	340	49
-	+	341	0
-	+	340	0
-	+	341	0
-	+	8	0
-	+	83	0
-	+	85	0
-	+	81	0
-	+	81	0
-	+	83	0
-	+	80	48
-	+	81	47
-	+	80	43
-	+	85	0
-	+	82	0
-	+	82	0
-	+	80	0
-	+	339	24
-	+	85	22
-	+	85	0
-	+	86	0
-	+	85	75
-	+	85	0
-	+	85	0
-	+	84	5
-	+	84	0
-	+	85	5
-	+	85	5
-	+	21	0
-	+	86	0
-	+	67	27
-	+	77	0
-	+	77	56
-	+	77	0
-	+	77	62
-	+	77	26
-	+	77	37
-	+	77	41
-	+	77	43
-	+	77	30
-	+	77	0
-	+	77	25
-	+	77	39
-	+	77	0
-	+	77	49
-	+	77	52
-	+	78	0
-	+	75	42
-	+	76	18
-	+	75	51
-	+	75	32
-	+	75	39
-	+	75	38
-	+	75	0
-	+	74	11
-	+	75	33
-	+	74	0
-	+	76	0
-	+	75	0
-	+	75	0
-	+	74	0
-	+	74	14
-	+	74	28
-	+	75	0
-	+	74	0
-	+	68	0
-	+	73	51
-	+	71	28
-	+	73	34
-	+	74	0
-	+	75	39
-	+	73	53
-	+	74	0
-	+	73	52
-	+	507	0
-	+	97	24
-	+	92	0
-	+	121	29
-	+	342	32
-
-> ~/catkin_ws/NERD_tree_1
-	"	16	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/catkin_ws/src/block_pose/src/ObjectPose.cc
-	"	749	0
-	^	1340	70
-	.	1340	69
-	+	273	0
-	+	307	0
-	+	307	0
-	+	306	98
-	+	968	0
-	+	948	0
-	+	948	0
-	+	1063	0
-	+	1162	0
-	+	1259	0
-	+	1353	0
-	+	1449	0
-	+	1550	0
-	+	948	0
-	+	933	0
-	+	933	0
-	+	306	0
-	+	306	14
-	+	309	13
-	+	35	0
-	+	272	0
-	+	272	4
-	+	306	0
-	+	309	0
-	+	272	68
-	+	307	63
-	+	393	0
-	+	405	0
-	+	392	0
-	+	405	42
-	+	288	75
-	+	400	62
-	+	400	8
-	+	401	0
-	+	400	0
-	+	322	0
-	+	326	0
-	+	326	0
-	+	400	0
-	+	332	0
-	+	336	0
-	+	331	0
-	+	332	0
-	+	331	0
-	+	336	8
-	+	337	0
-	+	336	0
-	+	335	0
-	+	332	35
-	+	333	35
-	+	334	0
-	+	332	0
-	+	326	0
-	+	749	0
-	+	858	0
-	+	1039	0
-	+	1234	0
-	+	1249	0
-	+	1244	68
-	+	1244	68
-	+	1244	0
-	+	1243	0
-	+	1244	0
-	+	1245	0
-	+	1240	0
-	+	1243	0
-	+	1242	68
-	+	1347	0
-	+	1347	0
-	+	1334	0
-	+	1241	62
-	+	1242	62
-	+	1340	62
-	+	1341	62
-	+	1340	0
-	+	1341	0
-	+	1426	0
-	+	1432	67
-	+	1433	70
-	+	1434	69
-	+	1525	0
-	+	1531	69
-	+	1532	68
-	+	1533	68
-	+	405	0
-	+	1053	0
-	+	1149	0
-	+	1149	0
-	+	1246	0
-	+	1344	0
-	+	1438	0
-	+	1440	0
-	+	1539	0
-	+	1539	0
-	+	1537	0
-	+	1539	0
-	+	1623	0
-	+	1538	94
-	+	1346	0
-	+	1340	69
-
-> ~/catkin_ws/settings/Settings_RIT_indoor2.yaml
-	"	62	17
-	^	69	18
-	.	69	17
-	+	62	18
-	+	62	14
-	+	67	15
-	+	66	17
-	+	69	17
-	+	65	16
-	+	62	0
-	+	63	0
-	+	63	0
-	+	65	16
-	+	67	15
-	+	68	16
-	+	63	0
-	+	65	15
-	+	67	15
-	+	62	0
-	+	62	25
-	+	62	23
-	+	62	22
-	+	62	25
-	+	41	0
-	+	42	0
-	+	40	0
-	+	40	30
-	+	63	14
-	+	64	17
-	+	66	17
-	+	69	17
-	+	64	17
-	+	65	16
-	+	66	17
-	+	67	15
-	+	68	16
-	+	69	17
-	+	63	14
-	+	67	15
-	+	64	17
-	+	65	16
-	+	63	20
-	+	62	25
-	+	63	0
-	+	62	0
-	+	62	0
-	+	62	0
-	+	61	0
-	+	61	0
-	+	62	0
-	+	58	0
-	+	58	0
-	+	63	14
-	+	64	18
-	+	66	17
-	+	67	15
-	+	68	16
-	+	69	17
-	+	62	25
-	+	63	14
-	+	64	17
-	+	65	16
-	+	66	17
-	+	67	15
-	+	68	16
-	+	69	17
-	+	59	20
-	+	60	27
-	+	59	20
-	+	63	15
-	+	65	16
-	+	66	17
-	+	67	15
-	+	68	16
-	+	69	17
-	+	60	27
-	+	29	12
-	+	63	14
-	+	64	17
-	+	65	16
-	+	66	17
-	+	67	15
-	+	68	16
-	+	69	17
-	+	64	17
-	+	65	16
-	+	66	17
-	+	67	15
-	+	68	16
-	+	69	17
-	+	63	14
-	+	64	17
-	+	65	16
-	+	66	17
-	+	67	15
-	+	68	16
-	+	69	17
-	+	63	14
-	+	64	17
-	+	65	16
-	+	66	17
-	+	67	15
-	+	69	17
-
-> ~/catkin_ws/src/block_pose/include/ObjectPose.h
-	"	129	0
-	^	85	42
-	.	85	41
-	+	91	18
-	+	125	61
-	+	35	57
-	+	135	41
-	+	98	0
-	+	97	25
-	+	135	65
-	+	135	0
-	+	135	0
-	+	135	0
-	+	135	0
-	+	135	0
-	+	135	0
-	+	135	32
-	+	135	31
-	+	127	33
-	+	119	31
-	+	117	61
-	+	135	0
-	+	135	0
-	+	75	0
-	+	79	30
-	+	80	32
-	+	82	32
-	+	81	32
-	+	135	0
-	+	83	51
-	+	87	0
-	+	87	9
-	+	87	0
-	+	87	35
-	+	87	38
-	+	87	37
-	+	87	36
-	+	87	36
-	+	87	38
-	+	89	0
-	+	87	20
-	+	83	26
-	+	83	0
-	+	83	59
-	+	43	28
-	+	51	24
-	+	86	0
-	+	86	4
-	+	89	11
-	+	87	0
-	+	87	0
-	+	86	0
-	+	87	0
-	+	105	20
-	+	106	0
-	+	107	37
-	+	108	27
-	+	85	41
-
-> ~/catkin_ws/src/block_pose/include/SystemHandler.h
-	"	213	0
-	.	67	0
-	+	76	22
-	+	74	54
-	+	75	75
-	+	77	60
-	+	78	48
-	+	54	36
-	+	159	0
-	+	69	0
-	+	86	0
-	+	46	37
-	+	47	40
-	+	41	26
-	+	79	42
-	+	80	44
-	+	47	32
-	+	68	0
-	+	68	0
-	+	69	15
-	+	68	53
-	+	69	0
-	+	47	31
-	+	58	21
-	+	55	29
-	+	51	28
-	+	58	25
-	+	55	33
-	+	51	32
-	+	41	27
-	+	59	45
-	+	60	45
-	+	61	45
-	+	62	45
-	+	163	18
-	+	164	18
-	+	165	18
-	+	166	18
-	+	59	0
-	+	60	8
-	+	61	8
-	+	62	8
-	+	81	0
-	+	82	0
-	+	83	0
-	+	84	0
-	+	81	26
-	+	82	26
-	+	83	26
-	+	84	26
-	+	81	44
-	+	82	44
-	+	83	44
-	+	84	44
-	+	33	40
-	+	34	17
-	+	33	41
-	+	34	0
-	+	97	0
-	+	96	24
-	+	63	16
-	+	234	5
-	+	235	17
-	+	236	23
-	+	236	21
-	+	237	10
-	+	63	9
-	+	64	60
-	+	65	60
-	+	65	60
-	+	209	0
-	+	208	0
-	+	208	9
-	+	208	115
-	+	68	39
-	+	68	31
-	+	68	31
-	+	64	10
-	+	65	10
-	+	65	10
-	+	62	0
-	+	64	8
-	+	65	8
-	+	65	8
-	+	69	0
-	+	142	0
-	+	67	21
-	+	238	22
-	+	255	0
-	+	286	17
-	+	287	24
-	+	50	69
-	+	65	0
-	+	236	0
-	+	204	0
-	+	193	52
-	+	286	0
-	+	239	25
-	+	68	0
-	+	66	0
-	+	66	0
-	+	67	0
-
-> ~/catkin_ws/src/block_pose/src/DominantPlane.cc
-	"	111	6
-	^	111	7
-	.	111	6
-	+	100	41
-	+	111	6
-
-> ~/catkin_ws/src/block_pose/src/ma
-	"	1	0
-
-> ~/catkin_ws/src/block_pose/src/NERD_tree_1
-	"	4	0
-	.	1	0
-	+	1	0
-
-> ~/catkin_ws/settings/Settings_RIT_indoor2.yaml]
-	"	1	0
-
-> ~/matching_project/main.cc
-	"	60	35
-
-> ~/catkin_ws/run.sh
-	"	1	0
-
-> ~/catkin_ws/settings/Settings_RIT_indoor2.yam
-	"	1	0
-
-> ~/catkin_ws/settings/Settings_RIT_indoor
-	"	1	0
-
-> ~/catkin_ws/src/block_pose/tags
-	"	55	0
-	^	33	1
-	.	45	0
-	+	33	0
-	+	45	0
-
-> ~/catkin_ws/src/block_pose/src/tags
-	"	71	0
-
-> /media/cur_project/TemporalConsistentDepth/scripts/loop_LSTM_run.sh
-	"	84	24
-	^	84	25
-	.	84	24
-	+	45	32
-	+	2	19
-	+	2	19
-	+	76	29
-	+	77	24
-	+	78	25
-	+	79	29
-	+	80	28
-	+	81	28
-	+	154	29
-	+	155	25
-	+	155	27
-	+	155	27
-	+	160	0
-	+	155	43
-	+	156	25
-	+	156	26
-	+	160	0
-	+	156	42
-	+	157	30
-	+	157	30
-	+	157	31
-	+	160	0
-	+	157	27
-	+	158	48
-	+	159	43
-	+	70	20
-	+	69	27
-	+	70	51
-	+	103	0
-	+	101	0
-	+	101	41
-	+	167	37
-	+	168	23
-	+	168	24
 	+	169	0
-	+	168	37
-	+	47	21
-	+	64	33
-	+	2	0
-	+	57	19
-	+	49	7
-	+	1	9
-	+	45	0
-	+	46	0
-	+	45	0
-	+	119	0
-	+	51	9
-	+	52	15
-	+	89	39
-	+	86	17
-	+	69	17
-	+	121	22
-	+	121	24
-	+	121	23
-	+	122	0
-	+	121	38
-	+	91	25
-	+	91	26
-	+	92	0
-	+	91	40
-	+	2	19
-	+	33	25
-	+	40	26
-	+	83	26
-	+	84	24
-
-> /media/Downloads/Untitled Folder/supplemental.tex
-	"	70	0
-
-> ~/catkin_ws/src/CMakeLists.txt
-	"	1	0
-
-> ~/catkin_ws/src/block_pose/CMakeLists.txt
-	"	212	34
-	^	212	35
-	.	212	34
-	+	212	34
-
-> ~/catkin_ws/ros_run.sh
-	"	2	39
-	^	2	46
-	.	2	45
-	+	1	48
-	+	2	32
-	+	2	32
-	+	2	33
-	+	3	0
-	+	2	45
-
-> ~/green_dataset/green_exp.py
-	"	6	30
-	^	6	31
-	.	6	30
-	+	1	10
-	+	2	0
-	+	7	0
-	+	4	23
-	+	5	54
-	+	6	30
-
-> ~/green_dataset/green_
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/utils/dataloader.py
-	"	285	0
-	^	457	67
-	.	457	66
-	+	224	71
-	+	224	0
-	+	224	19
-	+	283	29
-	+	224	8
-	+	10	10
-	+	224	0
-	+	207	0
-	+	224	0
-	+	212	63
-	+	224	0
-	+	224	0
-	+	214	41
-	+	215	79
-	+	216	25
-	+	224	0
-	+	215	0
-	+	214	37
-	+	214	50
-	+	215	19
-	+	212	63
-	+	284	0
-	+	285	0
-	+	285	0
-	+	283	32
-	+	217	33
-	+	218	32
-	+	219	33
-	+	245	21
-	+	252	20
-	+	245	21
-	+	259	20
-	+	246	0
-	+	221	0
-	+	221	0
-	+	253	0
-	+	222	0
-	+	222	0
-	+	260	0
-	+	223	0
-	+	223	0
-	+	220	32
-	+	237	20
-	+	245	20
-	+	252	20
-	+	259	20
-	+	279	0
-	+	214	0
-	+	42	44
-	+	44	0
-	+	44	96
-	+	45	98
-	+	46	97
-	+	47	71
-	+	52	0
-	+	70	0
-	+	50	34
-	+	43	0
-	+	47	70
-	+	44	22
-	+	45	23
-	+	46	22
-	+	50	62
-	+	51	33
-	+	54	33
-	+	57	49
-	+	58	51
-	+	59	49
-	+	69	0
-	+	69	0
-	+	62	0
-	+	67	0
-	+	42	69
-	+	57	15
-	+	58	16
-	+	59	15
-	+	60	16
-	+	63	37
-	+	64	39
-	+	65	37
-	+	66	39
-	+	63	15
-	+	64	16
-	+	65	15
-	+	66	16
-	+	67	69
-	+	68	69
-	+	48	39
-	+	49	37
-	+	48	0
-	+	62	0
-	+	61	26
-	+	69	26
-	+	68	81
-	+	69	20
-	+	68	87
-	+	457	71
-	+	457	0
-	+	457	24
-	+	457	66
-
-> /media/cur_project/TemporalConsistentDepth/utils/filename/kitti_2015_flow_test.txt
-	"	200	0
-
-> /media/cur_project/TemporalConsistentDepth/utils/filename/kitti_2015_4frames.txt
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/test_loop.py
-	"	81	50
-	^	153	92
-	.	153	91
-	+	56	0
-	+	57	0
-	+	56	0
-	+	57	0
-	+	227	0
-	+	227	0
-	+	57	0
-	+	232	0
-	+	24	0
-	+	70	0
-	+	87	0
-	+	87	0
-	+	87	0
-	+	31	69
-	+	56	0
-	+	57	0
-	+	77	0
-	+	76	0
-	+	87	0
-	+	227	24
-	+	228	24
-	+	229	22
-	+	232	0
-	+	231	33
-	+	231	23
-	+	56	0
-	+	73	0
-	+	72	0
-	+	73	0
-	+	76	0
-	+	231	0
-	+	230	0
-	+	9	15
-	+	10	0
-	+	16	0
-	+	10	31
-	+	11	32
-	+	8	10
-	+	87	0
-	+	87	0
-	+	87	0
-	+	87	0
-	+	87	0
-	+	86	0
-	+	87	0
-	+	79	0
-	+	79	136
-	+	8	24
-	+	80	89
-	+	79	156
-	+	80	137
-	+	79	158
-	+	87	0
-	+	80	30
-	+	87	0
-	+	81	29
-	+	85	0
-	+	86	0
-	+	81	113
-	+	78	0
-	+	79	0
-	+	81	123
-	+	86	0
-	+	81	172
-	+	83	172
-	+	81	126
-	+	82	0
-	+	83	126
-	+	84	0
-	+	87	0
-	+	87	0
-	+	79	0
-	+	15	0
-	+	16	0
-	+	65	0
-	+	66	0
-	+	65	0
-	+	41	0
-	+	42	0
-	+	41	74
-	+	43	78
-	+	45	78
-	+	41	69
-	+	43	73
-	+	45	73
-	+	79	30
-	+	98	23
-	+	109	24
-	+	132	27
-	+	179	28
-	+	131	29
-	+	137	6
-	+	141	0
-	+	137	0
-	+	141	0
-	+	148	0
-	+	148	0
-	+	150	64
-	+	155	0
-	+	153	91
-
-> /media/cur_project/TemporalConsistentDepth/eval_utils/eval_depth_video.py
-	"	18	13
-	^	18	16
-	.	18	15
-	+	1	0
-	+	232	0
-	+	181	0
-	+	11	34
-	+	10	20
-	+	9	19
-	+	10	0
-	+	36	0
-	+	64	10
-	+	64	6
-	+	64	0
-	+	64	0
-	+	64	0
-	+	36	0
-	+	35	0
-	+	36	0
-	+	35	0
-	+	64	0
-	+	11	40
-	+	18	15
-
-> /media/cur_project/TemporalConsistentDepth/test_depth.py
-	"	1	0
-
-> /media/cur_project/TemporalConsistentDepth/train_depth_LSTM.py
-	"	375	12
-	^	218	16
-	.	217	37
-	+	97	0
-	+	28	0
-	+	461	0
-	+	461	8
-	+	460	0
-	+	461	0
-	+	147	0
-	+	221	18
-	+	221	0
-	+	221	0
-	+	221	19
-	+	221	75
-	+	221	79
-	+	221	91
-	+	221	95
-	+	221	42
-	+	221	50
-	+	221	42
-	+	350	0
-	+	329	0
-	+	105	38
-	+	29	0
-	+	36	0
-	+	38	0
+	+	169	0
 	+	39	0
-	+	43	0
-	+	59	0
-	+	58	66
-	+	13	56
-	+	34	0
-	+	36	0
-	+	35	0
-	+	95	0
-	+	92	0
-	+	91	41
-	+	95	0
-	+	92	0
-	+	95	0
-	+	93	43
-	+	94	0
-	+	94	0
-	+	140	0
-	+	140	0
-	+	140	0
-	+	147	62
-	+	148	0
-	+	221	93
-	+	221	97
-	+	221	91
-	+	221	99
-	+	221	91
-	+	221	33
-	+	220	0
-	+	221	45
-	+	221	0
-	+	221	44
-	+	105	0
-	+	105	0
-	+	105	143
-	+	106	0
-	+	105	141
-	+	106	60
-	+	107	0
-	+	105	0
-	+	105	0
-	+	105	0
-	+	105	0
-	+	105	0
-	+	105	95
-	+	106	33
-	+	105	45
-	+	106	0
-	+	105	44
-	+	106	0
-	+	108	0
-	+	108	0
-	+	109	60
-	+	108	0
-	+	111	0
-	+	112	0
-	+	113	56
-	+	112	0
-	+	117	51
-	+	84	0
-	+	221	68
-	+	220	0
-	+	220	0
-	+	221	0
-	+	220	0
-	+	221	99
-	+	221	0
-	+	239	0
-	+	237	79
-	+	238	0
-	+	220	0
-	+	329	0
-	+	93	52
-	+	17	32
-	+	219	0
-	+	217	37
+	+	32	10
+	+	33	0
+	+	319	0
 
-> /media/cur_project/TemporalConsistentDepth/eval_utils/eval_depth_2015.py
-	"	45	0
-	^	64	21
-	.	58	0
+> /media/mnt1/cur_project/LoopNet/test_depth
+	"	1	0
+
+> /media/mnt1/cur_project/LoopNet/saved_model/loop_test/train.log
+	"	3	0
+
+> /media/mnt1/cur_project/LoopNet/eval_utils/eval_depth_video.py
+	"	9	0
+	^	66	52
+	.	66	51
+	+	69	0
+	+	67	0
+	+	66	51
+
+> /media/mnt1/cur_project/LoopNet/utils/loss_utils.py
+	"	196	0
+	^	227	17
+	.	270	0
+	+	269	0
+	+	270	0
+	+	270	98
+	+	270	18
+	+	270	48
+	+	270	50
+	+	270	47
+	+	270	49
+	+	270	41
+	+	270	41
+	+	270	41
+	+	270	41
+	+	270	55
+	+	270	43
+	+	270	43
+	+	270	43
+	+	270	43
+	+	270	45
+	+	270	44
+	+	270	47
+	+	270	46
+	+	270	7
+	+	270	7
+	+	270	9
+	+	270	20
+	+	227	16
+	+	270	0
+
+> /media/mnt1/cur_project/LoopNet/train_loop_LSTM_unified.py
+	"	1360	8
+
+> /media/mnt1/cur_project/LoopNet/train_loop.py
+	"	139	12
+
+> /media/mnt1/cur_project/LoopNet/scripts/loop_run.sh
+	"	82	0
+
+> /media/mnt1/cur_project/LoopNet/train_loop_LSTM
+	"	1	0
+
+> /media/intelpro/TemporalConsistentDepth/test_LSTM.py
+	"	163	8
+
+> /media/intelpro/TemporalConsistentDepth/scripts/remote_stereo_LSTM_run.sh
+	"	4	0
+
+> /media/intelpro/TemporalConsistentDepth/train_depth_LSTM.py
+	"	215	37
+
+> /media/TemporalConsistentDepth/train_depth.py
+	"	117	37
+	.	142	0
+	+	154	0
+	+	140	0
+	+	142	0
+
+> /media/TemporalConsistentDepth/utils.py
+	"	40	22
+
+> /media/TemporalConsistentDepth/dataloader.py
+	"	138	16
+	.	110	0
+	+	110	0
+
+> /media/TemporalConsistentDepth/scripts/stereo_run.sh
+	"	40	14
+	^	39	16
+	.	39	15
+	+	4	20
+	+	5	19
+	+	37	47
+	+	41	18
+	+	42	19
+	+	39	15
+	+	41	19
+	+	42	19
+	+	39	15
+	+	37	48
+	+	2	0
+	+	36	0
+	+	36	11
+	+	41	18
+	+	42	19
+	+	37	48
+	+	36	11
+	+	37	48
+	+	36	11
+	+	37	48
+	+	39	15
+	+	36	11
+	+	37	48
+	+	39	15
+	+	38	14
+	+	41	19
+	+	42	19
+	+	36	11
+	+	37	48
+	+	38	14
+	+	39	15
+	+	36	11
+	+	37	48
+	+	41	18
+	+	42	19
+	+	36	11
+	+	37	48
+	+	39	15
+	+	36	11
+	+	37	48
+	+	39	15
+	+	41	19
+	+	42	19
+	+	39	15
+	+	2	20
+	+	39	15
+	+	41	19
+	+	36	11
+	+	37	48
+	+	42	19
+	+	41	18
+	+	39	15
+	+	36	11
+	+	37	48
+	+	41	19
+	+	42	19
+	+	36	11
+	+	1	0
+	+	37	48
+	+	36	11
+	+	37	48
+	+	36	11
+	+	37	48
+	+	36	11
+	+	37	48
+	+	41	18
+	+	42	19
+	+	39	15
+
+> /media/TemporalConsistentDepth/test_depth.py
+	"	107	8
+
+> /media/TemporalConsistentDepth/eval_depth.py
+	"	38	8
+	.	38	0
+	+	38	0
+
+> /media/TemporalConsistentDepth/scripts/eval_stereo.sh
+	"	6	19
+	^	6	20
+	.	6	19
+	+	5	19
+	+	6	19
+
+> /media/TemporalConsistentDepth_cpy/TemporalConsistentDepth/scripts/remote_flow_run.sh
+	"	36	47
+	^	36	48
+	.	36	47
+	+	1	14
+	+	3	19
+	+	8	17
+	+	6	24
+	+	7	20
+	+	6	22
+	+	12	12
+	+	3	19
+	+	2	7
+	+	38	15
+	+	2	7
+	+	38	15
+	+	26	39
+	+	27	0
+	+	26	48
+	+	27	0
+	+	26	37
+	+	36	44
+	+	26	61
+	+	36	57
+	+	2	7
+	+	36	47
+
+> /media/TemporalConsistentDepth_cpy/TemporalConsistentDepth/dataloader.py
+	"	113	14
+	^	113	15
+	.	113	14
+	+	107	0
+	+	114	0
+	+	106	14
+	+	113	14
+
+> /media/TemporalConsistentDepth/train_loop.py
+	"	140	0
+	^	292	0
+	.	18	0
+	+	18	0
+	+	296	60
+	+	18	0
+	+	285	38
+	+	293	0
+	+	293	9
+	+	293	0
+	+	293	0
+	+	293	21
+	+	290	0
+	+	291	0
+	+	289	0
+	+	219	0
+	+	218	0
+	+	18	0
+	+	315	98
+	+	283	0
+	+	293	0
+	+	292	0
+	+	18	0
+
+> /media/TemporalConsistentDepth/train_flow.py
+	"	183	16
+	.	110	0
+	+	189	42
+	+	189	0
+	+	110	0
+
+> /media/Bridgeflow/utils/scene_dataloader.py
+	"	169	0
+
+> /media/Bridgeflow/utils/utils.py
+	"	113	4
+
+> /media/Bridgeflow/NERD_tree_1
+	"	1	0
+	.	1	0
+	+	1	0
+
+> /media/Bridgeflow/train.py
+	"	158	8
+	.	120	0
+	+	76	12
+	+	153	0
+	+	159	59
+	+	160	65
+	+	161	71
+	+	162	33
+	+	159	63
+	+	160	79
+	+	161	85
+	+	162	65
+	+	161	69
+	+	162	19
+	+	80	0
+	+	78	0
+	+	78	0
+	+	162	38
+	+	157	0
+	+	163	0
+	+	154	34
+	+	104	10
+	+	60	52
+	+	179	0
+	+	154	0
+	+	75	0
+	+	66	0
+	+	66	87
+	+	53	0
+	+	120	0
+
+> /media/Bridgeflow/scripts/run_train_remote.sh
+	"	6	44
+	^	1	8
+	.	1	7
+	+	7	22
+	+	5	21
+	+	1	7
+	+	3	11
+	+	1	7
+	+	7	20
+	+	3	11
+	+	1	7
+	+	6	38
+	+	7	58
+	+	1	7
+
+> /media/TemporalConsistentDepth/scripts/flow_run.sh
+	"	10	0
+
+> /media/TemporalConsistentDepth/scripts/remote_loop_run.sh
+	"	49	4
+	^	2	8
+	.	2	7
+	+	3	19
+	+	7	20
+	+	6	22
+	+	73	15
+	+	73	32
+	+	73	15
+	+	22	53
+	+	23	0
+	+	22	56
+	+	23	0
+	+	23	0
+	+	22	41
+	+	23	0
+	+	23	0
+	+	22	25
+	+	38	0
+	+	73	0
+	+	15	16
+	+	16	15
+	+	17	0
+	+	43	51
+	+	16	16
+	+	2	7
+	+	15	15
+	+	43	55
+	+	2	7
+	+	41	15
+	+	53	0
+	+	54	43
+	+	54	61
+	+	54	62
+	+	55	0
+	+	54	57
+	+	55	0
+	+	54	57
+	+	41	15
+	+	2	7
+	+	15	16
+	+	43	51
+	+	41	15
+	+	2	7
+
+> /media/TemporalConsistentDepth_cpy/TemporalConsistentDepth/train_flow.py
+	"	152	16
+	^	28	82
+	.	28	81
+	+	106	0
+	+	105	0
+	+	105	12
+	+	104	36
+	+	105	0
+	+	69	0
+	+	68	72
+	+	70	72
+	+	105	16
+	+	177	70
+	+	178	87
+	+	179	77
+	+	180	40
+	+	182	0
+	+	174	0
+	+	174	0
+	+	175	0
+	+	166	0
+	+	170	0
+	+	180	28
+	+	108	0
+	+	108	0
+	+	172	0
+	+	172	0
+	+	28	81
+
+> /media/TemporalConsistentDepth_cpy/TemporalConsistentDepth/utils.py
+	"	54	21
+	^	49	139
+	.	49	138
+	+	49	138
+
+> /media/TemporalConsistentDepth/scripts/loop_run.sh
+	"	1	0
+	^	1	15
+	.	37	0
+	+	1	14
+	+	37	0
+
+> /media/Bridgeflow/test_flow.py
+	"	24	0
+
+> ~/[Vundle] Installer
+	"	4	0
+	.	1	0
+	+	4	0
+	+	1	0
+
+> /media/TemporalConsistentDepth_cpy/TemporalConsistentDepth/train_
+	"	1	0
+
+> /media/TemporalConsistentDepth_cpy/TemporalConsistentDepth/ssim.py
+	"	19	4
+
+> /media/Bridgeflow/tags
+	"	1	0
+
+> /media/BridgeDepthFlow/train.py
+	"	114	8
+	^	25	67
+	.	59	0
+	+	135	0
+	+	135	0
+	+	25	0
+	+	135	0
+	+	151	0
+	+	58	0
+	+	59	0
+
+> /media/TemporalConsistentDepth_cpy/TemporalConsistentDepth/scripts/flow_run.sh
+	"	7	20
+	.	7	20
+	+	7	20
+
+> /media/TemporalConsistentDepth_cpy/TemporalConsistentDepth/scripts/flw
+	"	1	0
+
+> /media/BridgeDepthFlow/run.sh
+	"	1	118
+	^	1	119
+	.	1	118
+	+	2	0
+	+	1	118
+
+> /media/BridgeDepthFlow/utils/filenames/kitti_train_files_png_4frames.txt
+	"	2882	0
+
+> /media/vilab/intelpro/TemporalConsistentDepth/main.py
+	"	253	4
+	^	78	66
+	.	78	65
+	+	321	0
+	+	351	0
+	+	351	0
+	+	350	39
+	+	363	0
+	+	402	3
+	+	423	100
+	+	402	0
+	+	423	100
+	+	423	100
+	+	423	101
+	+	424	7
+	+	402	7
+	+	425	75
+	+	78	65
+
+> /ma
+	"	1	0
+
+> /media/vilab/intelpro/TemporalConsistentDepth/run_remote.sh
+	"	22	1
+	^	28	33
+	.	28	32
+	+	65	757
+	+	2	7
+	+	11	15
+	+	28	31
+	+	2	7
+	+	28	31
+	+	29	19
+	+	2	7
+	+	29	0
+	+	27	0
+	+	28	31
+	+	2	8
+	+	27	19
+	+	28	31
+	+	2	7
+	+	27	19
+	+	28	31
+	+	2	7
+	+	27	19
+	+	28	31
+	+	2	7
+	+	28	47
+	+	10	17
+	+	28	54
+	+	2	7
+	+	10	14
+	+	28	55
+	+	2	8
+	+	10	17
+	+	28	51
+	+	10	14
+	+	28	55
+	+	2	7
+	+	10	14
+	+	28	51
+	+	10	17
+	+	28	55
+	+	2	38
+	+	28	48
+	+	2	0
+	+	1	13
+	+	45	0
+	+	33	19
+	+	32	0
+	+	33	0
+	+	2	7
+	+	1	14
+	+	10	17
+	+	28	48
+	+	2	7
+	+	32	49
+	+	2	7
+	+	28	50
+	+	10	17
+	+	2	7
+	+	10	17
+	+	28	49
+	+	2	7
+	+	28	72
+	+	30	16
+	+	2	7
+	+	30	16
+	+	28	56
+	+	2	7
+	+	28	70
+	+	30	16
+	+	26	18
+	+	28	39
+	+	30	16
+	+	28	31
+	+	2	7
+	+	28	34
+	+	2	7
+	+	1	15
+	+	13	15
+	+	2	7
+	+	36	0
+	+	36	0
+	+	58	0
+	+	23	0
+	+	36	0
+	+	32	0
+	+	1	14
+	+	37	18
+	+	1	15
+	+	26	0
+	+	25	3
+	+	37	0
+	+	37	0
+	+	32	0
+	+	35	16
+	+	37	0
+	+	40	36
+	+	41	16
+	+	1	14
+	+	30	16
+	+	28	31
+	+	2	8
+	+	30	18
+	+	28	32
+
+> /media/vilab/intelpro/TemporalConsistentDepth/run_de
+	"	1	0
+
+> /media/vilab/intelpro/TemporalConsistentDepth/run_
+	"	1	0
+
+> /media/vilab/intelpro/TemporalConsistentDepth/run_Re
+	"	1	0
+
+> /media/vilab/intelpro/TemporalConsistentDepth/loss_function/flow_loss.py
+	"	191	64
+	^	191	65
+	.	191	64
+	+	115	0
+	+	211	0
+	+	18	21
+	+	151	18
+	+	153	20
+	+	191	64
+
+> /media/vilab/intelpro/TemporalConsistentDepth/run_main.sh
+	"	22	0
+	^	30	17
+	.	30	16
+	+	3	19
+	+	52	0
+	+	61	0
+	+	1	13
+	+	39	26
+	+	41	15
+	+	2	7
+	+	61	0
+	+	30	16
+
+> /media/vilab/intelpro/TemporalConsistentDepth/run
+	"	1	0
+
+> /media/vilab/intelpro/TemporalConsistentDepth/run.amin.sh
+	"	1	0
+
+> /media/vilab/intelpro/TemporalConsistentDepth/run_main
+	"	1	0
+
+> /media/intelpro/TemporalConsistentDepth/run_train.sh
+	"	13	12
+	^	12	43
+	.	12	43
+	+	1	24
+	+	1	234
+	+	1	58
+	+	1	776
+	+	1	102
+	+	1	283
+	+	1	301
+	+	1	16
+	+	1	0
+	+	14	38
+	+	13	39
+	+	12	25
+	+	2	7
+	+	5	15
+	+	2	7
+	+	5	14
+	+	12	34
+	+	13	0
+	+	12	34
+	+	8	21
+	+	12	35
+	+	2	7
+	+	5	15
+	+	12	25
+	+	13	12
+	+	12	26
+	+	2	7
+	+	5	14
+	+	12	24
+	+	2	7
+	+	6	15
+	+	12	24
+	+	5	14
+	+	12	28
+	+	2	7
+	+	5	14
+	+	12	17
+	+	5	15
+	+	13	0
+	+	5	0
+	+	12	24
+	+	5	15
+	+	2	7
+	+	5	15
+	+	12	27
+	+	2	8
+	+	5	14
+	+	12	27
+	+	2	7
+	+	5	14
+	+	12	27
+	+	2	7
+	+	5	16
+	+	6	15
+	+	12	28
+	+	2	7
+	+	13	12
+	+	12	28
+	+	5	15
+	+	13	12
+	+	2	7
+	+	5	14
+	+	12	27
+	+	13	12
+	+	2	7
+	+	5	14
+	+	12	27
+	+	2	7
+	+	5	14
+	+	12	27
+	+	2	7
+	+	6	15
+	+	5	15
+	+	12	28
+	+	5	14
+	+	12	42
+	+	13	12
+	+	2	7
+	+	5	14
+	+	12	41
+	+	2	7
+	+	5	14
+	+	12	41
+	+	2	7
+	+	5	15
+	+	12	43
+
+> /media/intelpro/TemporalConsistentDepth/loss_function/depth_loss.py
+	"	155	1
+	.	153	0
+	+	15	30
+	+	153	0
+	+	153	0
+	+	147	2
+	+	149	3
+	+	147	0
+	+	149	0
+	+	153	2
+	+	153	4
+	+	153	0
+	+	153	0
+
+> /media/intelpro/TemporalConsistentDepth/run_
+	"	1	0
+
+> /media/intelpro/TemporalConsistentDepth/run_train_sh
+	"	1	0
+
+> /media/intelpro/TemporalConsistentDepth/main.py
+	"	256	12
+	.	256	0
+	+	252	0
+	+	254	0
+	+	256	0
+
+> /media/intelpro/TemporalConsistentDepth/run_train
+	"	1	0
+
+> /media/intelpro/TemporalConsistentDepth/run_train_remote.sh
+	"	13	0
+	^	10	25
+	.	10	24
+	+	1	23
+	+	1	57
+	+	1	113
+	+	1	141
+	+	1	155
+	+	1	23
+	+	1	57
+	+	1	113
+	+	1	23
+	+	1	54
+	+	1	105
+	+	1	54
+	+	1	23
+	+	1	105
+	+	1	23
+	+	1	54
+	+	1	105
+	+	1	23
+	+	1	57
+	+	1	113
+	+	1	23
+	+	1	105
+	+	1	57
+	+	1	113
+	+	16	0
+	+	1	799
 	+	1	0
 	+	16	0
-	+	1	18
-	+	2	19
-	+	4	9
-	+	5	30
-	+	6	12
-	+	7	10
 	+	16	0
-	+	17	0
-	+	46	0
-	+	54	0
-	+	72	0
-	+	10	0
-	+	9	0
-	+	43	0
-	+	43	0
-	+	43	0
-	+	44	0
-	+	64	0
-	+	64	0
-	+	64	0
-	+	64	0
-	+	9	0
-	+	8	21
-	+	58	19
-	+	64	19
-	+	64	0
-	+	64	0
-	+	65	0
-	+	58	0
+	+	1	0
+	+	13	30
+	+	2	7
+	+	10	24
+	+	15	19
+	+	2	7
+	+	11	12
+	+	10	24
+	+	2	7
+	+	10	24
 
-> /media/Downloads/SfM_CVPR2017_code/egpaper_for_review.tex
+> /media/intelpro/TemporalConsistentDepth/loss_function/deop
 	"	1	0
-
-> ~/.cache/.fr-KrPBeD/egpaper_for_review.tex
-	"	1	0
-
-> /media/cur_project/monodepth/make_video.py
-	"	7	8
-	^	7	55
-	.	11	0
-	+	1	11
-	+	7	24
-	+	7	0
-	+	6	33
-	+	7	56
-	+	8	23
-	+	9	8
-	+	3	18
-	+	9	64
-	+	10	23
-	+	11	34
-	+	7	55
-	+	11	0
-	i	1	0
-
-> /media/cur_project/monodepth/visualize.py
-	"	8	24
-	^	8	25
-	.	8	24
-	+	4	23
-	+	10	4
-	+	2	18
-	+	3	0
-	+	5	9
-	+	8	18
-	+	7	15
-	+	9	13
-	+	10	0
-	+	7	30
-	+	5	60
-	+	7	0
-	+	5	42
-	+	5	54
-	+	5	30
-	+	7	0
-	+	5	44
-	+	6	23
-	+	7	0
-	+	8	24
-
-> /media/cur_project/monodepth/monodepth_simple.py
-	"	91	8
-	^	94	85
-	.	91	0
-	+	93	0
-	+	104	22
-	+	32	27
-	+	32	27
-	+	48	44
-	+	54	14
-	+	54	40
-	+	54	43
-	+	54	58
-	+	54	61
-	+	54	14
-	+	54	48
-	+	54	26
-	+	54	28
-	+	54	0
-	+	89	90
-	+	33	0
-	+	54	0
-	+	92	70
-	+	55	0
-	+	78	0
-	+	77	23
-	+	78	0
-	+	101	19
-	+	88	0
-	+	86	62
-	+	87	65
-	+	88	0
-	+	71	0
-	+	73	12
-	+	76	13
-	+	90	21
-	+	32	107
-	+	77	0
-	+	78	50
-	+	79	52
-	+	48	23
-	+	86	0
-	+	83	0
-	+	83	0
-	+	53	53
-	+	52	9
-	+	83	0
-	+	85	0
-	+	85	0
-	+	54	0
-	+	71	0
-	+	75	16
-	+	74	28
-	+	75	32
-	+	92	35
-	+	91	0
-	+	91	74
-	+	92	38
-	+	81	65
-	+	94	84
-	+	91	0
